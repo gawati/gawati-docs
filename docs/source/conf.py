@@ -52,7 +52,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Gawati Docs'
-copyright = u'2017, Ashok Hariharan'
+copyright = u'2017, African Innovation Foundation'
 author = u'Ashok Hariharan'
 
 # The version info for the project you're documenting, acts as replacement for
