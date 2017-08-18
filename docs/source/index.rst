@@ -10,7 +10,7 @@ Welcome to Gawati Docs's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+   AboutGawati      
 
 Indices and tables
 ==================
