@@ -1,0 +1,4 @@
+install pip & virtualenv
+within virtualenv:
+Install sphinx
+Install sphinx_rtd_theme

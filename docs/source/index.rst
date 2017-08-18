@@ -3,14 +3,17 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Gawati Docs's documentation!
-=======================================
+Gawati Documentation
+====================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   AboutGawati      
+   about-gawati
+   setup
+   setup-essentials
+   setup-code      
 
 Indices and tables
 ==================
