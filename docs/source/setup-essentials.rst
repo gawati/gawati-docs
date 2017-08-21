@@ -4,7 +4,7 @@ Gawati Essentials Setup
 Installer
 *********
 
-The installer is written for Centos 7.
+The installer is written for `CentOS`_ 7.
 
 
 Quickstart
