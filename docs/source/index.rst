@@ -12,9 +12,8 @@ Gawati Documentation
 
    about-gawati
    setup/index
-   developer-intro
-   coding-guidelines
    gawati-data-server
+   development/index
 
 
 Indices and tables
