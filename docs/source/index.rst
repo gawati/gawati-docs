@@ -12,7 +12,7 @@ Gawati Documentation
 
    about-gawati
    setup/index
-   gawati-data-server
+   system/index
    development/index
 
 
