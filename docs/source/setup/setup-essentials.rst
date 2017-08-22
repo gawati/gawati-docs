@@ -4,15 +4,15 @@ Gawati Essentials Setup
 Installer
 *********
 
-The installer is written for `CentOS`_ 7.
-
-
-Quickstart
-==========
+The installer is written for `CentOS`_ 7. CentOS "Minimal installation" type
+is sufficient.
 
 To download the `installation script`_ execute:
 
  curl https://raw.githubusercontent.com/gawati/setup-scripts/master/gawati/gawati_server_setup.sh -o gawati_server_setup.sh
+
+Quickstart
+==========
 
 The installer must be run from root account. It will switch accounts as needed.
 
