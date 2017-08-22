@@ -11,13 +11,13 @@ Gawati Documentation
    :caption: Contents:
 
    about-gawati
-   setup
+   setup/index
    setup-essentials
    setup-code
    developer-intro
    coding-guidelines
    gawati-data-server
-     
+
 
 Indices and tables
 ==================
