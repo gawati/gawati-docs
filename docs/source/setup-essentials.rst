@@ -36,7 +36,7 @@ Gawati server URL
 
 In the ini file that has been downloaded to your home folder after the first run
 of the installer, find the section [gawati-portal] and change the
-*GAWATI_URL_ROOT* variable (default: test.gawati.org).
+*GAWATI_URL_ROOT* variable (default: my.gawati.org).
 
 SSL server certificate
 ----------------------
