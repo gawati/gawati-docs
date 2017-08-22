@@ -47,6 +47,17 @@ mutually exclusive options for creating a certificate.
  - signed locally (use for internal server / testing)
  - signed by letsencrypt (use for public servers)
 
+ Between both options there is a shared set of information identifying the owner
+ of the generated certificates. Please adapt the respective section in [options]
+ to your case::
+
+  [options]
+  ...
+  organisation=ACME Installation Corp Ltd
+  country=CH
+  state=Zug
+  city=Zug
+
 locally signed certificate
 ''''''''''''''''''''''''''
 
@@ -70,12 +81,15 @@ set *type=install* and set variaböe *certs* identical to your *GAWATI_URL_ROOT*
 Installation targets
 ====================
 
-When you run the installer for the first time, it will download an additional file "dev.ini" into your home folder.
-The ini file defines the details of the installation. We call this an installation target.
+When you run the installer for the first time, it will download an additional
+file "dev.ini" into your home folder. The ini file defines the details of the
+installation. We call this an installation target.
 
-With the second execution of the installer, installation commences according to the configuration in the ini file.
+With the second execution of the installer, installation commences according to
+the configuration in the ini file.
 
-To choose a different profile to install, provide it as a commandline parameter, for example::
+To choose a different profile to install, provide it as a commandline parameter,
+for example::
 
  ./gawati_server_setup.sh prod
 
@@ -88,7 +102,8 @@ Components overview
 *******************
 
 The Gawati reference server is based on `CentOS`_ 7, Minimal Install.
-For hosting the application, we use `eXistdb`_ as XML/document database and `jetty`_ as Java web application server.
+For hosting the application, we use `eXistdb`_ as XML/document database and
+`jetty`_ as Java web application server.
 
 We use two (2) instances of `eXistdb`_
 
