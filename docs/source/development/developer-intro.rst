@@ -7,7 +7,6 @@ Resources
 - `Gawati on Github`_
 - `Google Group - General`_
 - `Google Group - Development`_
-- :doc:`coding-guidelines`
 
 
 Contributor Agreement
@@ -33,4 +32,3 @@ As per Harmony Agreements we provide a:
 .. _change the license: https://en.wikipedia.org/wiki/License_compatibility#Re-licensing_for_compatibility
 .. _AGPLv3: https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0)
 .. _Harmony Agreements: http://harmonyagreements.org/
-
