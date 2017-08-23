@@ -2,12 +2,13 @@ Gawati Installation System
 ##########################
 
 If you are looking for how to run a standard Gawati installation, please see
-:doc:`setup-essentials`.
+:doc:`../setup/setup-essentials`.
 
 Installation definiton file
 ***************************
 
-The format is standard ini format. Section names and item names within a section must be unique.
+The format is standard ini format. Section names and item names within a section
+must be unique.
 
 options
 =======
@@ -50,11 +51,11 @@ The content of demonstration installer instance in "dev.ini"::
   options=demooption
   postinstall=postdemo
 
-This installer is made for demonstartion purposes. It does not execute any
+This installer is made for demonstration purposes. It does not execute any
 installation task. The instance of this installation is called *demo*. If You
 run multiple installations with the same installer, each one must have a
-different, unique instance name as its header. This name will be used as the
-service / daemon name if installed as such.
+different, unique instance name as its header. This name will also be used as
+the service / daemon name if installed as such.
 
 
 type
@@ -72,7 +73,7 @@ This name references the folder name inside the *installers* folder containing
 all components of this installer including the script itself
 
 version
- Different versions may be available for installation. The chosen veryion must
+ Different versions may be available for installation. The chosen version must
  be denoted for the installation::
 
   version=1.0
@@ -108,7 +109,7 @@ This allows to make a single script serve multiple versions of a product if
 such is feasible for the given product.
 
 user
- OS user name. The installation will typicall execute as this user and/or run
+ OS user name. The installation will typically execute as this user and/or run
  its service as this user::
 
    user=root
@@ -129,7 +130,7 @@ options
  which options are supported is defined by the installer in the given section
 
 There can be any number of addtional items added and defined by the installer
-script defined in the section.
+script chosen for the section.
 
 
 resources
@@ -147,7 +148,7 @@ The section header defines the name of the resource.
 Resource names currently must match the name of the installer function that uses them.
 
 download
- defines, sparated by whitespace
+ defines, separated by whitespace
 
  #. the filename as written to in local filesystem
  #. the URL from which the resource is to be retrieved
@@ -163,7 +164,8 @@ Implementation considerations
 Applying eXistdb ports
 ======================
 
-We deviate with our confguration method from recommendations by eXistdb for the reasons below.
+We deviate with our confguration method from recommendations by eXistdb for the
+reasons below.
 
 mismatch between online documentation and installation content
 --------------------------------------------------------------
@@ -201,7 +203,8 @@ jetty-ssl.xml::
               <Default>
                 <SystemProperty name="jetty.ssl.port" deprecated="ssl.port" default="8443"/>
 
-Compared to documentation at http://exist-db.org/exist/apps/doc/troubleshooting.xml which wants you to...
+Compared to documentation at http://exist-db.org/exist/apps/doc/troubleshooting.xml
+which wants you to...
 
 change this for nonSSL (which doesnt exist)::
 
@@ -219,7 +222,8 @@ changing jetty.xml, but doesnt produce the expected result::
 
  sed -i "s%^\(.*\)name=\"jetty.port\" default=\"[[:digit:]]*\"/>\(.*\)$%\1name=\"jetty.port\" default=\"${EXIST_PORT}\"/>\2%" "${EXIST_HOME}/tools/jetty/etc/jetty.xml"
 
-changing the default for an undefined property instead of defining the property is not the right thing to do, but does work::
+changing the default for an undefined property instead of defining the property
+is not the right thing to do, but does work::
 
  xmlstarlet ed -u '/Configure[@id="Server"]/New[@id="httpConfig"]/Set[@name="securePort"]/Property[@name="jetty.httpConfig.securePort"]/Default/SystemProperty[@name="jetty.secure.port"]/@default' -v "8444" jetty.xml
 
