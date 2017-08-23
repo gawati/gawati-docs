@@ -1,9 +1,9 @@
 .. meta::
    :description: Gawati distributed library database system
-   :keywords: Gawati, documents, database, library, law, legal
+   :keywords: Gawati, documents, database, library, law, legal, open source, project
 
-Table of Contents
-=================
+Gawati
+======
 
 .. toctree::
    :maxdepth: 2
