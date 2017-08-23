@@ -1,8 +1,12 @@
-Gawati Essentials Setup
-#######################
+Server Setup
+############
 
-Installer
-*********
+Installation script
+*******************
+
+The server setup will install all required components in the OS from CentOS
+repositories or respective project sources where no CentOS packages are available.
+It will configure the OS and all services as a ready to run sytem.
 
 The installer is written for `CentOS`_ 7. CentOS "Minimal installation" type
 is sufficient.
@@ -14,13 +18,19 @@ To download the `installation script`_ execute:
 Quickstart
 ==========
 
-The installer must be run from root account. It will switch accounts as needed.
+The installer must be run as user root. It will switch accounts as needed.
+
+The installer works in two steps. On first invocation it downloads a Gawati
+configuration template with our default settings. On second installation the
+installation is executed according to the settings in this confiugration file.
 
 Running the installer twice will complete our default installation, assuming you
 will access your server with the URL *https://my.gawati.org*. You will have to
 make sure that *my.gawati.org* resolves to your server IP locally.
 
-If that's all you need, you may finish reading here.
+If that's all you need, you may finish reading here. Below you find more
+information for customising common configuration items and the key information
+of what is going to be installed.
 
 Common customisations
 =====================
