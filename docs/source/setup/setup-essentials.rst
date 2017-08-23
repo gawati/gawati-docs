@@ -11,7 +11,7 @@ It will configure the OS and all services as a ready to run sytem.
 The installer is written for `CentOS`_ 7. CentOS "Minimal installation" type
 is sufficient.
 
-To download the `installation script`_, switch to user root and execute:
+To download the `installation script`_, switch to user root and execute::
 
  cd
  curl https://raw.githubusercontent.com/gawati/setup-scripts/master/gawati/gawati_server_setup.sh -o gawati_server_setup.sh
