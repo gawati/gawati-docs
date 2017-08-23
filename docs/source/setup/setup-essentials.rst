@@ -11,9 +11,11 @@ It will configure the OS and all services as a ready to run sytem.
 The installer is written for `CentOS`_ 7. CentOS "Minimal installation" type
 is sufficient.
 
-To download the `installation script`_ execute:
+To download the `installation script`_, switch to user root and execute:
 
+ cd
  curl https://raw.githubusercontent.com/gawati/setup-scripts/master/gawati/gawati_server_setup.sh -o gawati_server_setup.sh
+ chmod 755 gawati_server_setup.sh
 
 Quickstart
 ==========
@@ -32,24 +34,25 @@ If that's all you need, you may finish reading here. Below you find more
 information for customising common configuration items and the key information
 of what is going to be installed.
 
+
 Common customisations
-=====================
+*********************
 
 montoring email address
------------------------
+=======================
 
 In the section [fail2ban], change the variables *mailsender* (default:
 from@sender.domain) and *mailrecipient* (default: root@localhost).
 
 Gawati server URL
------------------
+=================
 
 In the ini file that has been downloaded to your home folder after the first run
 of the installer, find the section [gawati-portal] and change the
 *GAWATI_URL_ROOT* variable (default: my.gawati.org).
 
 SSL server certificate
-----------------------
+=======================
 
 Your SSL certificate name must match your Gawati server URL. You have two
 mutually exclusive options for creating a certificate.
@@ -69,7 +72,7 @@ mutually exclusive options for creating a certificate.
   city=Zug
 
 locally signed certificate
-''''''''''''''''''''''''''
+--------------------------
 
 Creating such a certificate can be done without any external dependiencies. It's
 meant  for running internal or testing servers.
@@ -77,7 +80,7 @@ In section [acme] make sure to configure *type=disabled*. In section [localcerts
 set *type=install* and set variaböe *certs* identical to your *GAWATI_URL_ROOT*.
 
 `letsencrypt`_ signed certificate
-'''''''''''''''''''''''''''''''''
+---------------------------------
 
 For this, your Gawati server URL and certificate name must be resolvable via public
 DNS and public HTTP requests must arrive at your Gawati server on port 80.
@@ -89,7 +92,7 @@ set *type=install* and set variaböe *certs* identical to your *GAWATI_URL_ROOT*
 
 
 Installation targets
-====================
+********************
 
 When you run the installer for the first time, it will download an additional
 file "dev.ini" into your home folder. The ini file defines the details of the
@@ -106,7 +109,6 @@ for example::
 At this time, the default target "dev" is the only installation target provided by us.
 
 You can change ours, or create your own ini files if you need to deviate from our defaults.
-
 
 Components overview
 *******************
@@ -137,7 +139,6 @@ JETTY_HOME will be configured as JETTY_BASE/jettyserver.
 
 Jetty will be installed as a system service starting with the boot process.
 
-
 eXistdb
 =======
 
@@ -147,11 +148,11 @@ A random generated password will be configured for user "admin" which is display
 
 The backend instance of eXistdb will be installed as a system service starting with the boot process.
 
-
 Downloads
 =========
 
 Installation Resources will be downloaded into "/opt/Download"
+
 
 References
 **********
