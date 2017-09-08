@@ -22,6 +22,10 @@ Quickstart
 
 The installer must be run as user root. It will switch accounts as needed.
 
+To run the installer simply run:
+
+ ./gawati_server_setup.sh
+
 The installer works in two steps. On first invocation it downloads a Gawati
 configuration template with our default settings. On second run the
 installation is executed according to the settings in this configuration file.
