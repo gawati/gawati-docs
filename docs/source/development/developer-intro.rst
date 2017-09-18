@@ -2,9 +2,9 @@ Introduction for Developers
 ###########################
 
 Developer Tools
-***************'
+***************
 
-We recommend using VSCode (https://code.visualstudio.com). See :ref:`using-vscode`.
+We recommend using VSCode (https://code.visualstudio.com) as a Development IDE. See `using-vscode`_.
 
 
 Resources
