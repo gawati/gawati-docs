@@ -31,7 +31,7 @@ Licensing and Contribution
 **************************
 
 Gawati source code is licensed under `AGPLv3`_.
-For including your source code contribution we will have to ask you to for a contribution agreement which you can find in the `Introduction for Developers <./development/developer-intro>`_.
+For including your source code contribution we will have to ask you to for a contribution agreement which you can find in the :doc:`Introduction for Developers <./development/developer-intro>`.
 
 
 
