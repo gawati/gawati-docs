@@ -1,6 +1,12 @@
 Introduction for Developers
 ###########################
 
+Developer Tools
+***************'
+
+We recommend using VSCode (https://code.visualstudio.com). See :ref:`using-vscode`.
+
+
 Resources
 *********
 

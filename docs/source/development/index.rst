@@ -7,3 +7,4 @@ Development
    developer-intro
    coding-guidelines
    installationsystem
+   using-vscode
