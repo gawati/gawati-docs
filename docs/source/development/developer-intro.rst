@@ -4,8 +4,13 @@ Introduction for Developers
 Developer Tools
 ***************
 
-We recommend using VSCode (https://code.visualstudio.com) as a Development IDE. 
+We recommend using VSCode (https://code.visualstudio.com) as a Development IDE.
 See :doc:`Using VS Code <./using-vscode>`.
+
+GitHub
+******
+
+All our code is on Github. To contribute to the project via Github, see :doc:`Development Environment <./dev-env>`
 
 
 Resources
