@@ -15,10 +15,10 @@ Getting Started
 
 You will need to setup the basics first, the below instructions are specific to Windows 10 and Cent OS.
 
- - Download and install eXist-db, see `eXist-db <https://bintray.com/existdb/releases/exist/3.4.1/view>`
+ - Download and install eXist-db, see `eXist-db <https://bintray.com/existdb/releases/exist/3.4.1/view>`_
  - Download, and setup Visual Studio Code for development, see :doc:`VS Code Setup <./using-vscode>`
- - Download and `install Ant <http://ant.apache.org/manual/install.html#installing>`
- - Install Apache, on Cent OS this will likely be installed by default, on Windows you will have to download and install, see `Apache for Windows <https://www.apachehaus.com/cgi-bin/download.plx>`; enable `mod_alias`, `mod_rewrite`, `mod_proxy`
+ - Download and `install Ant <http://ant.apache.org/manual/install.html#installing>`_
+ - Install Apache, on Cent OS this will likely be installed by default, on Windows you will have to download and install, see `Apache for Windows <https://www.apachehaus.com/cgi-bin/download.plx>`_; enable `mod_alias`, `mod_rewrite`, `mod_proxy`
 
 *************************
 Building code from Github
@@ -50,4 +50,4 @@ If you have a stock installation of eXist-db, it will be running on port 8080. A
    :align: center
    :figclass: align-center
 
-Click the *+* icon, and select the package you just built in the `build` folder and install it into eXist-db. You will find the package accessible via the URL: `eXist gawati data <http://localhost:8080/exist/apps/gawati-data>`
+Click the *+* icon, and select the package you just built in the `build` folder and install it into eXist-db. You will find the package accessible via the URL: `eXist gawati data <http://localhost:8080/exist/apps/gawati-data>`_
