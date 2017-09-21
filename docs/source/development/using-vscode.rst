@@ -56,6 +56,8 @@ You will need to connect using SSL, for example the `gawati-portal` project inst
    :align: center
    :figclass: align-center
 
+Remember to check the "Reconnect at Sign-in" option, that way your network mapping to the eXist dav folder will be persistent between reboots of your computer.
+
 It will prompt you for a user name and password, enter the user name and password credentials for the collection / application. For the `gawati-portal` application for example, the default user name is `gawatiportal`. Once that is complete you will be able to open the `Z:\` folder in VSCode, and edit the XQuery, XSLT code.
 
 .. figure:: ./_images/vscode.png
