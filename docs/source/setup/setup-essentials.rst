@@ -34,7 +34,7 @@ Running the installer twice will complete our default installation, assuming you
 will access your server with the URL *https://my.gawati.org*. You will have to
 make sure that *my.gawati.org* resolves to your server IP locally.
 
-.. important::
+.. note::
    The Installer will automatically set the Admin passwords for the 2 eXist instances 
    and display it to you. You will need to copy and paste this from the screen or note it down somewhere as it is 
    the only point where the password is shown to the user.
