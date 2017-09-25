@@ -22,7 +22,7 @@ Quickstart
 
 The installer must be run as user root. It will switch accounts as needed.
 
-To run the installer simply run:
+To run the installer simply run::
 
  ./gawati_server_setup.sh
 
@@ -167,15 +167,15 @@ Uninstalling
 
 There is no uninstaller yet, but you can use the following script to remove the installed software::
 
-#!/bin/bash
-service eXist-be stop
-service eXist-st stop
-service jetty-dev01 stop
-yes | rm /etc/init.d/eXist-*
-yes | rm /etc/init.d/jetty-dev01
-yes | rm -rf /home/xstbe/apps
-yes | rm -rf /home/xstst/apps
-yes | rm -rf /home/dev01/apps
+    #!/bin/bash
+    service eXist-be stop
+    service eXist-st stop
+    service jetty-dev01 stop
+    yes | rm /etc/init.d/eXist-*
+    yes | rm /etc/init.d/jetty-dev01
+    yes | rm -rf /home/xstbe/apps
+    yes | rm -rf /home/xstst/apps
+    yes | rm -rf /home/dev01/apps
 
 
 References
