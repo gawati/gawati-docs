@@ -35,8 +35,8 @@ will access your server with the URL *https://my.gawati.org*. You will have to
 make sure that *my.gawati.org* resolves to your server IP locally.
 
 .. note::
-   The Installer will automatically set the Admin passwords for the 2 eXist instances 
-   and display it to you. You will need to copy and paste this from the screen or note it down somewhere as it is 
+   The Installer will automatically set the Admin passwords for the 2 eXist instances
+   and display it to you. You will need to copy and paste this from the screen or note it down somewhere as it is
    the only point where the password is shown to the user.
 
 If that's all you need, you may finish reading here. Below you find more
@@ -99,6 +99,16 @@ this is the preferred option.
 In section [localcerts] make sure to configure *type=disabled*. In section [acme]
 set *type=install* and set variable *certs* identical to your *GAWATI_URL_ROOT*.
 
+builduser
+=========
+
+After installing eXist application servers, the installer will retrieve code
+from github, compile and deploy it into these eXist instances. To do this, the
+installer creates a user dedicated for compiling Gawati components from source.
+This avoids compiling as root and interfering with existing user environments.
+The name of this user account is defined by the *builduser* user item in the
+[gawati-portal] section.
+
 
 Installation targets
 ********************
@@ -131,7 +141,8 @@ We use two (2) instances of `eXistdb`_
 #. Backend - the main data repository / active data
 #. Staging - data in transit / for syncronisation
 
-All services except for a (1) frontend Apache instance will be listening on 127.0.0.1 only.
+All services except for a (1) frontend Apache instance will be listening on
+127.0.0.1 only.
 
 Jetty
 =====
@@ -165,7 +176,8 @@ Installation Resources will be downloaded into "/opt/Download"
 Uninstalling
 ============
 
-There is no uninstaller yet, but you can use the following script to remove the installed software::
+There is no uninstaller yet, but you can use the following script to remove the
+installed software::
 
     #!/bin/bash
     service eXist-be stop
