@@ -129,8 +129,13 @@ options
 
  which options are supported is defined by the installer in the given section
 
+
+postinstall
+ additional, optional installation steps where available with the given
+ installer can be activated by listing in postinstall
+
 There can be any number of addtional items added and defined by the installer
-script chosen for the section.
+script called in the section.
 
 
 resources
