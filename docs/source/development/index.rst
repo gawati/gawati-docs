@@ -7,5 +7,6 @@ Development
    developer-intro
    coding-guidelines
    installationsystem
+   installer/index
    using-vscode
    data-server-apis
