@@ -28,7 +28,7 @@ ini Variables
 For email notifications, you need to configure a senders email address in
 "mailsender" and a recipient address in "mailrecipient" respectively.
 
-Postinstaller
-*************
+Postinstallers
+**************
 
 None
