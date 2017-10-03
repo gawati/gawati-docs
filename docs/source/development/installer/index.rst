@@ -1,8 +1,18 @@
-Installer Modules
-#################
+Installer
+#########
+
+System
+******
 
 .. toctree::
    :maxdepth: 2
 
-   centos
-   httpd
+   installationsystem
+
+Modules
+*******
+
+.. toctree::
+  :maxdepth: 1
+
+   modules/*
