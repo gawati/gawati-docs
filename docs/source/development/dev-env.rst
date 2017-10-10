@@ -6,19 +6,24 @@ Development Environment
 Introduction
 ************
 
-Gawati is composed of different components, you don't need to install the full set to begin developing on the Gawati platform.
-This section provides an outline of how you can contribute and use individual components. If you wish to install the complete stack, you can still do that. See :doc:`Setup <../setup/index>`.
+Gawati is composed of different components, you don't need to install the full set to begin developing on the Gawati platform.  This section provides an outline of how you can use and individual components. 
+
+.note ::
+  If you only wish to install and test the system, See :doc:`Setup <../setup/index>`.
 
 ****************
 Getting Started
 ****************
 
-You will need to setup the basics first, the below instructions are specific to Windows 10 and Cent OS.
+You will need to setup the basics first, the below instructions are not specific to an operating system, the components will run on different operating systems.
 
- - Download and install eXist-db, see `eXist-db <https://bintray.com/existdb/releases/exist/3.4.1/view>`_
- - Download, and setup Visual Studio Code for development, see :doc:`VS Code Setup <./using-vscode>`
+.note ::
+  Installing the JDK 8 is a pre-requisite. On Linux operating systems you can install OpenJDK8, `See <http://openjdk.java.net/install/>`_; For `Windows <https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html#CHDEBCCJ>`_ and for `Mac OSX <https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html#CHDBADCG>`_ and `Using OS X Homebrew <https://stackoverflow.com/questions/24342886/how-to-install-java-8-on-mac/28635465#28635465>`_
+
+ - Download and install eXist-db, see `eXist-db <https://bintray.com/existdb/releases/exist/3.4.1/view>`_ 
+ - Download, and setup Visual Studio Code (there are versions for Windows, OS X and Linux) for development, see :doc:`VS Code Setup <./using-vscode>`
  - Download and `install Ant <http://ant.apache.org/manual/install.html#installing>`_
- - Install Apache, on Cent OS this will likely be installed by default, on Windows you will have to download and install, see `Apache for Windows <https://www.apachehaus.com/cgi-bin/download.plx>`_; enable `mod_alias`, `mod_rewrite`, `mod_proxy`
+ - Install Apache, on Cent OS, Ubuntu and OS X this will likely be installed by default, on Windows you will have to download and install, see `Apache for Windows <https://www.apachehaus.com/cgi-bin/download.plx>`_; enable `mod_alias`, `mod_rewrite`, `mod_proxy`
 
 *************************
 Building code from Github
@@ -26,7 +31,8 @@ Building code from Github
 
 We are going to look at 2 components of Gawati:
  - the Gawati-Portal component: Provides a web portal interface to Legal data on Gawati
- - the Gawati-Data component: Provides a REST API to access Gawati documents from the XML database
+ - the Gawati-Data component: Provides a REST API to access Gawati documents from the XML database.
+ 
 The Portal accesses data and documents from the XML database via the Gawati-Data server's REST APIs.
 
 The build process for these components is a trivial one. It merely packages the files into a format expected by eXist-db, and then the packages are deployed on eXist-db.
