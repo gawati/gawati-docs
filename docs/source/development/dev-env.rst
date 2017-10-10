@@ -8,7 +8,8 @@ Introduction
 
 Gawati is composed of different components, you don't need to install the full set to begin developing on the Gawati platform.  This section provides an outline of how you can use and individual components. 
 
-.note ::
+
+.. note::
   If you only wish to install and test the system, See :doc:`Setup <../setup/index>`.
 
 ****************
@@ -17,13 +18,15 @@ Getting Started
 
 You will need to setup the basics first, the below instructions are not specific to an operating system, the components will run on different operating systems.
 
-.note ::
+.. note::
   Installing the JDK 8 is a pre-requisite. On Linux operating systems you can install OpenJDK8, `See <http://openjdk.java.net/install/>`_; For `Windows <https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html#CHDEBCCJ>`_ and for `Mac OSX <https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html#CHDBADCG>`_ and `Using OS X Homebrew <https://stackoverflow.com/questions/24342886/how-to-install-java-8-on-mac/28635465#28635465>`_
 
- - Download and install eXist-db, see `eXist-db <https://bintray.com/existdb/releases/exist/3.4.1/view>`_ 
- - Download, and setup Visual Studio Code (there are versions for Windows, OS X and Linux) for development, see :doc:`VS Code Setup <./using-vscode>`
- - Download and `install Ant <http://ant.apache.org/manual/install.html#installing>`_
- - Install Apache, on Cent OS, Ubuntu and OS X this will likely be installed by default, on Windows you will have to download and install, see `Apache for Windows <https://www.apachehaus.com/cgi-bin/download.plx>`_; enable `mod_alias`, `mod_rewrite`, `mod_proxy`
+The installation items are listed below:
+
+  - Download and install eXist-db, see `eXist-db <https://bintray.com/existdb/releases/exist/3.4.1/view>`_ 
+  - Download, and setup Visual Studio Code (there are versions for Windows, OS X and Linux) for development, see :doc:`VS Code Setup <./using-vscode>`
+  - Download and `install Ant <http://ant.apache.org/manual/install.html#installing>`_
+  - Install Apache, on Cent OS, Ubuntu and OS X this will likely be installed by default, on Windows you will have to download and install, see `Apache for Windows <https://www.apachehaus.com/cgi-bin/download.plx>`_; enable `mod_alias`, `mod_rewrite`, `mod_proxy`
 
 *************************
 Building code from Github

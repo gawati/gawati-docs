@@ -1,5 +1,5 @@
-Gawati Data Server
-##################
+Gawati Architecture
+###################
 
 The Gawati architecture is described in this document. 
 
