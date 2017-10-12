@@ -28,9 +28,7 @@ The installation items are listed below:
   3. Apache: Install Apache, on Cent OS, Ubuntu and OS X this will likely be installed by default, on Windows you will have to download and install, see `Apache for Windows <https://www.apachehaus.com/cgi-bin/download.plx>`_; enable `mod_alias`, `mod_rewrite`, `mod_proxy`
   4. Visual Studio Code: This is if you want play around with gawati code. Download, and setup Visual Studio Code (there are versions for Windows, OS X and Linux) for development, see :doc:`VS Code Setup <./using-vscode>`
 
-You can either build the source from github for each component, or you can install a released version of a component. 
-
-For getting familiar with the system we recommend starting by installing a released version. 
+You can either build the source from github for each component, or you can install a released version of a component. For getting familiar with the system we recommend starting by installing a released version. 
 
 *********************
 Installing components
@@ -38,18 +36,25 @@ Installing components
 
 First download the individual components into a folder:
 
- 1. `Gawati Portal <https://github.com/gawati/gawati-portal/releases/download/1.3/gawati-portal-1.3-dev.xar>_`
- 2. `Gawati Data <https://github.com/gawati/gawati-data/releases/download/1.2/gawati-data-1.2.xar>_`
- 3. `Gawati XML Data <https://github.com/gawati/gawati-data-xml/releases/download/1.2/gw-data-1.2.xar>_`
+ 1. `Gawati Portal <https://github.com/gawati/gawati-portal/releases/download/1.3/gawati-portal-1.3-dev.xar>`_
+ 2. `Gawati Data <https://github.com/gawati/gawati-data/releases/download/1.2/gawati-data-1.2.xar>`_
+ 3. `Gawati XML Data <https://github.com/gawati/gawati-data-xml/releases/download/1.2/gw-data-1.2.xar>`_
 
 Place these files in the `autodeploy` folder within the eXist installation, and restart the eXist database server. They will be automatically installed. 
 
 Now download the front-end templates, and place them in a folder where Apache can server them: 
 
-  * `Gawati Templates <https://github.com/gawati/gawati-templates/releases/download/1.3/gawati-templates-1.3.zip>_`
+  * `Gawati Templates <https://github.com/gawati/gawati-templates/releases/download/1.3/gawati-templates-1.3.zip>`_
 
-Add the Apache configuration:
 
+****************
+Load Sample Data
+****************
+TO DO
+
+****************************
+Add the Apache configuration
+****************************
 .. code-block:: apacheconf
    :linenos:
 
@@ -81,23 +86,13 @@ Add the Apache configuration:
       SetEnv proxy-nokeepalive 1
     </Location>
 
-
 The above assumes:
-  * eXist-db is running on port 8080 (if that is not the case in your installation change it appropriately)
+  * eXist-db is running on port 8080 (if that is not the case in your installation change it appropriately in line 17 and 18)
+  * Change the path in line 1 and line 2 to the folder into which you extracted `Gawati Templates`
+  * Change the path in line 8 and 9 to the folder into which you extracted the Gawati Sample data. 
 
-
-*******************
-Loading Sample Data
-*******************
-
-
-
-
-
-
-
- 
-
+.. note::
+  On Windows the Apache Alias directory path need to use the back slash instead of the standard windows forward slash. For e.g. if the templates are in `d:\code\gawati-templates`, then the path in the Apache configuration should be `d:/code/gawati-templates`. 
 
 *************************
 Building code from Github
