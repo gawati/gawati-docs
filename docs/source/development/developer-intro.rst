@@ -1,22 +1,18 @@
 Introduction for Developers
 ###########################
 
-Developer Tools
-***************
-
-We recommend using VSCode (https://code.visualstudio.com) as a Development IDE.
-See :doc:`Using VS Code <./using-vscode>`.
+Start Here 
+**********
+:doc:`Developing Gawati <./dev-env>`
 
 GitHub
 ******
 
-All our code is on Github. To contribute to the project via Github, see :doc:`Development Environment <./dev-env>`
+All our code is on Github (`Gawati on Github`_), under Open Source licenses. Our Github Project folder is folder: `Gawati Project on Github`_
 
+Mailing Lists
+*************
 
-Resources
-*********
-
-- `Gawati on Github`_
 - `Google Group - General`_
 - `Google Group - Development`_
 
@@ -39,6 +35,7 @@ As per Harmony Agreements we provide a:
 
 
 .. _Gawati on Github: https://github.com/gawati/gawati.github.io/
+.. _Gawati Project on Github: https://github.com/gawati/
 .. _Google Group - General: https://groups.google.com/forum/#!forum/gawati/
 .. _Google Group - Development: https://groups.google.com/forum/#!forum/gawati-dev/
 .. _change the license: https://en.wikipedia.org/wiki/License_compatibility#Re-licensing_for_compatibility
