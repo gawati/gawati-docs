@@ -85,14 +85,21 @@ Add the Apache configuration
       SetEnv force-proxy-request-1.0 1
       SetEnv proxy-nokeepalive 1
     </Location>
-
 The above assumes:
   * eXist-db is running on port 8080 (if that is not the case in your installation change it appropriately in line 17 and 18)
   * Change the path in line 1 and line 2 to the folder into which you extracted `Gawati Templates`
   * Change the path in line 8 and 9 to the folder into which you extracted the Gawati Sample data. 
 
 .. note::
-  On Windows the Apache Alias directory path need to use the back slash instead of the standard windows forward slash. For e.g. if the templates are in `d:\code\gawati-templates`, then the path in the Apache configuration should be `d:/code/gawati-templates`. 
+  On Windows the Apache Alias directory path need to use the back slash instead of the standard windows forward slash. For e.g. if the templates are in:
+  
+  ::
+    d:\code\gawati-templates
+  
+  then the path in the Apache configuration should be: 
+  
+  ::
+    d:/code/gawati-templates 
 
 *************************
 Building code from Github
