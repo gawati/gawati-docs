@@ -91,15 +91,7 @@ The above assumes:
   * Change the path in line 8 and 9 to the folder into which you extracted the Gawati Sample data. 
 
 .. note::
-  On Windows the Apache Alias directory path need to use the back slash instead of the standard windows forward slash. For e.g. if the templates are in:
-  
-  ::
-    d:\code\gawati-templates
-  
-  then the path in the Apache configuration should be: 
-  
-  ::
-    d:/code/gawati-templates 
+  On Windows the Apache Alias directory path need to use the back slash instead of the standard windows forward slash. For e.g. if the templates are in: `d:\\code\\gawati-templates` then the path in the Apache configuration should be: `d:/code/gawati-templates` 
 
 *************************
 Building code from Github
