@@ -1,24 +1,97 @@
-#######################
-Development Environment
-#######################
+#################
+Developing Gawati
+#################
 
 ************
 Introduction
 ************
 
-Gawati is composed of different components, you don't need to install the full set to begin developing on the Gawati platform.
-This section provides an outline of how you can contribute and use individual components. If you wish to install the complete stack, you can still do that. See :doc:`Setup <../setup/index>`.
+Gawati is composed of different components, you don't need to install the full set to begin developing on the Gawati platform.  This section provides an outline of how you can use and individual components. 
+
+
+.. note::
+  If you only wish to install and test the system, See :doc:`Setup <../setup/index>`.
 
 ****************
 Getting Started
 ****************
 
-You will need to setup the basics first, the below instructions are specific to Windows 10 and Cent OS.
+You will need to setup the basics first, the below instructions are not specific to an operating system, the components will run on different operating systems.
 
- - Download and install eXist-db, see `eXist-db <https://bintray.com/existdb/releases/exist/3.4.1/view>`_
- - Download, and setup Visual Studio Code for development, see :doc:`VS Code Setup <./using-vscode>`
- - Download and `install Ant <http://ant.apache.org/manual/install.html#installing>`_
- - Install Apache, on Cent OS this will likely be installed by default, on Windows you will have to download and install, see `Apache for Windows <https://www.apachehaus.com/cgi-bin/download.plx>`_; enable `mod_alias`, `mod_rewrite`, `mod_proxy`
+.. note::
+  Installing the JDK 8 is a pre-requisite. On Linux operating systems you can install  `OpenJDK8 <http://openjdk.java.net/install/>`_; For `Windows <https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html#CHDEBCCJ>`_ and for `Mac OSX <https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html#CHDBADCG>`_ and `Using OS X Homebrew <https://stackoverflow.com/questions/24342886/how-to-install-java-8-on-mac/28635465#28635465>`_
+
+The installation items are listed below:
+
+  1. eXist-db: Download and install eXist-db, see `eXist-db <https://bintray.com/existdb/releases/exist/3.4.1/view>`_ 
+  2. Ant: Download and `install Ant <http://ant.apache.org/manual/install.html#installing>`_
+  3. Apache: Install Apache, on Cent OS, Ubuntu and OS X this will likely be installed by default, on Windows you will have to download and install, see `Apache for Windows <https://www.apachehaus.com/cgi-bin/download.plx>`_; enable `mod_alias`, `mod_rewrite`, `mod_proxy`
+  4. Visual Studio Code: This is if you want play around with gawati code. Download, and setup Visual Studio Code (there are versions for Windows, OS X and Linux) for development, see :doc:`VS Code Setup <./using-vscode>`
+
+You can either build the source from github for each component, or you can install a released version of a component. For getting familiar with the system we recommend starting by installing a released version. 
+
+*********************
+Installing components
+*********************
+
+First download the individual components into a folder:
+
+ 1. `Gawati Portal <https://github.com/gawati/gawati-portal/releases/download/1.3/gawati-portal-1.3-dev.xar>`_
+ 2. `Gawati Data <https://github.com/gawati/gawati-data/releases/download/1.2/gawati-data-1.2.xar>`_
+ 3. `Gawati XML Data <https://github.com/gawati/gawati-data-xml/releases/download/1.2/gw-data-1.2.xar>`_
+
+Place these files in the `autodeploy` folder within the eXist installation, and restart the eXist database server. They will be automatically installed. 
+
+Now download the front-end templates, and place them in a folder where Apache can server them: 
+
+  * `Gawati Templates <https://github.com/gawati/gawati-templates/releases/download/1.3/gawati-templates-1.3.zip>`_
+
+
+****************
+Load Sample Data
+****************
+TO DO
+
+****************************
+Add the Apache configuration
+****************************
+.. code-block:: apacheconf
+   :linenos:
+
+    Alias /gwtemplates "/home/apps/path/to/gawati-templates"
+    <Directory "/home/apps/path/to/gawati-templates">
+    Require all granted
+      Options Indexes
+      AllowOverride All
+      Order allow,deny
+      Allow from all
+    </Directory>
+
+    Alias /akn "/home/data/akn"
+    <Directory "/home/data/akn">
+        Require all granted
+        Options Indexes Includes FollowSymLinks
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+
+    <Location "/gwportal/">
+      AddType text/cache-manifest .appcache
+      DirectoryIndex "index.html"
+      ProxyPass  "http://localhost:8080/exist/apps/gawati-portal/"
+      ProxyPassReverse "http://localhost:8080/exist/apps/gawati-portal/"
+      ProxyPassReverseCookiePath /exist /
+      SetEnv force-proxy-request-1.0 1
+      SetEnv proxy-nokeepalive 1
+    </Location>
+The above assumes:
+  * eXist-db is running on port 8080 (if that is not the case in your installation change it appropriately in line 17 and 18)
+  * Change the path in line 1 and line 2 to the folder into which you extracted `Gawati Templates`
+  * Change the path in line 8 and 9 to the folder into which you extracted the Gawati Sample data. 
+
+.. note::
+  On Windows the Apache Alias directory path need to use the back slash instead of the standard windows forward slash. For e.g. if the templates are in: `d:\\code\\gawati-templates` then the path in the Apache configuration should be: `d:/code/gawati-templates` 
 
 *************************
 Building code from Github
@@ -26,7 +99,8 @@ Building code from Github
 
 We are going to look at 2 components of Gawati:
  - the Gawati-Portal component: Provides a web portal interface to Legal data on Gawati
- - the Gawati-Data component: Provides a REST API to access Gawati documents from the XML database
+ - the Gawati-Data component: Provides a REST API to access Gawati documents from the XML database.
+ 
 The Portal accesses data and documents from the XML database via the Gawati-Data server's REST APIs.
 
 The build process for these components is a trivial one. It merely packages the files into a format expected by eXist-db, and then the packages are deployed on eXist-db.
