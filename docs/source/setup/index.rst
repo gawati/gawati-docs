@@ -11,9 +11,11 @@ Installation
 Release Versions
 ****************
 
-`Data Store`_
-`Data Access Module`_
-`Portal`_
+Find links to release versions of Gawati components below:
+
+ - `Data Store`_
+ - `Data Access Module`_
+ - `Portal`_
 
 .. _Data Store: https://github.com/gawati/gawati-data-xml/releases
 .. _Data Access Module: https://github.com/gawati/gawati-data/releases
