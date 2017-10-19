@@ -82,8 +82,8 @@ Where `<path_to_exist>` is the path to the eXist-db installation, and `<exist_ad
 
 On Windows do the following; Start the eXist-db Client. In the command window of the eXist-db client run the following commands:
 
-.. code-block:: xpath
-    :linenos
+.. code-block::
+    :linenos:
 
     find data(doc('/db/apps/gw-data/_auth/_pw.xml')/users/user[@name = 'gwdata']/@pw)
     show 1
@@ -97,8 +97,8 @@ Copy the output password hash as shown below.
 
 Now upload the data using the following command run from the eXist-db folder:
 
-.. code-block:: bash
-  :linenos
+.. code-block::
+  :linenos:
 
   ./bin/client.sh -u gwdata -P <copied_password_hash> -d -m /db/apps/gwd-data/akn -p /home/data/akn_xml/akn
 
