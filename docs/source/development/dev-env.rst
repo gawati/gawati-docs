@@ -102,7 +102,7 @@ Now upload the data using the following command run from the eXist-db folder:
 
     ./bin/client.sh -u gwdata -P <copied_password_hash> -d -m /db/apps/gwd-data/akn -p /home/data/akn_xml/akn
 
-On Windows you will run it as `.\bin\client.bat` instead. 
+On Windows you will run it as :samp:`.\bin\client.bat` instead. 
 
 ****************************
 Add the Apache configuration
