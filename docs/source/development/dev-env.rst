@@ -57,38 +57,50 @@ To understand better how gawati works, we provide you with sample data, which ca
 
 We do this to ensure optimal performance. 
 
- 1. Download the `XML Data set <https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_xml_sample-1.2.zip>`_ and the corresponding `PDF Data set <https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_xml_sample-1.2.zip>`_ 
- 2. To setup the PDF data-set, you just need to extract the files into a folder, e.g if you extract the PDF files into `/home/data/akn_pdf`, and add a Apache configuration to serve the folder contents (See line 9 below `Add the Apache configuration`_)
- 3. To setup the XML data-set, extract the archive into a separate folder. On Linux and MacOS you can run the following command to get the data input password: 
+Download the data sets
+======================
 
-  .. code-block:: bash
-      :linenos:
-      
-      <path_to_exist>/bin/client.sh -ouri=xmldb:exist://localhost:8080/exist/xmlrpc -u admin -P <exist_admin_password> -x "data(doc('/db/apps/gw-data/_auth/_pw.xml')/users/user[@name = 'gwdata']/@pw)"
+Download the `XML Data set <https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_xml_sample-1.2.zip>`_ and the corresponding `PDF Data set <https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_xml_sample-1.2.zip>`_ 
 
-  Where `<path_to_exist>` is the path to the eXist-db installation, and `<exist_admin_password>` is the eXist-db admin password. If you installed eXist on a different port change that in the `-ouri` setting.
 
-  On Windows do the following; Start the eXist-db Client. In the command window of the eXist-db client run the following commands:
+Setup the PDF data set
+======================
 
-  .. code-block:: xpath
-     :linenos
+To setup the PDF data-set, you just need to extract the files into a folder, e.g if you extract the PDF files into `/home/data/akn_pdf`, and add a Apache configuration to serve the folder contents (See line 9 below `Add the Apache configuration`_)
 
-     find data(doc('/db/apps/gw-data/_auth/_pw.xml')/users/user[@name = 'gwdata']/@pw)
-     show 1
+Setup the XML data set
+======================
 
-  Copy the output password hash as shown below.
+To setup the XML data-set, extract the archive into a separate folder. On Linux and MacOS you can run the following command to get the data input password: 
+
+.. code-block:: bash
+    :linenos:
+    
+    <path_to_exist>/bin/client.sh -ouri=xmldb:exist://localhost:8080/exist/xmlrpc -u admin -P <exist_admin_password> -x "data(doc('/db/apps/gw-data/_auth/_pw.xml')/users/user[@name = 'gwdata']/@pw)"
+
+Where `<path_to_exist>` is the path to the eXist-db installation, and `<exist_admin_password>` is the eXist-db admin password. If you installed eXist on a different port change that in the `-ouri` setting.
+
+On Windows do the following; Start the eXist-db Client. In the command window of the eXist-db client run the following commands:
+
+.. code-block:: xpath
+    :linenos
+
+    find data(doc('/db/apps/gw-data/_auth/_pw.xml')/users/user[@name = 'gwdata']/@pw)
+    show 1
+
+Copy the output password hash as shown below.
 
   .. figure:: ./_images/client-get-data-password.png
    :alt: Get data entry password
    :align: center
    :figclass: align-center
 
-  Now upload the data using the following command run from the eXist-db folder:
+Now upload the data using the following command run from the eXist-db folder:
 
-  .. code-block:: bash
-    :linenos
+.. code-block:: bash
+  :linenos
 
-    ./bin/client.sh -u gwdata -P <copied_password_hash> -d -m /db/apps/gwd-data/akn -p /home/data/akn_xml/akn
+  ./bin/client.sh -u gwdata -P <copied_password_hash> -d -m /db/apps/gwd-data/akn -p /home/data/akn_xml/akn
 
 On Windows you will run it as `.\bin\client.bat` instead. 
 
