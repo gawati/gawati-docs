@@ -23,9 +23,9 @@ You will need to setup the basics first, the below instructions are not specific
 
 The installation items are listed below:
 
-  1. eXist-db: Download and install eXist-db, see `eXist-db <https://bintray.com/existdb/releases/exist/3.4.1/view>`_ 
+  1. eXist-db: Download and install eXist-db, see `eXist-db <https://bintray.com/existdb/releases/exist/3.4.1/view>`_ Remember to note down the admin password of the eXist-db installation, you will need that later. 
   2. Ant: Download and `install Ant <http://ant.apache.org/manual/install.html#installing>`_
-  3. Apache: Install Apache, on Cent OS, Ubuntu and OS X this will likely be installed by default, on Windows you will have to download and install, see `Apache for Windows <https://www.apachehaus.com/cgi-bin/download.plx>`_; enable `mod_alias`, `mod_rewrite`, `mod_proxy`
+  3. Apache: Install Apache, on Cent OS, Ubuntu and OS X this will likely be installed by default, on Windows you will have to download and install, see `Apache for Windows <https://www.apachehaus.com/cgi-bin/download.plx>`_; enable `mod_alias`, `mod_rewrite`, `mod_proxy`, `mod_proxy_http`
   4. Visual Studio Code: This is if you want play around with gawati code. Download, and setup Visual Studio Code (there are versions for Windows, OS X and Linux) for development, see :doc:`VS Code Setup <./using-vscode>`
 
 You can either build the source from github for each component, or you can install a released version of a component. For getting familiar with the system we recommend starting by installing a released version. 
@@ -50,7 +50,59 @@ Now download the front-end templates, and place them in a folder where Apache ca
 ****************
 Load Sample Data
 ****************
-TO DO
+To understand better how gawati works, we provide you with sample data, which can be loaded into the system and tested. Sample data is provided in two specific parts:
+
+ * Xml Documents - which get loaded into the XML database
+ * PDF and other binary Documents - which are refered to by the XML documents, but served from the *file system*
+
+We do this to ensure optimal performance. 
+
+Download the data sets
+======================
+
+Download the `XML Data set <https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_xml_sample-1.2.zip>`_ and the corresponding `PDF Data set <https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_xml_sample-1.2.zip>`_ 
+
+
+Setup the PDF data set
+======================
+
+To setup the PDF data-set, you just need to extract the files into a folder, e.g if you extract the PDF files into `/home/data/akn_pdf`, and add a Apache configuration to serve the folder contents (See line 9 below `Add the Apache configuration`_)
+
+Setup the XML data set
+======================
+
+To setup the XML data-set, extract the archive into a separate folder. On Linux and MacOS you can run the following command to get the data input password: 
+
+.. code-block:: bash
+    :linenos:
+    
+    <path_to_exist>/bin/client.sh -ouri=xmldb:exist://localhost:8080/exist/xmlrpc -u admin -P <exist_admin_password> -x "data(doc('/db/apps/gw-data/_auth/_pw.xml')/users/user[@name = 'gwdata']/@pw)"
+
+Where `<path_to_exist>` is the path to the eXist-db installation, and `<exist_admin_password>` is the eXist-db admin password. If you installed eXist on a different port change that in the `-ouri` setting.
+
+On Windows do the following; Start the eXist-db Client. In the command window of the eXist-db client run the following commands:
+
+.. code-block:: none
+    :linenos:
+
+    find data(doc('/db/apps/gw-data/_auth/_pw.xml')/users/user[@name = 'gwdata']/@pw)
+    show 1
+
+Copy the output password hash as shown below.
+
+  .. figure:: ./_images/client-get-data-password.png
+   :alt: Get data entry password
+   :align: center
+   :figclass: align-center
+
+Now upload the data using the following command run from the eXist-db folder:
+
+.. code-block:: bash
+    :linenos:
+
+    ./bin/client.sh -u gwdata -P <copied_password_hash> -d -m /db/apps/gwd-data/akn -p /home/data/akn_xml/akn
+
+On Windows you will run it as :samp:`.\bin\client.bat` instead. 
 
 ****************************
 Add the Apache configuration
@@ -60,20 +112,19 @@ Add the Apache configuration
 
     Alias /gwtemplates "/home/apps/path/to/gawati-templates"
     <Directory "/home/apps/path/to/gawati-templates">
-    Require all granted
-      Options Indexes
+      Require all granted
       AllowOverride All
       Order allow,deny
       Allow from all
     </Directory>
 
-    Alias /akn "/home/data/akn"
-    <Directory "/home/data/akn">
-        Require all granted
-        Options Indexes Includes FollowSymLinks
-        AllowOverride All
-        Order allow,deny
-        Allow from all
+    Alias /akn "/home/data/akn_pdf"
+    <Directory "/home/data/akn_pdf">
+      Require all granted
+      Options Includes FollowSymLinks
+      AllowOverride All
+      Order allow,deny
+      Allow from all
     </Directory>
 
     <Location "/gwportal/">
