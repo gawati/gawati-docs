@@ -5,13 +5,12 @@ General
 *******
 
 The goal of the module is to apply Gawati specific configurations in the
-operating system and webserver, set up a user and start compilation and
-deployment of Gawati by the 2nd stage installer.
+operating system and webserver.
 
 Software Packages
 *****************
 
-"fabric" will be installed.
+"unzip" will be installed.
 
 Configuration
 *************
@@ -25,11 +24,8 @@ ini Variables
 
 The DNS name for the public gawati portal root URL needs to be specified in
 "GAWATI_URL_ROOT". The internal URL for the backend eXist DB must be specified
-as "EXIST_BE_URL". The eXist DB installer instances for Gawati backend and
-frontend must be provided as "exstbe" and "existst" respectively. A name for an
-OS user account must be specified as "builduser". This account will be created
-if not existing and used by the 2nd stage installer to build and deploy Gawati
-from source.
+as "EXIST_ST_URL". The eXist DB installer instance names for Gawati backend and
+frontend must be provided as "exstbe" and "existst" respectively.
 
 Postinstallers
 **************
@@ -45,3 +41,5 @@ will be references in /etc/httpd/conf.d/10-gawati.conf.
 SSL key and certificate matching the Gawati URL with compliant naming must be
 present in /etc/pki/tls/private and /etc/pki/tls/certs respectively. By default
 this is prepared by the <localcert> or <letsencrypt> module.
+The Gawati default website template / theme will be deployed into its web root
+folder below /var/www/html
