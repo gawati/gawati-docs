@@ -14,7 +14,7 @@ is sufficient.
 To download the `installation script`_, switch to user root and execute::
 
  cd
- curl https://raw.githubusercontent.com/gawati/setup-scripts/master/gawati/gawati_server_setup.sh -o gawati_server_setup.sh
+ curl https://gawati.org/gawati_server_setup.sh -o gawati_server_setup.sh
  chmod 755 gawati_server_setup.sh
 
 Quickstart
@@ -31,8 +31,8 @@ configuration template with our default settings. On second run the
 installation is executed according to the settings in this configuration file.
 
 Running the installer twice will complete our default installation, assuming you
-will access your server with the URL *https://my.gawati.org*. You will have to
-make sure that *my.gawati.org* resolves to your server IP locally.
+will access your server with the URL *https://my.gawati.local*. You will have to
+make sure that *my.gawati.local* resolves to your server IP locally.
 
 .. note::
    The Installer will automatically set the Admin passwords for the 2 eXist instances
