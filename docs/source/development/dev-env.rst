@@ -38,16 +38,15 @@ Installing components
   The components are currently at version 1.4
 
 First download the individual components into a folder:
-
- 1. :download:`Gawati Portal <https://github.com/gawati/gawati-portal/releases/download/1.4/gawati-portal-1.4-dev.xar>`
- 2. :download:`Gawati Data <https://github.com/gawati/gawati-data/releases/download/1.4/gawati-data-1.4.xar>`
- 3. :download:`Gawati Data XML <https://github.com/gawati/gawati-data-xml/releases/download/1.4/gw-data-1.4.xar>`
+ 1. `Download Gawati Portal`_
+ 2. `Download Gawati Data`_
+ 3. `Download Gawati Data Xml`_
 
 Place these files in the `autodeploy` folder within the eXist installation, and restart the eXist database server. They will be automatically installed. 
 
 Now download the front-end templates, and place them in a folder where Apache can server them: 
 
-  * :download:`Gawati Templates <https://github.com/gawati/gawati-templates/releases/download/1.4/gawati-templates-1.4.zip>`
+  * .. `Download Gawati Templates`_
 
 
 ****************
@@ -67,8 +66,7 @@ We do this to ensure optimal performance.
 Download the data sets
 ======================
 
-Download the `XML Data set <https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_xml_sample-1.2.zip>`_ and the corresponding `PDF Data set <https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_pdf_sample-1.2.zip>`_ 
-
+Download the `XML Data set`_ and the corresponding `PDF Data set`_ 
 
 Setup the PDF data set
 ======================
@@ -239,3 +237,9 @@ Click the *+* icon, and select the package you just built in the `build` folder 
 .. _WinMerge: http://winmerge.org/
 .. _Meld: http://meldmerge.org/
 .. _Meld OS X: https://yousseb.github.io/meld/
+.. _Download Gawati Portal: https://github.com/gawati/gawati-portal/releases/download/1.4/gawati-portal-1.4-dev.xar
+.. _Download Gawati Data: https://github.com/gawati/gawati-data/releases/download/1.4/gawati-data-1.4.xar
+.. _Download Gawati Data Xml: https://github.com/gawati/gawati-data-xml/releases/download/1.4/gw-data-1.4.xar
+.. _Download Gawati Templates: https://github.com/gawati/gawati-templates/releases/download/1.4/gawati-templates-1.4.zip
+.. _XML Data set: https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_xml_sample-1.2.zip
+.. _PDF Data set: https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_pdf_sample-1.2.zip
