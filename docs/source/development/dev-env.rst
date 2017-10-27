@@ -39,15 +39,15 @@ Installing components
 
 First download the individual components into a folder:
 
- 1. `Gawati Portal <https://github.com/gawati/gawati-portal/releases/download/1.4/gawati-portal-1.4-dev.xar>`_
- 2. `Gawati Data <https://github.com/gawati/gawati-data/releases/download/1.4/gawati-data-1.4.xar>`_
- 3. `Gawati Data XML <https://github.com/gawati/gawati-data-xml/releases/download/1.4/gw-data-1.4.xar>`_
+ 1. :download:`Gawati Portal <https://github.com/gawati/gawati-portal/releases/download/1.4/gawati-portal-1.4-dev.xar>`_
+ 2. :download:`Gawati Data <https://github.com/gawati/gawati-data/releases/download/1.4/gawati-data-1.4.xar>`_
+ 3. :download:`Gawati Data XML <https://github.com/gawati/gawati-data-xml/releases/download/1.4/gw-data-1.4.xar>`_
 
 Place these files in the `autodeploy` folder within the eXist installation, and restart the eXist database server. They will be automatically installed. 
 
 Now download the front-end templates, and place them in a folder where Apache can server them: 
 
-  * `Gawati Templates <https://github.com/gawati/gawati-templates/releases/download/1.4/gawati-templates-1.4.zip>`_
+  * :download:`Gawati Templates <https://github.com/gawati/gawati-templates/releases/download/1.4/gawati-templates-1.4.zip>`_
 
 
 ****************
@@ -195,7 +195,6 @@ The database contents get exported to the file system:
 
 In the image the exported `gawati portal`_ folder is selected. You will need to compare this folder with the git cloned folder on your file system using a tool like `WinMerge`_(on Windows) or `Meld`_(on Linux) or `Meld OS X`_, and merge the changed files. After which you can commit your changes.
 
-
 *************************
 Building code from Github
 *************************
@@ -228,6 +227,9 @@ If you have a stock installation of eXist-db, it will be running on port 8080. A
    :figclass: align-center
 
 Click the *+* icon, and select the package you just built in the `build` folder and install it into eXist-db. You will find the package accessible via the URL: `eXist gawati data <http://localhost:8080/exist/apps/gawati-data>`
+
+
+
 
 
 .. _gawati portal: https://github.com/gawati/gawati-portal
