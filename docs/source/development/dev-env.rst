@@ -34,7 +34,7 @@ You can either build the source from github for each component, or you can insta
 Installing components
 *********************
 
-.. versionadded:: 1.4
+.. note:: 
   The components are currently at version 1.4
 
 First download the individual components into a folder:
@@ -54,7 +54,7 @@ Now download the front-end templates, and place them in a folder where Apache ca
 Load Sample Data
 ****************
 
-.. versionadded:: 1.2
+.. note:: 
   The sample data is currently at version 1.2
 
 To understand better how gawati works, we provide you with sample data, which can be loaded into the system and tested. Sample data is provided in two specific parts:
@@ -109,7 +109,7 @@ Now upload the data using the following command run from the eXist-db folder:
 
     ./bin/client.sh -u gwdata -P <copied_password_hash> -d -m /db/apps/gw-data/akn -p /home/data/akn_xml/akn
 
-On Windows you will run it as :samp:`.\bin\client.bat` instead:
+On Windows you will run it as :samp:`.\\bin\\client.bat` instead:
 
 .. code-block:: bash
     :linenos:
