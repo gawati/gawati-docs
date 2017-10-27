@@ -39,15 +39,15 @@ Installing components
 
 First download the individual components into a folder:
 
- 1. :download:`Gawati Portal <https://github.com/gawati/gawati-portal/releases/download/1.4/gawati-portal-1.4-dev.xar>`_
- 2. :download:`Gawati Data <https://github.com/gawati/gawati-data/releases/download/1.4/gawati-data-1.4.xar>`_
- 3. :download:`Gawati Data XML <https://github.com/gawati/gawati-data-xml/releases/download/1.4/gw-data-1.4.xar>`_
+ 1. :download:`Gawati Portal <https://github.com/gawati/gawati-portal/releases/download/1.4/gawati-portal-1.4-dev.xar>`
+ 2. :download:`Gawati Data <https://github.com/gawati/gawati-data/releases/download/1.4/gawati-data-1.4.xar>`
+ 3. :download:`Gawati Data XML <https://github.com/gawati/gawati-data-xml/releases/download/1.4/gw-data-1.4.xar>`
 
 Place these files in the `autodeploy` folder within the eXist installation, and restart the eXist database server. They will be automatically installed. 
 
 Now download the front-end templates, and place them in a folder where Apache can server them: 
 
-  * :download:`Gawati Templates <https://github.com/gawati/gawati-templates/releases/download/1.4/gawati-templates-1.4.zip>`_
+  * :download:`Gawati Templates <https://github.com/gawati/gawati-templates/releases/download/1.4/gawati-templates-1.4.zip>`
 
 
 ****************
