@@ -34,22 +34,29 @@ You can either build the source from github for each component, or you can insta
 Installing components
 *********************
 
+.. versionadded:: 1.4
+  The components are currently at version 1.4
+
 First download the individual components into a folder:
 
- 1. `Gawati Portal <https://github.com/gawati/gawati-portal/releases/download/1.3/gawati-portal-1.3-dev.xar>`_
- 2. `Gawati Data <https://github.com/gawati/gawati-data/releases/download/1.2/gawati-data-1.2.xar>`_
- 3. `Gawati XML Data <https://github.com/gawati/gawati-data-xml/releases/download/1.2/gw-data-1.2.xar>`_
+ 1. `Gawati Portal <https://github.com/gawati/gawati-portal/releases/download/1.4/gawati-portal-1.4-dev.xar>`_
+ 2. `Gawati Data <https://github.com/gawati/gawati-data/releases/download/1.4/gawati-data-1.4.xar>`_
+ 3. `Gawati XML Data <https://github.com/gawati/gawati-data-xml/releases/download/1.4/gw-data-1.4.xar>`_
 
 Place these files in the `autodeploy` folder within the eXist installation, and restart the eXist database server. They will be automatically installed. 
 
 Now download the front-end templates, and place them in a folder where Apache can server them: 
 
-  * `Gawati Templates <https://github.com/gawati/gawati-templates/releases/download/1.3/gawati-templates-1.3.zip>`_
+  * `Gawati Templates <https://github.com/gawati/gawati-templates/releases/download/1.4/gawati-templates-1.4.zip>`_
 
 
 ****************
 Load Sample Data
 ****************
+
+.. versionadded:: 1.2
+  The sample data is currently at version 1.2
+
 To understand better how gawati works, we provide you with sample data, which can be loaded into the system and tested. Sample data is provided in two specific parts:
 
  * Xml Documents - which get loaded into the XML database
@@ -66,7 +73,7 @@ Download the `XML Data set <https://github.com/gawati/gawati-data-xml/releases/d
 Setup the PDF data set
 ======================
 
-To setup the PDF data-set, you just need to extract the files into a folder, e.g if you extract the PDF files into `/home/data/akn_pdf`, and add a Apache configuration to serve the folder contents (See line 9 below `Add the Apache configuration`_)
+To setup the PDF data-set, you just need to extract the files into a folder, e.g if you extract the PDF files into `/home/data/akn_pdf`, and add a Apache configuration to serve the folder contents (See line 7 below `Add the Apache configuration`_)
 
 Setup the XML data set
 ======================
@@ -95,8 +102,6 @@ Copy the output password hash as shown below.
    :align: center
    :figclass: align-center
 
-Open eXist dashboard - User Manager.  Select the `gwdata` user and enter the copied password and save.  Alternatively, install package `usermanager` and use the same to add the password.
-
 Now upload the data using the following command run from the eXist-db folder:
 
 .. code-block:: bash
@@ -104,11 +109,26 @@ Now upload the data using the following command run from the eXist-db folder:
 
     ./bin/client.sh -u gwdata -P <copied_password_hash> -d -m /db/apps/gw-data/akn -p /home/data/akn_xml/akn
 
-On Windows you will run it as :samp:`.\bin\client.bat` instead. 
+On Windows you will run it as :samp:`.\bin\client.bat` instead:
+
+.. code-block:: bash
+    :linenos:
+
+    .\bin\client.bat -u gwdata -P <copied_password_hash> -d -m /db/apps/gw-data/akn -p d:\data\akn_xml\akn
+
 
 ****************************
 Add the Apache configuration
 ****************************
+
+The Apache configuration will allow accessing gawati over a web-browser using the URL:
+
+.. code-block:: none
+
+  http://localhost/gwportal/
+
+To do this, open the `httpd.conf` (or equivalent) file of your apache installation and add the following:
+
 .. code-block:: apacheconf
    :linenos:
 
@@ -138,6 +158,7 @@ Add the Apache configuration
       SetEnv force-proxy-request-1.0 1
       SetEnv proxy-nokeepalive 1
     </Location>
+
 The above assumes:
   * eXist-db is running on port 8080 (if that is not the case in your installation change it appropriately in line 17 and 18)
   * Change the path in line 1 and line 2 to the folder into which you extracted `Gawati Templates`
