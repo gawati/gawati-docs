@@ -60,7 +60,7 @@ We do this to ensure optimal performance.
 Download the data sets
 ======================
 
-Download the `XML Data set <https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_xml_sample-1.2.zip>`_ and the corresponding `PDF Data set <https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_xml_sample-1.2.zip>`_ 
+Download the `XML Data set <https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_xml_sample-1.2.zip>`_ and the corresponding `PDF Data set <https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_pdf_sample-1.2.zip>`_ 
 
 
 Setup the PDF data set
@@ -80,7 +80,7 @@ To setup the XML data-set, extract the archive into a separate folder. On Linux 
 
 Where `<path_to_exist>` is the path to the eXist-db installation, and `<exist_admin_password>` is the eXist-db admin password. If you installed eXist on a different port change that in the `-ouri` setting.
 
-On Windows do the following; Start the eXist-db Client. In the command window of the eXist-db client run the following commands:
+On Windows do the following; Start the eXist-db Client(`<path_to_exist>/bin/client.bat`). In the command window of the eXist-db client run the following commands:
 
 .. code-block:: none
     :linenos:
@@ -95,12 +95,14 @@ Copy the output password hash as shown below.
    :align: center
    :figclass: align-center
 
+Open eXist dashboard - User Manager.  Select the `gwdata` user and enter the copied password and save.  Alternatively, install package `usermanager` and use the same to add the password.
+
 Now upload the data using the following command run from the eXist-db folder:
 
 .. code-block:: bash
     :linenos:
 
-    ./bin/client.sh -u gwdata -P <copied_password_hash> -d -m /db/apps/gwd-data/akn -p /home/data/akn_xml/akn
+    ./bin/client.sh -u gwdata -P <copied_password_hash> -d -m /db/apps/gw-data/akn -p /home/data/akn_xml/akn
 
 On Windows you will run it as :samp:`.\bin\client.bat` instead. 
 
