@@ -46,7 +46,7 @@ Place these files in the `autodeploy` folder within the eXist installation, and 
 
 Now download the front-end templates, and place them in a folder where Apache can server them: 
 
-  * .. `Download Gawati Templates`_
+  *  `Download Gawati Templates`_
 
 
 ****************
