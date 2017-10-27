@@ -41,7 +41,7 @@ First download the individual components into a folder:
 
  1. `Gawati Portal <https://github.com/gawati/gawati-portal/releases/download/1.4/gawati-portal-1.4-dev.xar>`_
  2. `Gawati Data <https://github.com/gawati/gawati-data/releases/download/1.4/gawati-data-1.4.xar>`_
- 3. `Gawati XML Data <https://github.com/gawati/gawati-data-xml/releases/download/1.4/gw-data-1.4.xar>`_
+ 3. `Gawati Data XML <https://github.com/gawati/gawati-data-xml/releases/download/1.4/gw-data-1.4.xar>`_
 
 Place these files in the `autodeploy` folder within the eXist installation, and restart the eXist database server. They will be automatically installed. 
 
@@ -160,12 +160,41 @@ To do this, open the `httpd.conf` (or equivalent) file of your apache installati
     </Location>
 
 The above assumes:
-  * eXist-db is running on port 8080 (if that is not the case in your installation change it appropriately in line 17 and 18)
+  * eXist-db is running on port 8080 (if that is not the case in your installation change it appropriately in line 16 and 17)
   * Change the path in line 1 and line 2 to the folder into which you extracted `Gawati Templates`
-  * Change the path in line 8 and 9 to the folder into which you extracted the Gawati Sample data. 
+  * Change the path in line 7 and 8 to the folder into which you extracted the Gawati Sample data. 
 
 .. note::
   On Windows the Apache Alias directory path need to use the back slash instead of the standard windows forward slash. For e.g. if the templates are in: `d:\\code\\gawati-templates` then the path in the Apache configuration should be: `d:/code/gawati-templates` 
+
+********************
+Development Workflow
+********************
+
+The standard development cycle is as follows:
+  1. clone the projects from github
+  2. build the projects where neccessary (`gawati portal`_, `gawati data`_, `gawati data xml`_)
+  3. deploy onto apache (`gawati templates`_) and;
+  4. deploy onto eXist-db (`gawati portal`_, `gawati data`_, `gawati data xml`_)
+
+Code for `gawati templates`_ is directly edited and commited from the filesystem. 
+
+Code for eXist-db packages requires an additional step. You wil need to export the database onto the file-system and then merge it into your github clone folder: 
+
+  .. figure:: ./_images/exist-backup.png
+   :alt: eXist backup
+   :align: center
+   :figclass: align-center
+
+The database contents get exported to the file system:
+
+  .. figure:: ./_images/exist-backup-export.png
+   :alt: eXist backup exported to file system
+   :align: center
+   :figclass: align-center
+
+In the image the exported `gawati portal`_ folder is selected. You will need to compare this folder with the git cloned folder on your file system using a tool like `WinMerge`_(on Windows) or `Meld`_(on Linux) or `Meld OS X`_, and merge the changed files. After which you can commit your changes.
+
 
 *************************
 Building code from Github
@@ -198,4 +227,13 @@ If you have a stock installation of eXist-db, it will be running on port 8080. A
    :align: center
    :figclass: align-center
 
-Click the *+* icon, and select the package you just built in the `build` folder and install it into eXist-db. You will find the package accessible via the URL: `eXist gawati data <http://localhost:8080/exist/apps/gawati-data>`_
+Click the *+* icon, and select the package you just built in the `build` folder and install it into eXist-db. You will find the package accessible via the URL: `eXist gawati data <http://localhost:8080/exist/apps/gawati-data>`
+
+
+.. _gawati portal: https://github.com/gawati/gawati-portal
+.. _gawati data: https://github.com/gawati/gawati-data
+.. _gawati data xml: https://github.com/gawati/gawati-data-xml
+.. _gawati templates: https://github.com/gawati/gawati-templates
+.. _WinMerge: http://winmerge.org/
+.. _Meld: http://meldmerge.org/
+.. _Meld OS X: https://yousseb.github.io/meld/
