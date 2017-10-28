@@ -36,6 +36,8 @@ Installing components
 
 .. include:: version-info.rst
 
+.. include:: download-links.rst
+
 Place #1,#2 & #3 files in the `autodeploy` folder within the eXist installation, and restart the eXist database server. They will be automatically installed. 
 
 Now extract #4 which are the front-end templates into a folder where Apache can serve them. 
