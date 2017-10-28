@@ -34,8 +34,10 @@ You can either build the source from github for each component, or you can insta
 Installing components
 *********************
 
+.. include:: version-info.rst
+
 .. note:: 
-  The components are currently at version 1.4
+  The `gawati portal`_, `gawati templates`_ components are currently at version 1.4; `gawati data`_, `gawati data xml`_ at version 1.4
 
 First download the individual components into a folder:
  1. `Download Gawati Portal`_
@@ -238,8 +240,8 @@ Click the *+* icon, and select the package you just built in the `build` folder 
 .. _Meld: http://meldmerge.org/
 .. _Meld OS X: https://yousseb.github.io/meld/
 .. _Download Gawati Portal: https://github.com/gawati/gawati-portal/releases/download/1.4/gawati-portal-1.4-dev.xar
-.. _Download Gawati Data: https://github.com/gawati/gawati-data/releases/download/1.4/gawati-data-1.4.xar
-.. _Download Gawati Data Xml: https://github.com/gawati/gawati-data-xml/releases/download/1.4/gw-data-1.4.xar
+.. _Download Gawati Data: https://github.com/gawati/gawati-data/releases/download/1.5/gawati-data-1.5.xar
+.. _Download Gawati Data Xml: https://github.com/gawati/gawati-data-xml/releases/download/1.5/gw-data-1.5.xar
 .. _Download Gawati Templates: https://github.com/gawati/gawati-templates/releases/download/1.4/gawati-templates-1.4.zip
 .. _XML Data set: https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_xml_sample-1.2.zip
 .. _PDF Data set: https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_pdf_sample-1.2.zip
