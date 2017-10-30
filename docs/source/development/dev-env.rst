@@ -33,10 +33,9 @@ You can either build the source from github for each component, or you can insta
 *********************
 Installing components
 *********************
-
-.. include:: version-info.rst
-
-.. include:: download-links.rst
+.. note::
+  .. include:: version-info.rst
+  .. include:: download-links.rst
 
 Place #1,#2 & #3 files in the `autodeploy` folder within the eXist installation, and restart the eXist database server. They will be automatically installed. 
 
