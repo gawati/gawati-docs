@@ -10,3 +10,4 @@ Development
    installer/index
    using-vscode
    data-server-apis
+   package-versions
