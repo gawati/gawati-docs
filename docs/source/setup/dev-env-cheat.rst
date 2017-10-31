@@ -1,5 +1,5 @@
-Developing with Gawati on a remote server, the lazy way
-#######################################################
+Developing with Gawati on a server, the lazy way
+################################################
 
 This will have your development consist of 2 components:
 
@@ -40,44 +40,10 @@ Gawati Server on local VM
 
 We recommend Virtualbox. Install using the command ::
 
-  choco install openssh 7zip virtualbox -y
-
-We provide a Centos 7 Minimal Install Virutalbox Image using LVM and seprate
-filesystems mounted where Gawati takes up space:
-
-  https://drive.google.com/open?id=0B6u3y5jrQTubSnRtWEE3cFdyLWc
-
-The VM is 7zip packed. Unpack it into folder "%USERPROFILE%\VirtualBox VMs".
-Add the VM to VirtualBox Manage using Machine -> Add , browse into the "Gawati"
-Folder and select the Gawati (.vbox) file.
-
-To run it for development we recommend to not start this instance, instead create
-a linked clone and run that. To do so, highlight the Gawati VM, right click and
-"Clone", select "Expert Mode" and activate "Linked Clone". You can then run this
-clone, and when you are done with it or broke it, delete it and create a new
-clone to restart with a clean slate.
-
-The VM is configured with dynamic IP (if its your first VM, tends to be 192.168.56.101).
-Log in to the VM console:
-
-Log in credentials
-  User root
-  Password MyGawatiLocal
-
-Check IP addr::
-
-  ip addr
-
-Add an entry to your hosts file at %WINDIR%\system32\drivers\etc using an
-administrative instance of notepad and add an entry equivalent to this, using the
-IP of your VM::
-
-  192.168.56.101  my.gawati.local
-
-You can connect to it using ssh as described below.
+  choco install 7zip virtualbox openssh -y
 
 and run the :doc:`Gawati installer<./setup-essentials>`.
-
+Please reboot the VM after installation.
 
 
 Install your desktop development tools
