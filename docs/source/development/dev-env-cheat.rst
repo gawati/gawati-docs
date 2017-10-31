@@ -1,5 +1,5 @@
-Developing with Gawati on a remote server, the lazy way
-#######################################################
+Developing with Gawati on a server, the lazy way
+################################################
 
 This will have your development consist of 2 components:
 
@@ -9,14 +9,8 @@ This will have your development consist of 2 components:
 You will use SSH to securely connect your desktop to the server.
 
 
-Install Gawati server
-*********************
-
-Prepare a CentOS minimal server and run the Gawati installer.
-
-
-Install your desktop development tools
-**************************************
+Chocolatey installation system
+******************************
 
 For MS Windows
 """"""""""""""
@@ -29,12 +23,39 @@ Open administrative cmd.exe and execute ::
   @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
 Close and reopen administrative cmd.exe
+The Chocolatey installation commands below, are to be executed in this administrative cmd.exe
 
+
+Install Gawati server
+*********************
+
+Prepare a CentOS minimal server
+"""""""""""""""""""""""""""""""
+
+You can do this as a VM on your local machine, or use a remote installation
+
+
+Gawati Server on local VM
+'''''''''''''''''''''''''
+
+We recommend Virtualbox. Install using the command ::
+
+  choco install 7zip virtualbox openssh -y
+
+and run the :doc:`Gawati installer<./setup-essentials>`.
+Please reboot the VM after installation.
+
+
+Install your desktop development tools
+**************************************
+
+For MS Windows
+""""""""""""""
 
 Install development applications
 ''''''''''''''''''''''''''''''''
 
-choco install openssh git jdk8 ant visualstudiocode -y
+choco install git jdk8 ant visualstudiocode -y
 
 
 Configure Visual Studio Code
