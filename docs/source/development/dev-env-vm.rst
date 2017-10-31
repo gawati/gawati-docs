@@ -1,5 +1,5 @@
-Developing with Gawati on a server / VM, the lazy way
-#####################################################
+Gawati on a server / VM
+#######################
 
 This will have your development consist of 2 components:
 

@@ -1,5 +1,5 @@
-Developing with Gawati as a local installation, the interactive way
-###################################################################
+Gawati as a local installation
+##############################
 
 The below instructions are not specific to an operating system, the components will run on different operating systems.
 
