@@ -69,7 +69,7 @@ Check IP addr::
 
   ip addr
 
-Add an entry to your hosts file at %WINDIR%\system32\drivers\etc using an
+Add an entry to your hosts file at %WINDIR%\\system32\\drivers\\etc using an
 administrative instance of notepad and add an entry equivalent to this, using the
 IP of your VM::
 
