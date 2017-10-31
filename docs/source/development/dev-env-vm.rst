@@ -80,10 +80,13 @@ You can connect to it using ssh::
   ssh -L 10443:localhost:10443 root@my.gawati.org
 
 From :doc:`Gawati installer<./setup-essentials>` documentation, just download the
-installer as described and run it twice.
+installer as described and run it twice and reboot the system after installation
+to activate kernel configurations and have services bind to IPs correctly ::
 
-Reboot the system after installation to activate kernel configurations and have
-services bind to IPs correctly.
+  curl "https://gawati.org/setup.sh" -o setup.sh
+  chmod 755 setup.sh
+  ./setup.sh
+  ./setup.sh
 
 
 Install your desktop development tools
