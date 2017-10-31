@@ -1,5 +1,5 @@
-Developing with Gawati on a server, the lazy way
-################################################
+Developing with Gawati on a remote server, the lazy way
+#######################################################
 
 This will have your development consist of 2 components:
 
@@ -40,10 +40,46 @@ Gawati Server on local VM
 
 We recommend Virtualbox. Install using the command ::
 
-  choco install 7zip virtualbox openssh -y
+  choco install openssh 7zip virtualbox -y
 
-and run the :doc:`Gawati installer<./setup-essentials>`.
-Please reboot the VM after installation.
+We provide a Centos 7 Minimal Install Virutalbox Image using LVM and seprate
+filesystems mounted where Gawati takes up space:
+
+  https://drive.google.com/open?id=0B6u3y5jrQTubSnRtWEE3cFdyLWc
+
+The VM is 7zip packed. Unpack it into folder "%USERPROFILE%\VirtualBox VMs".
+Add the VM to VirtualBox Manage using Machine -> Add , browse into the "Gawati"
+Folder and select the Gawati (.vbox) file.
+
+To run it for development we recommend to not start this instance, instead create
+a linked clone and run that. To do so, highlight the Gawati VM, right click and
+"Clone", select "Expert Mode" and activate "Linked Clone". You can then run this
+clone, and when you are done with it or broke it, delete it and create a new
+clone to restart with a clean slate.
+
+The VM is configured with dynamic IP (if its your first VM, tends to be 192.168.56.101).
+Log in to the VM console:
+
+Log in credentials::
+
+  User root
+  Password MyGawatiLocal
+
+Check IP addr::
+
+  ip addr
+
+Add an entry to your hosts file at %WINDIR%\system32\drivers\etc using an
+administrative instance of notepad and add an entry equivalent to this, using the
+IP of your VM::
+
+  192.168.56.101  my.gawati.local
+
+You can connect to it using ssh::
+
+  ssh -L 10443:localhost:10443 root@my.gawati.org
+
+From :doc:`Gawati installer<./setup-essentials>` documentation, just download the installer as described and run it twice.
 
 
 Install your desktop development tools
@@ -86,12 +122,12 @@ Connect to Gawati server
 
 In a new cmd shell, replace 'my.gawati.org' with your server name in the following command and run ::
 
-  ssh -L 10447:localhost:10447 root@my.gawati.org
+  ssh -L 10443:localhost:10443 root@my.gawati.org
 
-This will tunnel localhost:10447 to your server:10447 and encrypt the communication on its path. You can lower this shell, leaving it running in the background.
+This will tunnel localhost:10443 to your server:10443 and encrypt the communication on its path. You can lower this shell, leaving it running in the background.
 
 
-Point your webbrowser to http://localhost:10083 , log in as admin user (credentials received in server installation) and open 'eXide - XQuery IDE'
+Point your webbrowser to http://localhost:10443 , log in as admin user (credentials received in server installation) and open 'eXide - XQuery IDE'
 
 Paste following query into main tab 'new-document' ::
 
@@ -104,7 +140,7 @@ Copy the content in the 'Adaptive Output' Tab at the bottom. This is the passwor
 
 In a new cmd shell, replace 'yourpastedpasswordhere' with the password retrieved above and run ::
 
-  net use x: "https://localhost:10447/exist/webdav/db/apps/gawati-portal" /user:gawatiportal yourpastedpasswordhere
+  net use x: "https://localhost:10443/exist/webdav/db/apps/gawati-portal" /user:gawatiportal yourpastedpasswordhere
 
 You can close this cmd window.
 
