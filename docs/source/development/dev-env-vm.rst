@@ -15,15 +15,15 @@ Chocolatey installation system
 For MS Windows
 """"""""""""""
 
-Install Chocolatey
-''''''''''''''''''
+Install `Chocolatey`_
+'''''''''''''''''''''
 
 Open administrative cmd.exe and execute ::
 
   @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
 Close and reopen administrative cmd.exe
-The Chocolatey installation commands below, are to be executed in this administrative cmd.exe
+The `Chocolatey`_ installation commands below, are to be executed in this administrative cmd.exe
 
 
 Install Gawati server
@@ -38,11 +38,11 @@ You can do this as a VM on your local machine, or use a remote installation
 Gawati Server on local VM
 '''''''''''''''''''''''''
 
-We recommend Virtualbox. Install using the command ::
+We recommend `Virtualbox`_. Install using the command ::
 
   choco install openssh 7zip virtualbox -y
 
-We provide a Centos 7 Minimal Install Virutalbox Image using LVM and seprate
+We provide a Centos 7 Minimal Install `Virutalbox Image`_ using LVM and seprate
 filesystems mounted where Gawati takes up space:
 
   https://drive.google.com/open?id=0B6u3y5jrQTubSnRtWEE3cFdyLWc
@@ -120,9 +120,9 @@ For writing documentation install:
 Connect to Gawati server
 ''''''''''''''''''''''''
 
-In a new cmd shell, replace 'my.gawati.org' with your server name in the following command and run ::
+In a new cmd shell, and connect to your VM using ::
 
-  ssh -L 10443:localhost:10443 root@my.gawati.org
+  ssh -L 10443:localhost:10443 root@my.gawati.local
 
 This will tunnel localhost:10443 to your server:10443 and encrypt the communication on its path. You can lower this shell, leaving it running in the background.
 
@@ -145,3 +145,8 @@ In a new cmd shell, replace 'yourpastedpasswordhere' with the password retrieved
 You can close this cmd window.
 
 Open the new drive in Visual Studio Code in File -> Open Folder (CTRL+K -> CTRL+O)
+
+
+.. _Chocolatey: https://chocolatey.org/
+.. _Virtualbox: https://www.virtualbox.org/
+.. _Virutalbox Image: https://drive.google.com/open?id=0B6u3y5jrQTubSnRtWEE3cFdyLWc
