@@ -18,13 +18,14 @@ Getting Started
 
 You will need to setup the basics first.
 
-Install your development environment installing and running Gawati as local services on your development system (this document provides you with additional insight):
+Install your development environment installing and running Gawati as local services on your development system (this document provides you with additional insight).
+Alternatively, use a prebuilt VM and Gawati installer to run Gawati as a virtual machine (this document gets you a standardised environment fast).
 
-  :doc:`Local Service Development Installation <./dev-env-local>`
+.. toctree::
+   :maxdepth: 1
 
-Alternatively, use a prebuilt VM and Gawati installer to run Gawati as a virtual machine (this document gets you a standardised environment fast):
-
-  :doc:`Virtual Server Development Installation <./dev-env-vm>`
+   dev-env-local
+   dev-env-vm
 
 
 ********************
