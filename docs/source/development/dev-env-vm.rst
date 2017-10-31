@@ -87,6 +87,9 @@ to activate kernel configurations and have services bind to IPs correctly ::
   chmod 755 setup.sh
   ./setup.sh
   ./setup.sh
+  echo Take note of the admin credentials, then press >ENTER<
+  read
+  reboot
 
 
 Install your desktop development tools
