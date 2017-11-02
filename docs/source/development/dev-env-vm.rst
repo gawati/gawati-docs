@@ -145,17 +145,17 @@ received in server installation) and open 'eXide - XQuery IDE'
 Paste following query into main tab 'new-document' ::
 
   xquery version "3.1";
-  data(doc('/db/apps/gawati-portal/_auth/_pw.xml')/users/user[@name='gwdata']/@pw)
+  data(doc('/db/apps/gawati-portal/_auth/_pw.xml')/users/user[@name='gawatiportal']/@pw)
 
 and execute by clicking 'Eval' button in top row.
 Copy the content in the 'Adaptive Output' Tab at the bottom. This is the password
-of user 'gwdata' we need below.
+of user 'gawatiportal' we need below.
 
 
 In a new cmd shell, replace 'yourpastedpasswordhere' with the password retrieved
 above and run ::
 
-  net use x: "https://localhost:10443/exist/webdav/db/apps/gawati-portal" /user:gwdata yourpastedpasswordhere
+  net use x: "https://localhost:10443/exist/webdav/db/apps/gawati-portal" /user:gawatiportal yourpastedpasswordhere
 
 You can close this cmd window.
 
