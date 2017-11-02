@@ -139,7 +139,7 @@ This will tunnel localhost:10443 to your server:10443 and encrypt the communicat
 on its path. You can lower this shell, leaving it running in the background.
 
 
-Point your webbrowser to http://localhost:10443 , log in as admin user (credentials
+Point your webbrowser to https://localhost:10443 , log in as admin user (credentials
 received in server installation) and open 'eXide - XQuery IDE'
 
 Paste following query into main tab 'new-document' ::
