@@ -77,16 +77,16 @@ IP of your VM::
 
 You can connect to it using ssh::
 
-  ssh -L 10443:localhost:10443 root@my.gawati.org
+  ssh -L 10443:localhost:10443 root@my.gawati.local
 
 From :doc:`Gawati installer<./setup-essentials>` documentation, just download the
 installer as described and run it twice and reboot the system after installation
 to activate kernel configurations and have services bind to IPs correctly ::
 
-  curl "https://gawati.org/setup.sh" -o setup.sh
-  chmod 755 setup.sh
-  ./setup.sh
-  ./setup.sh
+  curl "https://gawati.org/setup" -o setup
+  chmod 755 setup
+  ./setup
+  ./setup
   echo Take note of the admin credentials, then press >ENTER<
   read
   reboot
@@ -145,7 +145,7 @@ received in server installation) and open 'eXide - XQuery IDE'
 Paste following query into main tab 'new-document' ::
 
   xquery version "3.1";
-  data(doc('/db/apps/gawati-portal/_auth/_pw.xml')/users/user[@name='gawatiportal']/@pw)
+  data(doc('/db/apps/gawati-portal/_auth/_pw.xml')/users/user[@name='gwdata']/@pw)
 
 and execute by clicking 'Eval' button in top row.
 Copy the content in the 'Adaptive Output' Tab at the bottom. This is the password
@@ -155,7 +155,7 @@ of user 'gwdata' we need below.
 In a new cmd shell, replace 'yourpastedpasswordhere' with the password retrieved
 above and run ::
 
-  net use x: "https://localhost:10443/exist/webdav/db/apps/gawati-portal" /user:gawatiportal yourpastedpasswordhere
+  net use x: "https://localhost:10443/exist/webdav/db/apps/gawati-portal" /user:gwdata yourpastedpasswordhere
 
 You can close this cmd window.
 
