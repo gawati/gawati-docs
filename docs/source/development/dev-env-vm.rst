@@ -32,7 +32,8 @@ Install Gawati server
 Prepare a CentOS minimal server
 """""""""""""""""""""""""""""""
 
-You can do this as a VM on your local machine, or use a remote installation
+You can do this as a VM on your local machine, or use a remote installation.
+Below we will run on a preconfigured VM image that you can download.
 
 
 Gawati Server on local VM
