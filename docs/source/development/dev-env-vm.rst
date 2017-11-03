@@ -66,7 +66,7 @@ Log in credentials::
 
 Check IP addr::
 
-  ip addr
+  ip addr show dev eth0
 
 Add an entry to your hosts file at %WINDIR%\\system32\\drivers\\etc using an
 administrative instance of notepad and add an entry equivalent to this, using the
@@ -76,10 +76,14 @@ IP of your VM::
 
 You can connect to it using ssh::
 
-  ssh -L 10443:localhost:10443 root@my.gawati.local
+  ssh root@my.gawati.local
+
+Allow all traffic from your PC to your VM (dont do this for internet facing servers) ::
+
+  firewall-cmd --zone=trusted --change-interface=eth0 --permanent
 
 From :doc:`Gawati installer<./setup-essentials>` documentation, just download the
-installer as described and run it twice and reboot the system after installation
+installer as described, run it twice and reboot the system after installation
 to activate kernel configurations and have services bind to IPs correctly ::
 
   curl "https://gawati.org/setup" -o setup
@@ -91,24 +95,23 @@ to activate kernel configurations and have services bind to IPs correctly ::
   poweroff
 
 Create another linked clone as above, but name it "Gawati Dev".
-You can then run this clone, and when you are done with it or broke it, delete it
-(with deleting files) and create a new clone to restart with a clean slate.
+You can then run this clone headless, and when you are done with it or broke it,
+delete it (with deleting files) and create a new clone to restart with a clean slate.
 
 
 Install your desktop development tools
 **************************************
 
-For MS Windows
-""""""""""""""
-
 Install development applications
-''''''''''''''''''''''''''''''''
+""""""""""""""""""""""""""""""""
 
-choco install git jdk8 ant visualstudiocode -y
+in administrative cmd.exe run ::
+
+  choco install git jdk8 ant visualstudiocode -y
 
 
 Configure Visual Studio Code
-''''''''''''''''''''''''''''
+""""""""""""""""""""""""""""
 
 Go to File -> Preferences -> Settings (Ctrl+,). Paste into rightmost tab titled
 'Place your settings here...' ::
@@ -131,38 +134,30 @@ For writing documentation install:
  - reStructuredText
 
 
-Connect to Gawati server
-''''''''''''''''''''''''
+Map a drive to Gawati server
+""""""""""""""""""""""""""""
 
-In a new cmd shell, and connect to your VM using ::
+Exist DB server allows WebDav access from localhost only, so we will use SSH
+forwarding to make our connection appear local.
+
+Open a new cmd shell and connect to your VM using ::
 
   ssh -L 10443:localhost:10443 root@my.gawati.local
 
 This will tunnel localhost:10443 to your server:10443 and encrypt the communication
-on its path. You can lower this shell, leaving it running in the background.
+on its path. You can lower this shell, leaving it running in the background. This
+forwarding allows you to access the exist instance as a local service. For example
+you can now browse https://localhost:10443 where you can log in as admin user (credentials
+received in server installation) to the (remote) server.
 
-
-Point your webbrowser to https://localhost:10443 , log in as admin user (credentials
-received in server installation) and open 'eXide - XQuery IDE'
-
-Paste following query into main tab 'new-document' ::
-
-  xquery version "3.1";
-  data(doc('/db/apps/gawati-portal/_auth/_pw.xml')/users/user[@name='gawatiportal']/@pw)
-
-and execute by clicking 'Eval' button in top row.
-Copy the content in the 'Adaptive Output' Tab at the bottom. This is the password
-of user 'gawatiportal' we need below.
-
-
-In a new cmd shell, replace 'yourpastedpasswordhere' with the password retrieved
+In a new cmd shell, replace 'youradminpassword' with the password retrieved
 above and run ::
 
-  net use x: "https://localhost:10443/exist/webdav/db/apps/gawati-portal" /user:gawatiportal yourpastedpasswordhere
+  net use x: "https://localhost:10443/exist/webdav/db/apps" /user:admin youradminpassword
 
 You can close this cmd window.
 
-Open the new drive in Visual Studio Code in File -> Open Folder (CTRL+K -> CTRL+O)
+Open the new X: drive in Visual Studio Code in File -> Open Folder (CTRL+K -> CTRL+O)
 
 
 .. _Chocolatey: https://chocolatey.org/
