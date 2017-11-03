@@ -53,9 +53,8 @@ Folder and select the Gawati (.vbox) file.
 
 To run it for development we recommend to not start this instance, instead create
 a linked clone and run that. To do so, highlight the Gawati VM, right click and
-"Clone", select "Expert Mode" and activate "Linked Clone". You can then run this
-clone, and when you are done with it or broke it, delete it (with deleting files)
-and create a new clone to restart with a clean slate.
+"Clone", select "Expert Mode" and activate "Linked Clone" and name it "Gawati Clean".
+This clone will keep a fresh installation of Gawati.
 
 The VM is configured with dynamic IP (if its your first VM, tends to be 192.168.56.101).
 Log in to the VM console:
@@ -89,7 +88,11 @@ to activate kernel configurations and have services bind to IPs correctly ::
   ./setup
   echo Take note of the admin credentials, then press >ENTER<
   read
-  reboot
+  poweroff
+
+Create another linked clone as above, but name it "Gawati Dev".
+You can then run this clone, and when you are done with it or broke it, delete it
+(with deleting files) and create a new clone to restart with a clean slate.
 
 
 Install your desktop development tools
