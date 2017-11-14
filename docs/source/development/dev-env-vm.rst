@@ -15,10 +15,10 @@ Chocolatey installation system
 For MS Windows
 """"""""""""""
 
-Install `Chocolatey`_
-'''''''''''''''''''''
+Install Chocolatey
+''''''''''''''''''
 
-Open administrative cmd.exe and execute ::
+Install `Chocolatey`_ from their website or open administrative cmd.exe and execute ::
 
   @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
@@ -32,7 +32,8 @@ Install Gawati server
 Prepare a CentOS minimal server
 """""""""""""""""""""""""""""""
 
-You can do this as a VM on your local machine, or use a remote installation
+You can do this as a VM on your local machine, or use a remote installation.
+Below we will run on a preconfigured VM image that you can download.
 
 
 Gawati Server on local VM
@@ -53,9 +54,8 @@ Folder and select the Gawati (.vbox) file.
 
 To run it for development we recommend to not start this instance, instead create
 a linked clone and run that. To do so, highlight the Gawati VM, right click and
-"Clone", select "Expert Mode" and activate "Linked Clone". You can then run this
-clone, and when you are done with it or broke it, delete it (with deleting files)
-and create a new clone to restart with a clean slate.
+"Clone", select "Expert Mode", activate "Linked Clone" and name it "Gawati Clean".
+This clone will keep a fresh installation of Gawati. Start the "Gawati Clean" VM.
 
 The VM is configured with dynamic IP (if its your first VM, tends to be 192.168.56.101).
 Log in to the VM console:
@@ -67,7 +67,7 @@ Log in credentials::
 
 Check IP addr::
 
-  ip addr
+  ip addr show dev eth0
 
 Add an entry to your hosts file at %WINDIR%\\system32\\drivers\\etc using an
 administrative instance of notepad and add an entry equivalent to this, using the
@@ -77,32 +77,42 @@ IP of your VM::
 
 You can connect to it using ssh::
 
-  ssh -L 10443:localhost:10443 root@my.gawati.org
+  ssh root@my.gawati.local
+
+Allow all traffic from your PC to your VM (dont do this for internet facing servers) ::
+
+  firewall-cmd --zone=trusted --change-interface=eth0 --permanent
 
 From :doc:`Gawati installer<./setup-essentials>` documentation, just download the
-installer as described and run it twice and reboot the system after installation
+installer as described, run it twice and reboot the system after installation
 to activate kernel configurations and have services bind to IPs correctly ::
 
-  curl "https://gawati.org/setup.sh" -o setup.sh
-  chmod 755 setup.sh
-  ./setup.sh
-  ./setup.sh
+  curl "https://gawati.org/setup" -o setup
+  chmod 755 setup
+  ./setup
+  ./setup
+  echo Take note of the admin credentials, then press >ENTER<
+  read
+  poweroff
+
+Create another linked clone as above, but name it "Gawati Dev".
+You can then run this clone headless, and when you are done with it or broke it,
+delete it (with deleting files) and create a new clone to restart on a clean slate.
 
 
 Install your desktop development tools
 **************************************
 
-For MS Windows
-""""""""""""""
-
 Install development applications
-''''''''''''''''''''''''''''''''
+""""""""""""""""""""""""""""""""
 
-choco install git jdk8 ant visualstudiocode -y
+in administrative cmd.exe run ::
+
+  choco install git jdk8 ant visualstudiocode -y
 
 
 Configure Visual Studio Code
-''''''''''''''''''''''''''''
+""""""""""""""""""""""""""""
 
 Go to File -> Preferences -> Settings (Ctrl+,). Paste into rightmost tab titled
 'Place your settings here...' ::
@@ -125,38 +135,30 @@ For writing documentation install:
  - reStructuredText
 
 
-Connect to Gawati server
-''''''''''''''''''''''''
+Map a drive to Gawati server
+""""""""""""""""""""""""""""
 
-In a new cmd shell, and connect to your VM using ::
+Exist DB server allows WebDav access from localhost only, so we will use SSH
+forwarding to make our connection appear local.
+
+Open a new cmd shell and connect to your VM using ::
 
   ssh -L 10443:localhost:10443 root@my.gawati.local
 
 This will tunnel localhost:10443 to your server:10443 and encrypt the communication
-on its path. You can lower this shell, leaving it running in the background.
+on its path. You can lower this shell, leaving it running in the background. This
+forwarding allows you to access the exist instance as a local service. For example
+you can now browse https://localhost:10443 where you can log in as admin user (credentials
+received in server installation) to the (remote) server.
 
-
-Point your webbrowser to http://localhost:10443 , log in as admin user (credentials
-received in server installation) and open 'eXide - XQuery IDE'
-
-Paste following query into main tab 'new-document' ::
-
-  xquery version "3.1";
-  data(doc('/db/apps/gawati-portal/_auth/_pw.xml')/users/user[@name='gawatiportal']/@pw)
-
-and execute by clicking 'Eval' button in top row.
-Copy the content in the 'Adaptive Output' Tab at the bottom. This is the password
-of user 'gwdata' we need below.
-
-
-In a new cmd shell, replace 'yourpastedpasswordhere' with the password retrieved
+In a new cmd shell, replace 'youradminpassword' with the password retrieved
 above and run ::
 
-  net use x: "https://localhost:10443/exist/webdav/db/apps/gawati-portal" /user:gawatiportal yourpastedpasswordhere
+  net use x: "https://localhost:10443/exist/webdav/db/apps" /user:admin youradminpassword
 
 You can close this cmd window.
 
-Open the new drive in Visual Studio Code in File -> Open Folder (CTRL+K -> CTRL+O)
+Open the new X: drive in Visual Studio Code in File -> Open Folder (CTRL+K -> CTRL+O)
 
 
 .. _Chocolatey: https://chocolatey.org/

@@ -8,6 +8,11 @@ The server setup will install all required components in the OS from `CentOS`_
 repositories or respective project sources where no CentOS packages are available.
 It will configure the OS and all services as a ready to run sytem.
 
+If you want to try Gawati on a local virtual machine, please follow the related
+instructions in :doc:`Gawati on a server / VM <../development/dev-env-vm>` to
+install Virtualbox and download / import our preinstalled CentOS 7 image, then
+continue here.
+
 The installer is written for `CentOS`_ 7. CentOS "Minimal installation" type
 is sufficient.
 
@@ -176,19 +181,9 @@ Installation Resources will be downloaded into "/opt/Download"
 Uninstalling
 ============
 
-There is no uninstaller yet, but you can use the following script to remove the
-installed software::
-
-    #!/bin/bash
-    service eXist-be stop
-    service eXist-st stop
-    service jetty-dev01 stop
-    yes | rm /etc/init.d/eXist-*
-    yes | rm /etc/init.d/jetty-dev01
-    yes | rm -rf /home/xstbe/apps
-    yes | rm -rf /home/xstst/apps
-    yes | rm -rf /home/dev01/apps
-
+There is no proper uninstaller yet, but if you installed the system with our
+default installation paths and service names, you can use the script at
+/opt/Download/installer/uninstall.sh to remove all files related to Gawati.
 
 References
 **********

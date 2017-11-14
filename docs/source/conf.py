@@ -130,7 +130,7 @@ htmlhelp_basename = 'GawatiDocsdoc'
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
-    # 'papersize': 'letterpaper',
+    'papersize': 'a4paper',
 
     # The font size ('10pt', '11pt' or '12pt').
     #
@@ -180,10 +180,10 @@ texinfo_documents = [
 # -- Options for Epub output ----------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = project
-epub_author = author
-epub_publisher = author
-epub_copyright = copyright
+epub_title = Gawati Docs
+epub_author = The Gawati Community
+epub_publisher = The Gawati Community
+epub_copyright = 2017, African Innovation Foundation
 
 # The unique identifier of the text. This can be a ISBN number
 # or the project homepage.
@@ -200,4 +200,4 @@ epub_exclude_files = ['search.html']
 
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
+intersphinx_mapping = {'https://docs.gawati.org/': None}

@@ -6,7 +6,7 @@ Developing Gawati
 Introduction
 ************
 
-Gawati is composed of different components, you don't need to install the full set to begin developing on the Gawati platform.  This section provides an outline of how you can use and individual components.
+Gawati is made of different components, you don't need to install the full set to begin developing on the Gawati platform.  This section provides an outline of how you can use and individual components.
 
 
 .. note::
@@ -18,7 +18,7 @@ Getting Started
 
 You will need to setup the basics first.
 
-Install your development environment installing and running Gawati as local services on your development system (this document provides you with additional insight).
+Prepare your development environment installing and running Gawati as local services on your development system (this document provides you with additional insight).
 Alternatively, use a prebuilt VM and Gawati installer to run Gawati as a virtual machine (this document gets you a standardised environment fast).
 
 .. toctree::
@@ -34,13 +34,13 @@ Development Workflow
 
 The standard development cycle is as follows:
   1. clone the projects from github
-  2. build the projects where neccessary (`gawati portal`_, `gawati data`_, `gawati data xml`_)
+  2. build the projects where necessary (`gawati portal`_, `gawati data`_, `gawati data xml`_)
   3. deploy onto apache (`gawati templates`_) and;
   4. deploy onto eXist-db (`gawati portal`_, `gawati data`_, `gawati data xml`_)
 
-Code for `gawati templates`_ is directly edited and commited from the filesystem.
+Code for `gawati templates`_ is directly edited and committed from the filesystem.
 
-Code for eXist-db packages requires an additional step. You wil need to export the database onto the file-system and then merge it into your github clone folder:
+Code for eXist-db packages requires an additional step. You will need to export the database onto the file-system and then merge it into your github clone folder:
 
   .. figure:: ./_images/exist-backup.png
    :alt: eXist backup
