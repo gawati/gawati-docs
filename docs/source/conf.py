@@ -180,10 +180,10 @@ texinfo_documents = [
 # -- Options for Epub output ----------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = Gawati Docs
-epub_author = The Gawati Community
-epub_publisher = The Gawati Community
-epub_copyright = 2017, African Innovation Foundation
+epub_title = 'Gawati Docs'
+epub_author = 'The Gawati Community'
+epub_publisher = 'The Gawati Community'
+epub_copyright = '2017, African Innovation Foundation'
 
 # The unique identifier of the text. This can be a ISBN number
 # or the project homepage.
