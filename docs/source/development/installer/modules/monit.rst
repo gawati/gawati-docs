@@ -1,5 +1,5 @@
-template
-########
+monit
+#####
 
 General
 *******
