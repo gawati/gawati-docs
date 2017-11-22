@@ -1,8 +1,9 @@
 
 **Current Versions**:
 
-  * `gawati portal`_, `gawati templates`_  are currently at version 1.4; 
-  * `gawati data`_, `gawati data xml`_ at version 1.5
+  * `gawati templates`_  is currently at version 1.4; 
+  * `gawati portal`_, `gawati data xml`_ at version 1.5;
+  * `gawati data`_ at version 1.6
 
 
 
