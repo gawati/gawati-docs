@@ -19,8 +19,8 @@ is sufficient.
 To download the `installation script`_, switch to user root and execute::
 
  cd
- curl https://gawati.org/gawati_server_setup.sh -o gawati_server_setup.sh
- chmod 755 gawati_server_setup.sh
+ curl https://gawati.org/setup -o setup
+ chmod 755 setup
 
 Quickstart
 ==========
@@ -29,7 +29,7 @@ The installer must be run as user root. It will switch accounts as needed.
 
 To run the installer simply run::
 
- ./gawati_server_setup.sh
+ ./setup
 
 The installer works in two steps. On first invocation it downloads a Gawati
 configuration template with our default settings. On second run the
@@ -128,7 +128,7 @@ the configuration in the ini file.
 To choose a different profile to install, provide it as a commandline parameter,
 for example::
 
- ./gawati_server_setup.sh prod
+ ./setup prod
 
 At this time, the default target "dev" is the only installation target provided by us.
 
