@@ -41,7 +41,7 @@ Gawati Server on local VM
 
 We recommend `Virtualbox`_. Install using the command ::
 
-  choco install openssh 7zip virtualbox -y
+  choco install kitty 7zip virtualbox -y
 
 We provide a Centos 7 Minimal Install `Virutalbox Image`_ using LVM and seprate
 filesystems mounted where Gawati takes up space:
@@ -77,7 +77,7 @@ IP of your VM::
 
 You can connect to it using ssh::
 
-  ssh root@my.gawati.local
+  kitty -pw MyGawatiLocal -ssh root@my.gawati.local
 
 Allow all traffic from your PC to your VM (dont do this for internet facing servers) ::
 
@@ -143,7 +143,7 @@ forwarding to make our connection appear local.
 
 Open a new cmd shell and connect to your VM using ::
 
-  ssh -L 10443:localhost:10443 root@my.gawati.local
+  kitty -pw MyGawatiLocal -ssh root@my.gawati.local -L 10443:localhost:10443
 
 This will tunnel localhost:10443 to your server:10443 and encrypt the communication
 on its path. You can lower this shell, leaving it running in the background. This
