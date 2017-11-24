@@ -4,7 +4,7 @@ Gawati as a local installation
 The below instructions are not specific to an operating system, the components will run on different operating systems.
 
 .. note::
-  Installing the JDK 8 is a pre-requisite. On Linux operating systems you can install  `OpenJDK8 <http://openjdk.java.net/install/>`_; For `Windows <https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html#CHDEBCCJ>`_ and for `Mac OSX <https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html#CHDBADCG>`_ and `Using OS X Homebrew <https://stackoverflow.com/questions/24342886/how-to-install-java-8-on-mac/28635465#28635465>`_
+  Installing the JDK 8 is a pre-requisite. On Linux operating systems you can install `OpenJDK8 <http://openjdk.java.net/install/>`_; For `Windows <https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html#CHDEBCCJ>`_ and for `Mac OSX <https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html#CHDBADCG>`_ and `Using OS X Homebrew <https://stackoverflow.com/questions/24342886/how-to-install-java-8-on-mac/28635465#28635465>`_
 
 The installation items are listed below:
 
@@ -57,40 +57,40 @@ Setup the XML data set
 To setup the XML data-set, extract the archive into a separate folder. On Linux and MacOS you can run the following command to get the data input password:
 
 .. code-block:: bash
-    :linenos:
+  :linenos:
 
-    <path_to_exist>/bin/client.sh -ouri=xmldb:exist://localhost:8080/exist/xmlrpc -u admin -P <exist_admin_password> -x "data(doc('/db/apps/gw-data/_auth/_pw.xml')/users/user[@name = 'gwdata']/@pw)"
+  <path_to_exist>/bin/client.sh -ouri=xmldb:exist://localhost:8080/exist/xmlrpc -u admin -P <exist_admin_password> -x "data(doc('/db/apps/gw-data/_auth/_pw.xml')/users/user[@name = 'gwdata']/@pw)"
 
 Where `<path_to_exist>` is the path to the eXist-db installation, and `<exist_admin_password>` is the eXist-db admin password. If you installed eXist on a different port change that in the `-ouri` setting.
 
 On Windows do the following; Start the eXist-db Client(`<path_to_exist>/bin/client.bat`). In the command window of the eXist-db client run the following commands:
 
 .. code-block:: none
-    :linenos:
+  :linenos:
 
-    find data(doc('/db/apps/gw-data/_auth/_pw.xml')/users/user[@name = 'gwdata']/@pw)
-    show 1
+  find data(doc('/db/apps/gw-data/_auth/_pw.xml')/users/user[@name = 'gwdata']/@pw)
+  show 1
 
 Copy the output password hash as shown below.
 
-  .. figure:: ./_images/client-get-data-password.png
-   :alt: Get data entry password
-   :align: center
-   :figclass: align-center
+.. figure:: ./_images/client-get-data-password.png
+  :alt: Get data entry password
+  :align: center
+  :figclass: align-center
 
 Now upload the data using the following command run from the eXist-db folder:
 
 .. code-block:: bash
-    :linenos:
+  :linenos:
 
-    ./bin/client.sh -u gwdata -P <copied_password_hash> -d -m /db/apps/gw-data/akn -p /home/data/akn_xml/akn
+  ./bin/client.sh -u gwdata -P <copied_password_hash> -d -m /db/apps/gw-data/akn -p /home/data/akn_xml/akn
 
 On Windows you will run it as :samp:`.\\bin\\client.bat` instead:
 
 .. code-block:: bash
-    :linenos:
+  :linenos:
 
-    .\bin\client.bat -u gwdata -P <copied_password_hash> -d -m /db/apps/gw-data/akn -p d:\data\akn_xml\akn
+  .\bin\client.bat -u gwdata -P <copied_password_hash> -d -m /db/apps/gw-data/akn -p d:\data\akn_xml\akn
 
 
 ****************************
@@ -106,7 +106,7 @@ The Apache configuration will allow accessing gawati over a web-browser using th
 To do this, open the `httpd.conf` (or equivalent) file of your apache installation and add the following:
 
 .. code-block:: apacheconf
-   :linenos:
+  :linenos:
 
     Alias /gwtemplates "/home/apps/path/to/gawati-templates"
     <Directory "/home/apps/path/to/gawati-templates">
@@ -130,8 +130,8 @@ To do this, open the `httpd.conf` (or equivalent) file of your apache installati
       DirectoryIndex "index.html"
       ProxyPass  "http://localhost:8080/exist/apps/gawati-portal/"
       ProxyPassReverse "http://localhost:8080/exist/apps/gawati-portal/"
-      ProxyPassReverseCookiePath /exist /
       SetEnv force-proxy-request-1.0 1
+      ProxyPassReverseCookiePath /exist /
       SetEnv proxy-nokeepalive 1
     </Location>
 
@@ -150,34 +150,34 @@ Portal Version 2
 
 The Portal Version 2 is a new front-end to the Gawati Data Server and will replace the current Portal frontend, what we call *gawati-portal*.
 
-This can be found at the following URL : `Portal v2 <https://github.com/gawati/gawati-portal-v2>`_. It has been written on the `node js <https://nodejs.org/en/>`_ platform.
+This can be found at the following URL: `Portal v2 <https://github.com/gawati/gawati-portal-v2>`_. It has been written on the `node js <https://nodejs.org/en/>`_ platform.
 
 Pre-requisities for Installing Version 2:
 
- * NVM - Node Version Manager
- * Node JS 
+  * NVM - Node Version Manager
+  * Node JS
 
-First install NVM: 
+First install NVM:
 
 .. code-block:: bash
-    :linenos:
-    
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+  :linenos:
+
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
 
 Then install node using NVM:
 
 .. code-block:: bash
-    :linenos:
+  :linenos:
 
-    nvm install node --lts
+  nvm install node --lts
 
 Then build the Portal V2 app:
 
 .. code-block:: bash
-    :linenos:
+  :linenos:
 
-    npm run build
-  
+  npm run build
+
 The `build` folder has the full app compiled as static html and JS. Put this within Apache HTTP or deploy using ExpressJS server.
 
 
