@@ -108,32 +108,32 @@ To do this, open the `httpd.conf` (or equivalent) file of your apache installati
 .. code-block:: apacheconf
   :linenos:
 
-  Alias /gwtemplates "/home/apps/path/to/gawati-templates"
-  <Directory "/home/apps/path/to/gawati-templates">
-    Require all granted
-    AllowOverride All
-    Order allow,deny
-    Allow from all
-  </Directory>
+    Alias /gwtemplates "/home/apps/path/to/gawati-templates"
+    <Directory "/home/apps/path/to/gawati-templates">
+      Require all granted
+      AllowOverride All
+      Order allow,deny
+      Allow from all
+    </Directory>
 
-  Alias /akn "/home/data/akn_pdf"
-  <Directory "/home/data/akn_pdf">
-    Require all granted
-    Options Includes FollowSymLinks
-    AllowOverride All
-    Order allow,deny
-    Allow from all
-  </Directory>
+    Alias /akn "/home/data/akn_pdf"
+    <Directory "/home/data/akn_pdf">
+      Require all granted
+      Options Includes FollowSymLinks
+      AllowOverride All
+      Order allow,deny
+      Allow from all
+    </Directory>
 
-  <Location "/gwportal/">
-    AddType text/cache-manifest .appcache
-    DirectoryIndex "index.html"
-    ProxyPass  "http://localhost:8080/exist/apps/gawati-portal/"
-    ProxyPassReverse "http://localhost:8080/exist/apps/gawati-portal/"
-    ProxyPassReverseCookiePath /exist /
-    SetEnv force-proxy-request-1.0 1
-    SetEnv proxy-nokeepalive 1
-  </Location>
+    <Location "/gwportal/">
+      AddType text/cache-manifest .appcache
+      DirectoryIndex "index.html"
+      ProxyPass  "http://localhost:8080/exist/apps/gawati-portal/"
+      ProxyPassReverse "http://localhost:8080/exist/apps/gawati-portal/"
+      SetEnv force-proxy-request-1.0 1
+      ProxyPassReverseCookiePath /exist /
+      SetEnv proxy-nokeepalive 1
+    </Location>
 
 The above assumes:
   * eXist-db is running on port 8080 (if that is not the case in your installation change it appropriately in line 16 and 17)
