@@ -144,5 +144,42 @@ The above assumes:
   On Windows the Apache Alias directory path need to use the back slash instead of the standard windows forward slash. For e.g. if the templates are in: `d:\\code\\gawati-templates` then the path in the Apache configuration should be: `d:/code/gawati-templates`
 
 
+****************
+Portal Version 2
+****************
+
+The Portal Version 2 is a new front-end to the Gawati Data Server and will replace the current Portal frontend, what we call *gawati-portal*.
+
+This can be found at the following URL : `Portal v2 <https://github.com/gawati/gawati-portal-v2>`_. It has been written on the `node js <https://nodejs.org/en/>`_ platform.
+
+Pre-requisities for Installing Version 2:
+
+ * NVM - Node Version Manager
+ * Node JS 
+
+First install NVM: 
+
+.. code-block:: bash
+    :linenos:
+    
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+
+Then install node using NVM:
+
+.. code-block:: bash
+    :linenos:
+
+    nvm install node --lts
+
+Then build the Portal V2 app:
+
+.. code-block:: bash
+    :linenos:
+
+    npm run build
+  
+The `build` folder has the full app compiled as static html and JS. Put this within Apache HTTP or deploy using ExpressJS server.
+
+
 .. _XML Data set: https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_xml_sample-1.2.zip
 .. _PDF Data set: https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_pdf_sample-1.2.zip
