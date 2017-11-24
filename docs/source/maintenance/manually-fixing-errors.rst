@@ -22,9 +22,9 @@ They follow a similar naming convention.
 Items to Check
 **************
 
-========================
-1 Check for Country Code
-========================
+================================
+1 Check for Missing Country Code
+================================
 
 Look in the `<an:identification>` tags:
 
@@ -69,9 +69,9 @@ In the above example it looks like:
     <an:FRBRcountry value="" showAs=""/>
 
 The :code:`@value` and :code:`@showAs` attributes are empty. ** This is an error **
-These attributes are used in other elements of the :code:`<an:identification>` element.
+These attributes are used in other elements of the :code:`<an:identification>` element, :code:`<an:references>` element and the :code:`<an:componentRef>` element.
 
-For exampe, within :code:`<an:FBRthis>` and :code:`<an:FRBRuri>`
+**Within :code:`<an:FRBRWork>`:**
 
 .. code-block:: xml
     :linenos:
@@ -83,4 +83,108 @@ For exampe, within :code:`<an:FBRthis>` and :code:`<an:FRBRuri>`
     </an:FRBRWork>
 
 
+**Within :code:`<an:FRBRExpression>`:**
 
+.. code-block:: xml
+    :linenos:
+
+	<an:FRBRExpression>
+	    <an:FRBRthis value="/akn//act/2000-10-18/resolution_leg182/eng@/!main"/>
+	    <an:FRBRuri value="/akn//act/2000-10-18/resolution_leg182/eng@"/>
+            ....
+	</an:FRBRExpression>
+
+
+**Within :code:`<an:FRBRManifestation>`:**
+
+.. code-block:: xml
+    :linenos:
+
+        <an:FRBRManifestation>
+            <an:FRBRthis value="/akn//act/2000-10-18/resolution_leg182/eng@/!main.xml"/>
+            <an:FRBRuri value="/akn//act/2000-10-18/resolution_leg182/eng@/.akn"/>
+	    .....
+        </an:FRBRManifestation>
+
+
+**Within :code:`<an:original>`:**
+
+.. code-block:: xml
+    :linenos:
+
+    <an:references source="#source">
+        <an:original eId="original" href="/akn//act/2000-10-18/resolution_leg182/eng@/!main"
+            showAs="RESOLUTION LEG.1(82)"/>
+	....
+    </an:references>
+
+**Within :code:`<an:componentRef>`:** (note there are 2 attributes to set here: `@src` and `@alt` )
+
+.. code-block:: xml
+    :linenos:
+
+    <an:componentRef src="/akn//act/2000-10-18/resolution_leg182/eng@/!main.pdf"
+        alt="akn__act_2000-10-18_resolution_leg182_eng_main.pdf" GUID="#embedded-doc-1"
+        showAs="ADOPTION OF AMENDMENTS OF THE LIMITATION AMOUNTS IN THE PROTOCOL OF 1992 TO AMEND THE INTERNATIONAL CONVENTION ON CIVIL LIABILITY FOR OIL POLLUTION DAMAGE, 1969"
+    />
+
+
+The country code should appear in the reference :code:`/akn/<<country code here >>>/act/2000-10-18....` after `/akn//`
+
+
+-------------------
+Fixing Country Code
+-------------------
+
+First we have to determine what is the country of origin of the document. 
+
+Open the PDF document corresponding to the XML document. 
+
+For the above example, the document is here:  :download:`example_law.pdf <./_static/example_law.pdf>`
+
+Scan the document content to understand which country it is from. The above PDF upon scanning we see:
+
+.. figure:: ./_images/change.png
+   :alt: Example Law
+   :align: center
+   :figclass: align-center
+
+We can see that it is not from a specific country but is from an international organization *International Maritime Organization* . 
+
+Now open the Excel sheet of country codes, provided here: :download:`countries.xls <./_static/countries.xls>`.
+
+The excel sheet provides country code in the first column and the country name in the 2nd. 
+
+You will find the country code for International Maritime Organization here as:
+
+.. code-block:: none
+    :linenos:
+
+    un-imo	International Maritime Organization
+
+Note that down and fix it in the XML in the following places:
+
+    1. `<an:FRBRcountry value="" showAs=""/>` becomes `<an:FRBRcountry value="un-imo" showAs="International Maritime Organization"/>`
+    2. `<an:FRBRthis value="/akn//act... />` becomes `<an:FRBRthis value="/akn/un-imo/act...." />`
+    3. `<an:FRBRthis value="/akn//act... />` becomes `<an:FRBRthis value="/akn/un-imo/act...." />`
+    4. `<an:FRBRuri value="/akn//act/2000-10-1... "/>` becomes `<an:FRBRuri value="/akn/un-imo/act/2000-10-18..."/>`
+    5. `<an:original eId="original" href="/akn//act/2000-10-18..." />` becomes `<an:original eId="original" href="/akn/un-imo/act/... " />`
+    6. And `<an:componentRef>` where:
+    
+    .. code-block:: xml
+        :linenos:
+
+        <an:componentRef src="/akn//act/2000-10-18/resolution_leg182/eng@/!main.pdf" alt="akn__act_2000-10-18_resolution_leg182_eng_main.pdf" />
+
+    becomes:
+
+    .. code-block:: xml
+        :linenos:
+
+        <an:componentRef src="/akn/un-imo/act/2000-10-18/resolution_leg182/eng@/!main.pdf" alt="akn_un-imo_act_2000-10-18_resolution_leg182_eng_main.pdf" />
+
+    more precisely for `@alt`:
+
+    `akn__act_2000-10-18_resolution_leg182_eng_main.pdf`  becomes:
+
+    `akn_un-imo_act_2000-10-18_resolution_leg182_eng_main.pdf`
