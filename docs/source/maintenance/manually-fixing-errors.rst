@@ -71,7 +71,7 @@ In the above example it looks like:
 The :code:`@value` and :code:`@showAs` attributes are empty. ** This is an error **
 These attributes are used in other elements of the :code:`<an:identification>` element, :code:`<an:references>` element and the :code:`<an:componentRef>` element.
 
-**Within :code:`<an:FRBRWork>`:**
+**Within `<an:FRBRWork>`:**
 
 .. code-block:: xml
     :linenos:
@@ -83,7 +83,7 @@ These attributes are used in other elements of the :code:`<an:identification>` e
     </an:FRBRWork>
 
 
-**Within :code:`<an:FRBRExpression>`:**
+**Within `<an:FRBRExpression>`:**
 
 .. code-block:: xml
     :linenos:
@@ -95,7 +95,7 @@ These attributes are used in other elements of the :code:`<an:identification>` e
 	</an:FRBRExpression>
 
 
-**Within :code:`<an:FRBRManifestation>`:**
+**Within `<an:FRBRManifestation>`:**
 
 .. code-block:: xml
     :linenos:
@@ -107,7 +107,7 @@ These attributes are used in other elements of the :code:`<an:identification>` e
         </an:FRBRManifestation>
 
 
-**Within :code:`<an:original>`:**
+**Within `<an:original>`:**
 
 .. code-block:: xml
     :linenos:
@@ -118,7 +118,7 @@ These attributes are used in other elements of the :code:`<an:identification>` e
 	....
     </an:references>
 
-**Within :code:`<an:componentRef>`:** (note there are 2 attributes to set here: `@src` and `@alt` )
+**Within `<an:componentRef>`:** (note there are 2 attributes to set here: `@src` and `@alt` )
 
 .. code-block:: xml
     :linenos:
@@ -129,7 +129,7 @@ These attributes are used in other elements of the :code:`<an:identification>` e
     />
 
 
-The country code should appear in the reference :code:`/akn/<<country code here >>>/act/2000-10-18....` after `/akn//`
+The country code should appear in the reference :code:`/akn/<<country code here >>>/act/2000-10-18....` after :code:`/akn//`
 
 
 -------------------
@@ -164,12 +164,12 @@ You will find the country code for International Maritime Organization here as:
 
 Note that down and fix it in the XML in the following places:
 
-    1. `<an:FRBRcountry value="" showAs=""/>` becomes `<an:FRBRcountry value="un-imo" showAs="International Maritime Organization"/>`
-    2. `<an:FRBRthis value="/akn//act... />` becomes `<an:FRBRthis value="/akn/un-imo/act...." />`
-    3. `<an:FRBRthis value="/akn//act... />` becomes `<an:FRBRthis value="/akn/un-imo/act...." />`
-    4. `<an:FRBRuri value="/akn//act/2000-10-1... "/>` becomes `<an:FRBRuri value="/akn/un-imo/act/2000-10-18..."/>`
-    5. `<an:original eId="original" href="/akn//act/2000-10-18..." />` becomes `<an:original eId="original" href="/akn/un-imo/act/... " />`
-    6. And `<an:componentRef>` where:
+    1. :code:`<an:FRBRcountry value="" showAs=""/>` becomes :code:`<an:FRBRcountry value="un-imo" showAs="International Maritime Organization"/>`
+    2. :code:`<an:FRBRthis value="/akn//act... />` becomes :code:`<an:FRBRthis value="/akn/un-imo/act...." />`
+    3. :code:`<an:FRBRthis value="/akn//act... />` becomes :code:`<an:FRBRthis value="/akn/un-imo/act...." />`
+    4. :code:`<an:FRBRuri value="/akn//act/2000-10-1... "/>` becomes :code:`<an:FRBRuri value="/akn/un-imo/act/2000-10-18..."/>`
+    5. :code:`<an:original eId="original" href="/akn//act/2000-10-18..." />` becomes :code:`<an:original eId="original" href="/akn/un-imo/act/... " />`
+    6. And :code:`<an:componentRef>` where:
     
     .. code-block:: xml
         :linenos:
@@ -185,6 +185,6 @@ Note that down and fix it in the XML in the following places:
 
     more precisely for `@alt`:
 
-    `akn__act_2000-10-18_resolution_leg182_eng_main.pdf`  becomes:
+    :code:`akn__act_2000-10-18_resolution_leg182_eng_main.pdf`  becomes:
 
-    `akn_un-imo_act_2000-10-18_resolution_leg182_eng_main.pdf`
+    :code:`akn_un-imo_act_2000-10-18_resolution_leg182_eng_main.pdf`
