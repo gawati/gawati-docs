@@ -2,7 +2,7 @@ Gawati Installation System
 ##########################
 
 If you are looking for how to run a standard Gawati installation, please see
-:doc:`../setup/setup-essentials`.
+:doc:`../../setup/setup-essentials`.
 
 Installation definiton file
 ***************************
