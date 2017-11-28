@@ -46,7 +46,7 @@ We recommend `Virtualbox`_. Install using the command ::
 We provide a Centos 7 Minimal Install `Virutalbox Image`_ using LVM and seprate
 filesystems mounted where Gawati takes up space:
 
-  https://drive.google.com/open?id=0B6u3y5jrQTubSnRtWEE3cFdyLWc
+  http://gawati.org/GawatiVM.7z
 
 The VM is 7zip packed. Unpack it into folder "%USERPROFILE%\\VirtualBox VMs".
 Add the VM to VirtualBox Manage using Machine -> Add , browse into the "Gawati"
