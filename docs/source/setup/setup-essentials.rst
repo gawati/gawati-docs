@@ -19,7 +19,7 @@ is sufficient.
 To download the `installation script`_, switch to user root and execute::
 
  cd
- curl https://gawati.org/setup -o setup
+ curl http://gawati.org/setup -o setup
  chmod 755 setup
 
 Quickstart
