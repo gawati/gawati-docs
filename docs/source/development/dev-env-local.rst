@@ -238,16 +238,6 @@ Test if your services are accessible
 
 Assuming your domain is `localhost`, and you have loaded the data into eXist and started the service, this url accessed via a web browser should return some XML documents to you: `http://localhost/gw/service/recent/expressions/summary`
 
-Installing Gawati Portal Server
-===============================
-
-Choose the appropriate folder to install the portal server. 
-Extract the downloaded archive into that folder, and then run:
-
-.. code-block:: bash
-  :linenos:
-
-  npm install
 
 Installing Gawati Portal UI
 ===========================
