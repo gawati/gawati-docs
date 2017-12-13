@@ -224,7 +224,6 @@ The services provided by *Gawati Data* to access the XML documents in Gawati are
     SetEnv proxy-nokeepalive 1
   </Location>
 
-
 The above assumes:
   * eXist-db is running on port 8080 (if that is not the case in your installation change it appropriately in line 16 and 17)
 
@@ -243,6 +242,8 @@ Choose the appropriate folder to install the portal server.
 Extract the downloaded archive into that folder, and then run:
 
 .. code-block:: bash
+  :linenos:
+
   npm install
 
 Installing Gawati Portal UI
@@ -254,6 +255,8 @@ And add the corresponding Apache Server configuration entry.
 For example: if you want to serve the portal from the `/ui` virtual directory of your domain, and your files are located in `/home/web/apps/gawati-portal-ui`, then use the following apache configuration --  
 
 .. code-block:: apacheconf
+  :linenos:
+
     Alias /ui "/home/web/apps/gawati-portal-ui"
     <Directory "/home/web/apps/gawati-portal-ui">	
       DirectoryIndex "index.html"
@@ -276,21 +279,28 @@ Running the REST service
 Run the following in the extracted folder to setup the server:
 
 .. code-block:: bash
+  :linenos:
+
   npm install 
 
 Assuming you extracted the portal server into : `/home/web/portal-server`, from that folder, run :
 
 .. code-block:: bash
+  :linenos:
+
   node ./bin/www
 
 To start up the web-service. By default it starts on PORT 9001. You can change that by running it as: 
 
 .. code-block:: bash
+  :linenos:
+
   PORT=11001 node ./bin/www
 
 Add the following Apache entry for it:
 
 .. code-block:: apacheconf
+  :linenos:
 
   <Location "/gw/service/short-filter-cache/">
     AddType text/cache-manifest .appcache
@@ -307,6 +317,8 @@ Running the cron service
 This is started by simply running: 
 
 .. code-block:: bash
+  :linenos:
+  
   node ./cron.js
 
 
