@@ -3,7 +3,7 @@
 
   * `gawati portal ui`_ : 2.0.4
   * `gawati portal server`_ : 1.0.1
-  * `gawati data`_ : 1.7
+  * `gawati data`_ : 1.8
   * `gawati data xml`_ :1.5
 
 
