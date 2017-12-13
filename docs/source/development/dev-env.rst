@@ -2,6 +2,9 @@
 Developing Gawati
 #################
 
+.. contents:: Table of Contents 
+  :local:
+
 ************
 Introduction
 ************

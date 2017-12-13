@@ -20,7 +20,8 @@ The installation items are listed below:
 
 You can either build the source from github for each component, or you can install a released version of a component. For getting familiar with the system we recommend starting by installing a released version.
 
-.. contents:: :local:
+.. contents:: Table of Contents 
+  :local:
 
 *********************
 Installing components

@@ -8,6 +8,8 @@ This will have your development consist of 2 components:
 
 You will use SSH to securely connect your desktop to the server.
 
+.. contents:: Table of Contents 
+  :local:
 
 Chocolatey installation system
 ******************************

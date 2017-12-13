@@ -1,6 +1,9 @@
 Server Setup
 ############
 
+.. contents:: Table of Contents 
+  :local:
+  
 Installation script
 *******************
 
