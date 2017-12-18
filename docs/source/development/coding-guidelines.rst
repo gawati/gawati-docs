@@ -74,12 +74,22 @@ These formal documentation comments allow running documentation
 generation tools to extract documentation from code. For this we
 recommend the following for different programming languages
 
--  Javascript - `JSDoc <http://usejsdoc.org/>`__ style comments for
+-  Javascript - `SphinxJS <https://pypi.python.org/pypi/sphinx-js/>`__ style comments for
    functions and modules
 -  XQuery - `XQDoc <http://exist-db.org/exist/apps/doc/xqdoc.xml>`__
    style comments for functions and modules
 -  Java -
    `JavaDoc <http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html>`__
    style comments for functions and classes.
+
+Language Specific Coding Guidelines
+===================================
+
+The below are coding guidelines of how the code is to be strucutured and written. The reason for doing this is to have consistent and readable code. Many programmging languages and frameworks provide multiple ways of doing the same thing - for e.g. in React JS you can declare components either declaring a class directly, or by calling a spefific createClass api, both approaches may look correct, but both result in different looking code -- which reduces readability. These coding guidelines below for different languages and frameoworks encourage uniformity and consistency. 
+
+React JS  
+--------
+
+Our front-end is primarily using React JS, and we recommend following the `Airbnb React JS coding  style guide <<https://github.com/airbnb/javascript/tree/master/react>`__ . 
 
 
