@@ -304,6 +304,26 @@ Add the following Apache entry for it:
     SetEnv proxy-nokeepalive 1
   </Location>
 
+  <Location "/gw/service/smart-filter-cache/">
+    AddType text/cache-manifest .appcache
+    ProxyPass  "http://localhost:9001/gwp/smart-filter-cache"
+    ProxyPassReverse "http://localhost:9001/gwp/smart-filter-cache"
+    ProxyPassReverseCookiePath /exist /
+    SetEnv force-proxy-request-1.0 1
+    SetEnv proxy-nokeepalive 1
+  </Location>
+
+  <Location "/gw/service/full-filter-cache/">
+    AddType text/cache-manifest .appcache
+    ProxyPass  "http://localhost:9001/gwp/full-filter-cache"
+    ProxyPassReverse "http://localhost:9001/gwp/full-filter-cache"
+    ProxyPassReverseCookiePath /exist /
+    SetEnv force-proxy-request-1.0 1
+    SetEnv proxy-nokeepalive 1
+  </Location>
+
+
+
 Running the cron service
 ------------------------
 
