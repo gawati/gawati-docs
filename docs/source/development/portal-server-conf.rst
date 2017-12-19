@@ -28,11 +28,4 @@
     SetEnv proxy-nokeepalive 1
   </Location>
 
-  <Location "/gw/service/keyword">
-    AddType text/cache-manifest .appcache
-    ProxyPass  "http://localhost:9001/gwp/keyword"
-    ProxyPassReverse "http://localhost:9001/gwp/keyword"
-    SetEnv force-proxy-request-1.0 1
-    SetEnv proxy-nokeepalive 1
-  </Location>
 
