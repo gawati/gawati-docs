@@ -294,7 +294,6 @@ Add the following Apache entry for it:
 
 .. code-block:: apacheconf
   :linenos:
-
   .. include:: portal-server-conf.rst
 
 
