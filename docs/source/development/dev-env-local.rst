@@ -127,105 +127,7 @@ Add the Apache configuration for gawati data services
 
 The services provided by *Gawati Data* to access the XML documents in Gawati are not directly exposed to the outside, they are reverse proxied using Apache. The full configuration of apache config entries is provided below: 
 
-.. code-block:: apacheconf
-  :linenos:
-
-  <Location "/gw/service/searchac/">
-    AddType text/cache-manifest .appcache
-    DirectoryIndex "login.html"
-    ProxyPass  "http://localhost:8080/exist/restxq/gw/searchAC/json"
-    ProxyPassReverse "http://localhost:8080/exist/restxq/gw/searchAC/json"
-    ProxyPassReverseCookiePath /exist /
-    SetEnv force-proxy-request-1.0 1
-    SetEnv proxy-nokeepalive 1
-  </Location>
-
-  <Location "/gw/service/pdf/">
-    AddType text/cache-manifest .appcache
-    DirectoryIndex "login.html"
-    ProxyPass  "http://localhost:8080/exist/restxq/gw/doc/pdf"
-    ProxyPassReverse "http://localhost:8080/exist/restxq/gw/doc/pdf"
-    ProxyPassReverseCookiePath /exist /
-    SetEnv force-proxy-request-1.0 1
-    SetEnv proxy-nokeepalive 1
-  </Location>
-
-  <Location "/gw/service/themes/expressions/summary/">
-    AddType text/cache-manifest .appcache
-    ProxyPass  "http://localhost:8080/exist/restxq/gw/themes/expressions/summary/json"
-    ProxyPassReverse "http://localhost:8080/exist/restxq/gw/themes/expressions/summary/json"
-    ProxyPassReverseCookiePath /exist /
-    SetEnv force-proxy-request-1.0 1
-    SetEnv proxy-nokeepalive 1
-  </Location>
-
-
-  <Location "/gw/service/recent/expressions/summary/">
-    AddType text/cache-manifest .appcache
-    ProxyPass  "http://localhost:8080/exist/restxq/gw/recent/expressions/summary/json"
-    ProxyPassReverse "http://localhost:8080/exist/restxq/gw/recent/expressions/summary/json"
-    ProxyPassReverseCookiePath /exist /
-    SetEnv force-proxy-request-1.0 1
-    SetEnv proxy-nokeepalive 1
-  </Location>
-
-
-  <Location "/gw/service/doc/">
-    AddType text/cache-manifest .appcache
-    ProxyPass  "http://localhost:8080/exist/restxq/gw/doc/json"
-    ProxyPassReverse "http://localhost:8080/exist/restxq/gw/doc/json"
-    ProxyPassReverseCookiePath /exist /
-    SetEnv force-proxy-request-1.0 1
-    SetEnv proxy-nokeepalive 1
-  </Location>
-
-  <Location "/gw/portal/xml/">
-    AddType text/cache-manifest .appcache
-    ProxyPass  "http://localhost:8080/exist/restxq/gw/doc"
-    ProxyPassReverse "http://localhost:8080/exist/restxq/gw/doc"
-    ProxyPassReverseCookiePath /exist /
-    SetEnv force-proxy-request-1.0 1
-    SetEnv proxy-nokeepalive 1
-  </Location>
-
-  <Location "/gw/service/search/year/">
-    AddType text/cache-manifest .appcache
-    ProxyPass  "http://localhost:8080/exist/restxq/gw/search/years/summary/json"
-    ProxyPassReverse "http://localhost:8080/exist/restxq/gw/search/years/summary/json"
-    ProxyPassReverseCookiePath /exist /
-    SetEnv force-proxy-request-1.0 1
-    SetEnv proxy-nokeepalive 1
-  </Location>
-
-
-  <Location "/gw/service/search/language/">
-    AddType text/cache-manifest .appcache
-    ProxyPass  "http://localhost:8080/exist/restxq/gw/search/languages/summary/json"
-    ProxyPassReverse "http://localhost:8080/exist/restxq/gw/search/languages/summary/json"
-    ProxyPassReverseCookiePath /exist /
-    SetEnv force-proxy-request-1.0 1
-    SetEnv proxy-nokeepalive 1
-  </Location>
-
-
-  <Location "/gw/service/search/keyword/">
-    AddType text/cache-manifest .appcache
-    ProxyPass  "http://localhost:8080/exist/restxq/gw/search/keywords/summary/json"
-    ProxyPassReverse "http://localhost:8080/exist/restxq/gw/search/keywords/summary/json"
-    ProxyPassReverseCookiePath /exist /
-    SetEnv force-proxy-request-1.0 1
-    SetEnv proxy-nokeepalive 1
-  </Location>
-
-
-  <Location "/gw/service/search/country/">
-    AddType text/cache-manifest .appcache
-    ProxyPass  "http://localhost:8080/exist/restxq/gw/search/countries/summary/json"
-    ProxyPassReverse "http://localhost:8080/exist/restxq/gw/search/countries/summary/json"
-    ProxyPassReverseCookiePath /exist /
-    SetEnv force-proxy-request-1.0 1
-    SetEnv proxy-nokeepalive 1
-  </Location>
+.. include:: gawati-data-conf.rst
 
 The above assumes:
   * eXist-db is running on port 8080 (if that is not the case in your installation change it appropriately in line 16 and 17)
@@ -247,17 +149,7 @@ And add the corresponding Apache Server configuration entry.
 
 For example: if you want to serve the portal from the `/ui` virtual directory of your domain, and your files are located in `/home/web/apps/gawati-portal-ui`, then use the following apache configuration --  
 
-.. code-block:: apacheconf
-  :linenos:
-
-    Alias /ui "/home/web/apps/gawati-portal-ui"
-    <Directory "/home/web/apps/gawati-portal-ui">	
-      DirectoryIndex "index.html"
-      Require all granted
-      AllowOverride All
-      Order allow,deny
-      Allow from all
-    </Directory>
+.. include:: portal-ui-conf.rst
 
 
 Installing Gawati Portal Server
