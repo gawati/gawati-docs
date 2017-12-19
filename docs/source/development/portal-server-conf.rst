@@ -1,3 +1,6 @@
+.. code-block:: apacheconf
+  :linenos:
+
   <Location "/gw/service/short-filter-cache/">
     AddType text/cache-manifest .appcache
     ProxyPass  "http://localhost:9001/gwp/short-filter-cache"
@@ -32,3 +35,4 @@
     SetEnv force-proxy-request-1.0 1
     SetEnv proxy-nokeepalive 1
   </Location>
+

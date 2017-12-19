@@ -292,9 +292,7 @@ To start up the web-service. By default it starts on PORT 9001. You can change t
 
 Add the following Apache entry for it:
 
-.. code-block:: apacheconf
-  :linenos:
-  .. include:: portal-server-conf.rst
+.. include:: portal-server-conf.rst
 
 
 Running the cron service
