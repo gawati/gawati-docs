@@ -182,6 +182,9 @@ To start up the web-service. By default it starts on PORT 9001. You can change t
 
   PORT=11001 node ./bin/www
 
+Add the Apache Conf entry 
+-------------------------
+
 Add the following Apache entry for it:
 
 .. include:: portal-server-conf.rst
