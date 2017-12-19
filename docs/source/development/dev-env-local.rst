@@ -335,6 +335,19 @@ This is started by simply running:
   node ./cron.js
 
 
+Environment Variables
+---------------------
+
+The server can be customized with various envirobment variables which can be specified as prefixes to the service startup. 
+
+  * WITH_CRON - setting `WITH_CRON=1` starts the server with the cron, so there is no separate process for the cron. *This is not recommended for production use*.
+  * WITH_CLIENT - setting `WITH_CLIENT=1`, the server provides the portal-ui client on the `/v2` virual directory (instead of Apache doing it). The client is expected to be in the `client/build` sub-directory.
+  * HOST - allows setting the host name or address which the server binds to, default is `127.0.0.1`. 
+  * PORT - allows setting the port on which the server listens to, default is `9001`.
+  * API_HOST - allows setting the host address to the `gawati-data` server, default is `localhost`
+  * API_PORT - allows setting the port number to the `gawati-data` server, default is `8080`
+
+
 .. _gawati-portal-ui: https://github.com/gawati/gawati-portal-ui
 .. _gawati-portal-server: https://github.com/gawati/gawati-portal-server
 .. _XML Data set: https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_xml_sample-1.2.zip
