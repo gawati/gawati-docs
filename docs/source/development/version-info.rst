@@ -5,7 +5,7 @@
   * `gawati portal server`_ : 1.0.2
   * `gawati data`_ : 1.8
   * `gawati data xml`_ :1.5
-  * `Version Compatibility Chart`_ 
+  * :doc:`Version Compatibility Chart <./version-compat>`.
 
 
 
@@ -13,4 +13,4 @@
 .. _gawati portal server: https://github.com/gawati/gawati-portal-server
 .. _gawati data: https://github.com/gawati/gawati-data
 .. _gawati data xml: https://github.com/gawati/gawati-data-xml
-.. _Version Compatibility Chart: :doc:`./version-compat`
+
