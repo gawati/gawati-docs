@@ -1,6 +1,12 @@
 Version Compatibility Chart
 ###########################
 
-.. raw:: html
-
-    <iframe style="width:90%;height:auto;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZDubqXD7YnZXDuhdhmaxzC0tk0d8ih8HITleXOPLUmbGrbjbBAVkG5AxHVuEnteQEHIE4SxbObLCD/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
++----------------+-----------------+-------------+-----------+----------------+--------+
+| GAWATI VERSION | GAWATI DATA XML | GAWATI DATA | PORTAL UI | PORTAL SERVER  | STATUS |
++================+=================+=============+===========+================+========+
+| 1.0.3          | 1.5             |    1.8      |  2.0.7    |   1.0.5        |  OK    |    
++----------------+-----------------+-------------+-----------+----------------+--------+
+| 1.0.2          | 1.5             |    1.8      |  2.0.6    |   1.0.4        |  OK    |    
++----------------+-----------------+-------------+-----------+----------------+--------+
+| 1.0.1          | 1.5             |    1.8      |  2.0.5    |   1.0.3        |  OK    |    
++----------------+-----------------+-------------+-----------+----------------+--------+
