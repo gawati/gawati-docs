@@ -13,4 +13,4 @@
 .. _gawati portal server: https://github.com/gawati/gawati-portal-server
 .. _gawati data: https://github.com/gawati/gawati-data
 .. _gawati data xml: https://github.com/gawati/gawati-data-xml
-.. _Version Compatibility Chart: version-compat
+.. _Version Compatibility Chart: version-compat.rst
