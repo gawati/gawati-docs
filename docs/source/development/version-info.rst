@@ -2,11 +2,11 @@
 **Current Versions** 
 
   * GAWATI 1.0.3
-    * `gawati portal ui`_ : 2.0.7
-    * `gawati portal server`_ : 1.0.5
-    * `gawati data`_ : 1.8
-    * `gawati data xml`_ :1.5
-    * :doc:`Version Compatibility Chart <./version-compat>`.
+    - `gawati portal ui`_ : 2.0.7
+    - `gawati portal server`_ : 1.0.5
+    - `gawati data`_ : 1.8
+    - `gawati data xml`_ :1.5
+    - :doc:`Version Compatibility Chart <./version-compat>`.
 
 
 
