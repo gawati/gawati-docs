@@ -3,7 +3,7 @@ Version Compatibility Chart
 
 +-------+--------+------+------+-------+------+
 |GAWATI |GAWATI  |GAWATI|PORTAL|PORTAL |      |
-|VERSION|DATA XML|DATA  |SERVER|UI     |STATUS|
+|VERSION|DATA XML|DATA  |UI    |SERVER |STATUS|
 +=======+========+======+======+=======+======+
 | 1.0.3 | 1.5    |1.8   |2.0.7 |1.0.5  |  OK  |    
 +-------+--------+------+------+-------+------+
