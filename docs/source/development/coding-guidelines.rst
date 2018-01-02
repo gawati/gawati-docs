@@ -115,6 +115,7 @@ Provide a line of white space between different kinds of imports. for e.g. :
 
 .. code-block:: javascript
   :linenos:
+    
     //  external component includes
     import React from 'react';  
     import axios from 'axios';  
@@ -132,7 +133,6 @@ Provide a line of white space between different kinds of imports. for e.g. :
 
     // css & image includes
     import '../css/ListingContentColumn.css';
-
 
 
 
