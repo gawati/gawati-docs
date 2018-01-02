@@ -91,5 +91,48 @@ React JS
 --------
 
 Our front-end is primarily using React JS, and we recommend following the `Airbnb React JS coding  style guide <<https://github.com/airbnb/javascript/tree/master/react>`__ . 
+Additionally we recommend the following guidelines for our React code-base. 
+
+AJAX Http Client
+~~~~~~~~~~~~~~~~
+
+Use `axios <https://github.com/axios/axios>`__ (not fetch or XMLHttpRequest) for both client and server (Node) usage.
+
+Reading/Writing Files
+~~~~~~~~~~~~~~~~~~~~~
+
+Use only async apis. 
+
+Callbacks vs Promises
+~~~~~~~~~~~~~~~~~~~~~
+
+Use Promises where possible. For APIs where there is no promise based version available, use an API promisifier (like `bluebird <http://bluebirdjs.com/>`__)
+
+Structuring Component includes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Provide a line of white space between different kinds of imports. for e.g. :
+
+.. code-block:: javascript
+  :linenos:
+    //  external component includes
+    import React from 'react';  
+    import axios from 'axios';  
+
+    //  utility function includes
+    import {apiGetCall} from '../api';                      
+    import {coerceIntoArray} from '../utils/generalhelper'; 
+
+    // component & container includes
+    import DivFeed from '../components/DivFeed';                        
+    import DivListing from '../components/DivListing';              
+    import ExprAbstract from './ExprAbstract';
+    import SearchListPaginator from '../components/SearchListPaginator';
+    import GwSpinner from '../components/GwSpinner';
+
+    // css & image includes
+    import '../css/ListingContentColumn.css';
+
+
 
 
