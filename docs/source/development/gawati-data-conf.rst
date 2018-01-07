@@ -97,3 +97,16 @@
     SetEnv force-proxy-request-1.0 1
     SetEnv proxy-nokeepalive 1
   </Location>
+
+  ##
+  ## added for gawati-data v 1.9
+  ##
+  
+  <Location "/gw/service/search/filter/">
+    AddType text/cache-manifest .appcache
+    ProxyPass  "http://localhost:8080/exist/restxq/gw/search/filter/json"
+    ProxyPassReverse "http://localhost:8080/exist/restxq/gw/search/filter/json"
+    ProxyPassReverseCookiePath /exist /
+    SetEnv force-proxy-request-1.0 1
+    SetEnv proxy-nokeepalive 1
+  </Location>

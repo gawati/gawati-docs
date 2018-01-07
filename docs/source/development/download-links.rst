@@ -8,6 +8,6 @@
 
 
 .. _Download Gawati Portal UI: https://github.com/gawati/gawati-portal-ui/releases/download/2.0.9/portal-ui-2.0.9.zip
-.. _Download Gawati Portal Server: https://github.com/gawati/gawati-portal-server/releases/download/1.0.5/portal-server-1.0.5.zip
+.. _Download Gawati Portal Server: https://github.com/gawati/gawati-portal-server/releases/download/1.0.7/portal-server-1.0.7.zip
 .. _Download Gawati Data: https://github.com/gawati/gawati-data/releases/download/1.9/gawati-data-1.9.xar
 .. _Download Gawati Data Xml: https://github.com/gawati/gawati-data-xml/releases/download/1.5/gw-data-1.5.xar
