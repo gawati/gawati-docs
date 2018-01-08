@@ -1,6 +1,8 @@
 Version Compatibility Chart
 ###########################
 
+GAWATI VERSION - is a composite version number attached to the entire stack and identifies a specific combination of packages which are compatible.
+
 +-------+--------+------+-------+-------+------+
 |GAWATI |GAWATI  |GAWATI|PORTAL |PORTAL |      |
 |VERSION|DATA XML|DATA  |UI     |SERVER |STATUS|

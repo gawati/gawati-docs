@@ -1,7 +1,7 @@
 
 **Current Versions** 
 
-  * GAWATI 1.0.3
+  * GAWATI 1.0.5
   
     - `gawati portal ui`_ : 2.0.10
     - `gawati portal server`_ : 1.0.7
