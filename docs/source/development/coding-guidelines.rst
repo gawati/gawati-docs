@@ -93,6 +93,26 @@ React JS
 Our front-end is primarily using React JS, and we recommend following the `Airbnb React JS coding  style guide <<https://github.com/airbnb/javascript/tree/master/react>`__ . 
 Additionally we recommend the following guidelines for our React code-base. 
 
+ES 2015
+~~~~~~~
+
+We recommend using `ES 2015 <https://babeljs.io/learn-es2015/>`__ for all front-end code. 
+
+so 
+
+.. code-block:: javascript
+  :linenos:
+  import { getLangs } from "../utils/i18nhelper";
+
+is good, 
+
+.. code-block:: javascript
+  :linenos:
+  require("../utils/i18nhelper");
+
+is not good.
+
+
 AJAX Http Client
 ~~~~~~~~~~~~~~~~
 
