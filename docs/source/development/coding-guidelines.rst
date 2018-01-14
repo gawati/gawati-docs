@@ -66,6 +66,15 @@ A *Revisit* comments should have a:
 * *date* : so it is easier to judge relevance and status at a later time 
 * *description* : should also indicate what conditions/events would render the comment obsolete.
 
+The following is an example of a revisit comment:
+
+.. code-block:: javascript
+  :linenos:
+  
+   /**
+     * !+LINK_ROUTE(kohsah, 2017-12-31) Switching to using linkRoute instead of hard-coded link URL
+     *
+     */
 
 Formal Documentation comments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -102,12 +111,16 @@ so
 
 .. code-block:: javascript
   :linenos:
+  
   import { getLangs } from "../utils/i18nhelper";
+
 
 is good, 
 
+
 .. code-block:: javascript
   :linenos:
+  
   require("../utils/i18nhelper");
 
 is not good.
