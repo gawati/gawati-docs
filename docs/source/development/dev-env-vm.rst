@@ -15,8 +15,9 @@ Using Gawati scripts
 ********************
 
 The installation has been prepared for you in the form of `scripts to download`_
-and run.
-Below are the individual steps described for reference and troubleshooting.
+and run. After the script based installation completes, you may skip some steps
+below and continue at `Configure Visual Studio Code`_ .
+The individual steps described below are for reference and troubleshooting.
 
 
 Chocolatey installation system
