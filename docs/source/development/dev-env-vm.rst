@@ -11,6 +11,14 @@ You will use SSH to securely connect your desktop to the server.
 .. contents:: Table of Contents 
   :local:
 
+Using Gawati scripts
+********************
+
+The installation has been prepared for you in the form of `scripts to download`_
+and run.
+Below are the individual steps described for reference and troubleshooting.
+
+
 Chocolatey installation system
 ******************************
 
@@ -163,6 +171,7 @@ You can close this cmd window.
 Open the new X: drive in Visual Studio Code in File -> Open Folder (CTRL+K -> CTRL+O)
 
 
+.. _scripts to download: http://dl.gawati.org/dev/windows-tools-latest.zip
 .. _Chocolatey: https://chocolatey.org/
 .. _Virtualbox: https://www.virtualbox.org/
 .. _Virutalbox Image: https://drive.google.com/open?id=0B6u3y5jrQTubSnRtWEE3cFdyLWc
