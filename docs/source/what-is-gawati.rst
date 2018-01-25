@@ -24,7 +24,7 @@ Your typical way to access Gawati would be via the online Portal - where you wou
   :align: center
   :figclass: align-center
 
-(a more Technically oriented diagram can be accessed :download:`here <./_images/arch_portal_tech.png>` ) 
+(for a more Technically oriented explanation click `here <./portal>`__ ) 
 
 The Portal follows a conventional architecture which is popular nowadays of having different components which integrate via HTTP REST services. 
 The portal is primarily three components:
