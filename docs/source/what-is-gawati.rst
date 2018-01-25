@@ -2,6 +2,7 @@ What is Gawati
 ##############
 
 What exactly is Gawati and what problem is it trying to solve ? 
+===============================================================
 
 Gawati is a Legal Data Exchange platform that allows Legal documents to be Authenticated, Shared and Published. 
 
@@ -9,7 +10,8 @@ If you are a custodian of legal documents, and want to publish them online, Gawa
 
 Gawati lets you own your legal data and authenticate it via digital signatures, and also control how you want it published, while at the same time making it searchable and accessible using open standards. 
 
-Here is how Gawati works. 
+Here is how Gawati works
+========================
 
 Your typical way to access Gawati would be via the online Portal - where you would search and view legal data. 
 
