@@ -2,6 +2,7 @@ Gawati Portal
 #############
 
 .. figure:: ./_images/arch_portal_tech.png
+  :target: ./_images/arch_portal_tech.png
   :alt: Portal Architecture
   :align: center
   :figclass: align-center
