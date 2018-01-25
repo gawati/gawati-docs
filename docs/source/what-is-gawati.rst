@@ -16,7 +16,7 @@ Gawati makes us of `Akoma Ntoso XML <http://www.akomantoso.org>`__ an open stand
 
 We do this quite differently. Our distributed / federated architecture allows syncing legal data across servers. 
 
-You can standalone as described above, but you can also run it federated: 
+You can run gawati as standalone as described above, but you can also run it in a federated setup, where multiple gawati instances running indepdently push data onto a central aggregator: 
 
 .. figure:: ./_images/federation.png
   :target: ./_images/federation.png
