@@ -11,7 +11,7 @@ Gawati lets you own your legal data and authenticate it via digital signatures, 
 
 Here is how Gawati works. 
 
-Your typical way to access Gawati would be via the online Portal - which supports searching and viewing legal data. 
+Your typical way to access Gawati would be via the online Portal - where you would search and view legal data. 
 
 .. figure:: ./_images/arch_portal.png
   :alt: Portal Architecture
