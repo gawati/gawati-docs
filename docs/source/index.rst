@@ -17,6 +17,7 @@ directly `on GitHub`_
 .. toctree::
    :maxdepth: 2
 
+   what-is-gawati
    about-gawati
    setup/index
    system/index
