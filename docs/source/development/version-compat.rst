@@ -7,6 +7,8 @@ GAWATI VERSION - is a composite version number attached to the entire stack and 
 |GAWATI |GAWATI  |GAWATI|PORTAL |PORTAL |      |
 |VERSION|DATA XML|DATA  |UI     |SERVER |STATUS|
 +=======+========+======+=======+=======+======+
+| 1.0.6 | 1.5    |1.9   |2.0.13 |1.0.7  |  OK  |    
++-------+--------+------+-------+-------+------+
 | 1.0.5 | 1.5    |1.9   |2.0.10 |1.0.7  |  OK  |    
 +-------+--------+------+-------+-------+------+
 | 1.0.4 | 1.5    |1.9   |2.0.9  |1.0.5  |  OK  |    
