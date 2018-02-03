@@ -213,6 +213,18 @@ The server can be customized with various envirobment variables which can be spe
   * API_HOST - allows setting the host address to the `gawati-data` server, default is `localhost`
   * API_PORT - allows setting the port number to the `gawati-data` server, default is `8080`
 
+Accessing eXist-db via SSH tunnelling
+-------------------------------------
+
+If eXist-db is installed in a remote server, by default the server starts on port 8080 and listens only to localhost.
+To access the web-based dashboard from a remote computer, you need to use ssh tunneling. For example, if your remote server  is on the I.P. Address `101.102.103.104`, and eXist-db is on port `8080`, running the following command, will give you access to the eXist-db dashboard on `http://localhost:9999` :
+
+.. code-block:: bash
+  :linenos:
+
+   ssh -vv -i <path to private key> -p 22 -L 9999:127.0.0.1:8080 server_user@101.102.103.104
+
+
 
 .. _gawati-portal-ui: https://github.com/gawati/gawati-portal-ui
 .. _gawati-portal-server: https://github.com/gawati/gawati-portal-server
