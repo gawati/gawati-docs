@@ -3,21 +3,42 @@ Version Compatibility Chart
 
 GAWATI VERSION - is a composite version number attached to the entire stack and identifies a specific combination of packages which are compatible.
 
-+-------+--------+------+-------+-------+------+
-|GAWATI |GAWATI  |GAWATI|PORTAL |PORTAL |      |
-|VERSION|DATA XML|DATA  |UI     |SERVER |STATUS|
-+=======+========+======+=======+=======+======+
-| 1.0.8 | 1.5    |1.9   |2.0.15 |1.0.8  |  OK  |    
-+-------+--------+------+-------+-------+------+
-| 1.0.6 | 1.5    |1.9   |2.0.13 |1.0.7  |  OK  |    
-+-------+--------+------+-------+-------+------+
-| 1.0.5 | 1.5    |1.9   |2.0.10 |1.0.7  |  OK  |    
-+-------+--------+------+-------+-------+------+
-| 1.0.4 | 1.5    |1.9   |2.0.9  |1.0.5  |  OK  |    
-+-------+--------+------+-------+-------+------+
-| 1.0.3 | 1.5    |1.8   |2.0.7  |1.0.5  |  OK  |    
-+-------+--------+------+-------+-------+------+
-| 1.0.2 | 1.5    |1.8   |2.0.6  |1.0.4  |  OK  |    
-+-------+--------+------+-------+-------+------+
-| 1.0.1 | 1.5    |1.8   |2.0.5  |1.0.3  |  OK  |    
-+-------+--------+------+-------+-------+------+
+.. raw:: html
+    
+        <table style="border: solid 1px black;">
+    <thead>
+        <tr>
+            <th>Gawati Version</th>
+            <th>Portal UI</th>
+            <th>Portal Server</th>
+            <th>Gawati Data</th>
+            <th>Gawati Data XML</th>
+            <th>Gawati Auth</th>
+            <th>Gawati Client</th>
+            <th>Gawati Client Server</th>
+            <th>Gawati Client Data</th>
+        </tr>
+    </thead>
+    
+        <tr>
+            <td>1.0.8</td>
+            <td>
+                    <a href="https://github.com/gawati/gawati-portal-ui/commit/14f24ae">2.0.15</a>
+                    </td>
+            <td>
+                    <a href="https://github.com/gawati/gawati-portal-server/commit/8d490f9">1.0.8</a>
+                    </td>
+            <td>
+                    <a href="https://github.com/gawati/gawati-data/commit/5bce37b">1.9</a>
+                    </td>
+            <td>
+                    <a href="https://github.com/gawati/gawati-data-xml/commit/b3e23d0">1.5</a>
+                    </td>
+            <td>gawati-auth</td>
+            <td>gawati-client</td>
+            <td>gawati-client-server</td>
+            <td>gawati-client-data</td>
+        </tr>
+        </table>
+
+    
