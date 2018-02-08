@@ -8,16 +8,17 @@ Installation script
 *******************
 
 The server setup will install all required components in the OS from `CentOS`_
-repositories or respective project sources where no CentOS packages are available.
-It will configure the OS and all services as a ready to run sytem.
+(RedHat compatible) repositories or respective project sources where no CentOS
+packages are available. It will configure the OS and all services as a ready to
+run sytem.
 
 If you want to try Gawati on a local virtual machine, please follow the related
 instructions in :doc:`Gawati on a server / VM <../development/dev-env-vm>` to
 install Virtualbox and download / import our preinstalled CentOS 7 image, then
 continue here.
 
-The installer is written for `CentOS`_ 7. CentOS "Minimal installation" type
-is sufficient.
+The installer is written for `CentOS`_ 7 (RedHat 7 compatible). CentOS / RedHat
+"Minimal installation" type is sufficient.
 
 To download the `installation script`_, switch to user root and execute::
 
@@ -194,7 +195,7 @@ References
 - :doc:`setup-installationsystem`.
 
 
-.. _CentOS: https://www.centos.org
+.. _CentOS: https://www.centos.org/about/
 .. _letsencrypt: https://letsencrypt.org
 .. _eXistdb: http://www.exist-db.org
 .. _installation script: https://raw.githubusercontent.com/gawati/setup-scripts/master/gawati/gawati_server_setup.sh
