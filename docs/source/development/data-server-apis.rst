@@ -26,7 +26,7 @@ Returns a list of document abstracts (summaries) filtered by a specific language
   - XML endpoint - `/gwd/search/languages/summary`
   - JSON endpoint - `/gwd/search/languages/summary/json`
  * Parameters:
-  - doclang - `ISO639-2 Alpha 3<http://www.loc.gov/standards/iso639-2/php/English_list.php>`_ language code
+  - doclang - `ISO639-2 Alpha 3 <http://www.loc.gov/standards/iso639-2/php/English_list.php>`_ language code
   - count - the number of results to return
   - from - the paging point where to return results from.
 
@@ -257,7 +257,7 @@ Returns an abstracted list of documents, filtered by one or more countries.
   - XML endpoint - `/gwd/search/countries/summary`
   - JSON endpoint - `/gwd/search/countries/summary/json`
  * Parameters:
-  - country(1+) - country, this parameter can be specified multiple times. Countries are specified as `ISO ALPH-2 country codes<http://www.nationsonline.org/oneworld/country_code_list.htm>`_.
+  - country(1+) - country, this parameter can be specified multiple times. Countries are specified as `ISO ALPH-2 country codes <http://www.nationsonline.org/oneworld/country_code_list.htm>`_.
   - count - the number of results to return
   - from - the paging point where to return results from.
 
