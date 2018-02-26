@@ -70,8 +70,8 @@ Installation Steps:
     :figclass: align-center
  
  11) Switch to the `Installation` tab in the client section, and choose the format as `KeyCloak OIDC JSON`. Change the following variables, `auth-server-url` to `url` and change `resource` to `clientId`:
-
-.. code-block:: JSON
+ 
+ .. code-block:: JSON
   :linenos:
 
     {
@@ -82,6 +82,7 @@ Installation Steps:
         "public-client": true,
         "confidential-port": 0
     }
+
 
  Save it is `keycloak.json` into the `gawati-portal-ui` `src/configs` folder. Note that, you don't need to do this, if you have the above defaults as the portal ships with `keycloak.json` with the same contents.
  12) Finally, go to `Realm Settings => Login` and set `User Registration` to `on` and set `Email as User name` to `on`. 
