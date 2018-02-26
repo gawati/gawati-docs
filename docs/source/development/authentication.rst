@@ -85,6 +85,7 @@ Installation Steps:
 
 
  Save it is `keycloak.json` into the `gawati-portal-ui` `src/configs` folder. Note that, you don't need to do this, if you have the above defaults as the portal ships with `keycloak.json` with the same contents.
+ 
  12) Finally, go to `Realm Settings => Login` and set `User Registration` to `on` and set `Email as User name` to `on`. 
 
    .. figure:: ./_images/kc-login.png
