@@ -30,7 +30,8 @@ Installation Steps:
  3) Unzip this and move to bin directory.
  4) Run `standalone.sh` (or in windows `standalone.bat`). By default it starts on port 8080. You should change the default port as it clashes with the default ports of eXist-db. You will need to do that in `standalone/configuration/standalone.xml` : 
         
-    .. code-block:: xml
+.. code-block:: xml
+  :linenos:
 
     <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
         ...
@@ -44,9 +45,9 @@ Installation Steps:
  7) Create a realm called `gawati`: 
     
     .. figure:: ./_images/kc-add-realm.png
-    :alt: Add Realm
-    :align: center
-    :figclass: align-center
+     :alt: Add Realm
+     :align: center
+     :figclass: align-center
  
  8) If you are getting a https related error. You can disable it from command line
   * `./bin/add-user-keycloak.sh -r master -u <user> -p <password>`
@@ -56,9 +57,9 @@ Installation Steps:
  9) Within the `gawati` realm, Navigate to client tab and click new client. Fill the name of client (`gawati-portal-ui`), the client root url and hit save:
     
     .. figure:: ./_images/kc-add-client.png
-    :alt: Add Client
-    :align: center
-    :figclass: align-center
+     :alt: Add Client
+     :align: center
+     :figclass: align-center
  
  10) Now edit the same  `gawati-portal-ui` client document, and set the other parameters as shown below. In this case we have set the root url, valid url etc to `http://localhost:3000` which is the dev mode host and port for the `gawati-portal-ui`, if you are deploying on `localhost` and apache you can set this to `http://localhost`. Correspondingly if you are deploying on a domain e.g. `http://www.domain.org` you can set it to that domain. 
 
@@ -69,15 +70,16 @@ Installation Steps:
  
  11) Switch to the `Installation` tab in the client section, and choose the format as `KeyCloak OIDC JSON`. Change the following variables, `auth-server-url` to `url` and change `resource` to `clientId`:
 
-   .. code-block:: JSON
+.. code-block:: JSON
+  :linenos:
 
     {
-     "realm": "gawati",
-     "url": "http://localhost:11080/auth",
-     "ssl-required": "external",
-     "clientId": "gawati-portal-ui",
-     "public-client": true,
-     "confidential-port": 0
+        "realm": "gawati",
+        "url": "http://localhost:11080/auth",
+        "ssl-required": "external",
+        "clientId": "gawati-portal-ui",
+        "public-client": true,
+        "confidential-port": 0
     }
 
  Save it is `keycloak.json` into the `gawati-portal-ui` `src/configs` folder. Note that, you don't need to do this, if you have the above defaults as the portal ships with `keycloak.json` with the same contents.
