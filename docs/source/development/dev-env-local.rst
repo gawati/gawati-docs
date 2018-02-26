@@ -151,6 +151,7 @@ For example: if you want to serve the portal from the `/ui` virtual directory of
 
 .. include:: portal-ui-conf.rst
 
+For setting up Authentication, click here:  :doc:`Authentication <./authentication>`
 
 Installing Gawati Portal Server
 ===============================
