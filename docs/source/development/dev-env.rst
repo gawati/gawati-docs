@@ -93,8 +93,40 @@ If you have a stock installation of eXist-db, it will be running on port 8080. A
 Click the *+* icon, and select the package you just built in the `build` folder and install it into eXist-db. You will find the package accessible via the URL: `eXist gawati data <http://localhost:8080/exist/apps/gawati-data>`
 
 
+********************
+Customizing Gawati
+********************
+Theming Gawati
+------------------
+The look and feel of Portal interface can be customized according to certain themes.  
+The Portal Interface is available presently in two themes:
 
+1. Default - `default`
+2. Kenya - `ke`
 
+A subset of the CSS styles have been extracted into CSS variables.  The variables are defined in `vars.css` files.  A `vars.css` file is available for each theme and contains the styles specific to that theme. `vars.css` and the images used in a theme are present in the `src/css/themes/<theme>` folder.  In order to apply a theme, edit the file `.env`.  Change the value of the `REACT_APP_THEME` variable to the code of the required theme. For eg., to select the Default theme, the `.env` file should read:
+
+`REACT_APP_THEME=default`
+
+The `env.development` file overrides the `.env` file in development mode.  In order to change the theme during development, modifying `env.development` alone will do.
+
+The background, foreground colors for the text content in the top bar, section and footer areas , buttons and other UI controls, logos etc., are customizable.
+
+Default theme
+^^^^^^^^^^^^^^^^^^^^^
+.. figure:: ./_images/theme_default.png
+  :target: ./_images/theme_default.png
+  :alt: Default theme
+  :align: center
+  :figclass: align-center
+
+Kenya theme
+^^^^^^^^^^^^^^^^^^^^^
+.. figure:: ./_images/theme_ke.png
+  :target: ./_images/theme_ke.png
+  :alt: Kenya theme
+  :align: center
+  :figclass: align-center
 
 .. _gawati portal: https://github.com/gawati/gawati-portal
 .. _gawati data: https://github.com/gawati/gawati-data
