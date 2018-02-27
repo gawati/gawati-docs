@@ -22,6 +22,26 @@ GAWATI VERSION - is a composite version number attached to the entire stack and 
     </thead>
     
         <tr>
+            <td style="border: 1px solid black; text-align:center;">1.0.9</td>
+            <td style="border: 1px solid black; text-align:center;">
+                    <a href="https://github.com/gawati/gawati-portal-ui/commit/170d910">2.0.16</a>
+                    </td>
+            <td style="border: 1px solid black; text-align:center;">
+                    <a href="https://github.com/gawati/gawati-portal-server/commit/8d490f9">1.0.8</a>
+                    </td>
+            <td style="border: 1px solid black; text-align:center;">
+                    <a href="https://github.com/gawati/gawati-data/commit/07c70ba">1.10</a>
+                    </td>
+            <td style="border: 1px solid black; text-align:center;">
+                    <a href="https://github.com/gawati/gawati-data-xml/commit/b3e23d0">1.5</a>
+                    </td>
+            <td style="border: 1px solid black; text-align:center;">N/A</td>
+            <td style="border: 1px solid black; text-align:center;">N/A</td>
+            <td style="border: 1px solid black; text-align:center;">N/A</td>
+            <td style="border: 1px solid black; text-align:center;">N/A</td>
+        </tr>
+    
+        <tr>
             <td style="border: 1px solid black; text-align:center;">1.0.8</td>
             <td style="border: 1px solid black; text-align:center;">
                     <a href="https://github.com/gawati/gawati-portal-ui/commit/14f24ae">2.0.15</a>
