@@ -108,6 +108,8 @@ A subset of the CSS styles have been extracted into CSS variables.  The variable
 
 `REACT_APP_THEME=default`
 
+The `env.development` file overrides the `.env` file in development mode.  In order to change the theme during development, modifying `env.development` alone will do.
+
 The background, foreground colors for the text content in the top bar, section and footer areas , buttons and other UI controls, logos etc., are customizable.
 
 Default theme
