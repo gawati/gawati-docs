@@ -245,6 +245,18 @@ The advantage of using something like a `gawati.local` pseudonym is that you can
 
   </VirtualHost>
 
+You will also need to change the following parameters in `index.html`:
+
+.. code-block:: html
+  :linenos:
+
+    <script>
+      gawati = {
+        GAWATI_PROXY: "http://localhost", <== change to http://gawati.local
+        GAWATI_DOCUMENT_SERVER: "http://localhost" <== change to http://gawati.local
+      };
+    </script>
+
 
 For setting up Authentication, click here:  :doc:`Authentication <./authentication>`
 
