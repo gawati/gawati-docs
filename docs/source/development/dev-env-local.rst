@@ -215,6 +215,7 @@ The advantage of using something like a `gawati.local` pseudonym is that you can
 
   DirectoryRoot "/path/to/gawati-portal-ui/build"
 
+  # entry for akn binary files 
   Alias /akn "/path/to/akn/pdf/files/folder/akn"
   <Directory "/path/to/akn/pdf/files/folder/akn">	
     DirectoryIndex "index.html"
@@ -222,6 +223,7 @@ The advantage of using something like a `gawati.local` pseudonym is that you can
     AllowOverride All
   </Directory>
 
+  # entry for gawati data
   <Location ~ "/gwd/(.*)">
     AddType text/cache-manifest .appcache
     ProxyPassMatch  "http://localhost:8080/exist/restxq/gw/$1"
@@ -231,6 +233,7 @@ The advantage of using something like a `gawati.local` pseudonym is that you can
     SetEnv proxy-nokeepalive 1
   </Location>
 
+  # entry for gawati portal server
   <Location ~ "/gwp/(.*)">
     AddType text/cache-manifest .appcache
     ProxyPassMatch  "http://localhost:9001/gwp/$1"
@@ -239,13 +242,6 @@ The advantage of using something like a `gawati.local` pseudonym is that you can
     SetEnv proxy-nokeepalive 1
   </Location>
 
-  <Location ~ "/gwc/(.*)">
-    AddType text/cache-manifest .appcache
-    ProxyPassMatch  "http://localhost:9002/gwc/$1"
-    ProxyPassReverse "http://localhost:9002/gwc/$1"
-    SetEnv force-proxy-request-1.0 1
-    SetEnv proxy-nokeepalive 1
-  </Location>
 
   </VirtualHost>
 
