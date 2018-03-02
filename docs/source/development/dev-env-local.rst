@@ -162,11 +162,12 @@ Typically to start it in development mode, all you need to do is:
   npm start
 
 This will start the portal-ui in development mode on `localhost:3000`. 
-The development mode has a proxy for REST services, and this is by default set to `localhost` which means the development mode server will proxy all requests to a data service like the following: `http://127.0.0.1/gwd/themes/expressions/summary/json?themes=trade&themes=goods&themes=supplies&count=4&from=1&to=4` via `http://localhost:3000`. This proxy is not used in production mode. 
+The development mode has a proxy for REST services, and this is by default set to `localhost` which means the development mode server will proxy all requests to a data service like the following: `http://127.0.0.1/gwd/themes/expressions/summary/json?themes=trade&themes=goods&themes=supplies&count=4&from=1&to=4` via `http://localhost:3000`. 
+This proxy is not used in production mode. 
 
 For production mode testing we recommend using a local VirtualHost in Apache. You can define an alternate name for localhost. e.g. `gawati.local`. This is done in `/etc/hosts` for Linux installations, and add an entry as follows for `gawati.local`:
 
-.. code-block ::none
+.. code-block:: none
   :linenos:
 
   127.0.0.1 localhost
@@ -174,7 +175,7 @@ For production mode testing we recommend using a local VirtualHost in Apache. Yo
 
 for windows you will need to open `C:/Windows/System32/drivers/etc/hosts`, and add the setting there for `gawati.local`. 
 
-.. code-block ::none
+.. code-block:: none
   :linenos:
 
   # Copyright (c) 1993-2009 Microsoft Corp.
@@ -205,7 +206,7 @@ for windows you will need to open `C:/Windows/System32/drivers/etc/hosts`, and a
 
 The advantage of using something like a `gawati.local` pseudonym is that you can closely mimic live deployment locally for both development and production modes. For example, the following config covers both development and production modes. Your proxy data requests in development mode channeled through `localhost` will still work even though the mappings below are for the `gawati.local` virtual host since `gawati.local` resolves to the same local IP.  
 
-.. code-block ::apacheconf
+.. code-block:: apacheconf
   :linenos:
 
   <VirtualHost 127.0.0.1:80>
