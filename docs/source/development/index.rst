@@ -7,7 +7,8 @@ Development
    developer-intro
    dev-env
    coding-guidelines
-   installer/index
    using-vscode
    data-server-apis
    package-versions
+   jenkins/index
+   installer/index
