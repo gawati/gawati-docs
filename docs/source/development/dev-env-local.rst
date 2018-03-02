@@ -151,6 +151,104 @@ For example: if you want to serve the portal from the `/ui` virtual directory of
 
 .. include:: portal-ui-conf.rst
 
+
+Development and Production mode
+-------------------------------
+
+Typically to start it in development mode, all you need to do is: 
+
+.. code:: bash 
+
+  npm start
+
+This will start the portal-ui in development mode on `localhost:3000`. 
+The development mode has a proxy for REST services, and this is by default set to `localhost` which means the development mode server will proxy all requests to a data service like the following: `http://127.0.0.1/gwd/themes/expressions/summary/json?themes=trade&themes=goods&themes=supplies&count=4&from=1&to=4` via `http://localhost:3000`. This proxy is not used in production mode. 
+
+For production mode testing we recommend using a local VirtualHost in Apache. You can define an alternate name for localhost. e.g. `gawati.local`. This is done in `/etc/hosts` for Linux installations, and add an entry as follows for `gawati.local`:
+
+.. code-block ::none
+  :linenos:
+
+  127.0.0.1 localhost
+  127.0.0.1 gawati.local  
+
+for windows you will need to open `C:/Windows/System32/drivers/etc/hosts`, and add the setting there for `gawati.local`. 
+
+.. code-block ::none
+  :linenos:
+
+  # Copyright (c) 1993-2009 Microsoft Corp.
+  #
+  # This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+  #
+  # This file contains the mappings of IP addresses to host names. Each
+  # entry should be kept on an individual line. The IP address should
+  # be placed in the first column followed by the corresponding host name.
+  # The IP address and the host name should be separated by at least one
+  # space.
+  #
+  # Additionally, comments (such as these) may be inserted on individual
+  # lines or following the machine name denoted by a '#' symbol.
+  #
+  # For example:
+  #
+  #      102.54.94.97     rhino.acme.com          # source server
+  #       38.25.63.10     x.acme.com              # x client host
+
+  # localhost name resolution is handled within DNS itself.
+  #	127.0.0.1       localhost
+  #	::1             localhost
+
+  127.0.0.1       localhost
+  127.0.0.1       gawati.local
+
+
+The advantage of using something like a `gawati.local` pseudonym is that you can closely mimic live deployment locally for both development and production modes. For example, the following config covers both development and production modes. Your proxy data requests in development mode channeled through `localhost` will still work even though the mappings below are for the `gawati.local` virtual host since `gawati.local` resolves to the same local IP.  
+
+.. code-block ::apacheconf
+  :linenos:
+
+  <VirtualHost 127.0.0.1:80>
+  ProxyRequests off
+  ServerName gawati.local
+
+  DirectoryRoot "/path/to/gawati-portal-ui/build"
+
+  Alias /akn "/path/to/akn/pdf/files/folder/akn"
+  <Directory "/path/to/akn/pdf/files/folder/akn">	
+    DirectoryIndex "index.html"
+    Require all granted
+    AllowOverride All
+  </Directory>
+
+  <Location ~ "/gwd/(.*)">
+    AddType text/cache-manifest .appcache
+    ProxyPassMatch  "http://localhost:8080/exist/restxq/gw/$1"
+    ProxyPassReverse "http://localhost:8080/exist/restxq/gw/$1"
+    ProxyPassReverseCookiePath /exist /
+    SetEnv force-proxy-request-1.0 1
+    SetEnv proxy-nokeepalive 1
+  </Location>
+
+  <Location ~ "/gwp/(.*)">
+    AddType text/cache-manifest .appcache
+    ProxyPassMatch  "http://localhost:9001/gwp/$1"
+    ProxyPassReverse "http://localhost:9001/gwp/$1"
+    SetEnv force-proxy-request-1.0 1
+    SetEnv proxy-nokeepalive 1
+  </Location>
+
+  <Location ~ "/gwc/(.*)">
+    AddType text/cache-manifest .appcache
+    ProxyPassMatch  "http://localhost:9002/gwc/$1"
+    ProxyPassReverse "http://localhost:9002/gwc/$1"
+    SetEnv force-proxy-request-1.0 1
+    SetEnv proxy-nokeepalive 1
+  </Location>
+
+  </VirtualHost>
+
+
 For setting up Authentication, click here:  :doc:`Authentication <./authentication>`
 
 Installing Gawati Portal Server
@@ -224,6 +322,8 @@ To access the web-based dashboard from a remote computer, you need to use ssh tu
   :linenos:
 
    ssh -vv -i <path to private key> -p 22 -L 9999:127.0.0.1:8080 server_user@101.102.103.104
+
+
 
 
 
