@@ -25,17 +25,17 @@ Prerequisites:
 
 Installation Steps:
 
-#. Install the Java 8 JDK
-#. Visit http://www.keycloak.org/downloads.html  and download  `KeyCloak 3.4.3 Final <https://downloads.jboss.org/keycloak/3.4.3.Final/keycloak-3.4.3.Final.zip>`_. 
-#. Unzip this and move to bin directory.
-#. To prevent KeyCloak from hanging due to lack of available entropy, change the jvm to use `urandom` instead of `random`:
+1) Install the Java 8 JDK
+2) Visit http://www.keycloak.org/downloads.html  and download  `KeyCloak 3.4.3 Final <https://downloads.jboss.org/keycloak/3.4.3.Final/keycloak-3.4.3.Final.zip>`_. 
+3) Unzip this and move to bin directory.
+4) To prevent KeyCloak from hanging due to lack of available entropy, change the jvm to use `urandom` instead of `random`:
     
     * Open the $JAVA_HOME/jre/lib/security/java.security file in a text editor.
     * Change the line:
       - Change the entry `securerandom.source=file:/dev/random` to read: 
       - `securerandom.source=file:/dev/urandom` ; Save your change and exit the text editor.
 
-#. Run `standalone.sh` (or in windows `standalone.bat`). By default it starts on port 8080. You should change the default port as it clashes with the default ports of eXist-db. You will need to do that in `standalone/configuration/standalone.xml`.
+5) Run `standalone.sh` (or in windows `standalone.bat`). By default it starts on port 8080. You should change the default port as it clashes with the default ports of eXist-db. You will need to do that in `standalone/configuration/standalone.xml`.
 
  .. code-block:: NONE
   :linenos:
@@ -48,37 +48,37 @@ Installation Steps:
     </socket>
 
 
-#. Restart the service and visit the link : `http://localhost:11080` 
-#. Click on the administration console. Login with the admin and admin.
-#. Create a realm called `gawati`: 
+6) Restart the service and visit the link : `http://localhost:11080` 
+7) Click on the administration console. Login with the admin and admin.
+8) Create a realm called `gawati`: 
     
     .. figure:: ./_images/kc-add-realm.png
      :alt: Add Realm
      :align: center
      :figclass: align-center
  
-#. If you are getting a https related error. You can disable it from command line
+9) If you are getting a https related error. You can disable it from command line
 
   * `./bin/add-user-keycloak.sh -r master -u <user> -p <password>`
   * `./bin/kcadm.sh config credentials --server http://localhost:11080/auth --realm master --user <user> --password <password>`
   * `./bin/kcadm.sh update realms/master -s sslRequired=NONE`
   * Restart the server
 
-#. Within the `gawati` realm, Navigate to client tab and click new client. Fill the name of client (`gawati-portal-ui`), the client root url and hit save:
+10) Within the `gawati` realm, Navigate to client tab and click new client. Fill the name of client (`gawati-portal-ui`), the client root url and hit save:
     
     .. figure:: ./_images/kc-add-client.png
      :alt: Add Client
      :align: center
      :figclass: align-center
  
-#. Now edit the same  `gawati-portal-ui` client document, and set the other parameters as shown below. In this case we have set the root url, valid url etc to `http://localhost:3000` which is the dev mode host and port for the `gawati-portal-ui`, if you are deploying on `localhost` and apache you can set this to `http://localhost`. Correspondingly if you are deploying on a domain e.g. `http://www.domain.org` you can set it to that domain. 
+11) Now edit the same  `gawati-portal-ui` client document, and set the other parameters as shown below. In this case we have set the root url, valid url etc to `http://localhost:3000` which is the dev mode host and port for the `gawati-portal-ui`, if you are deploying on `localhost` and apache you can set this to `http://localhost`. Correspondingly if you are deploying on a domain e.g. `http://www.domain.org` you can set it to that domain. 
 
    .. figure:: ./_images/kc-edit-client.png
     :alt: Add Client
     :align: center
     :figclass: align-center
  
-#. Switch to the `Installation` tab in the client section, and choose the format as `KeyCloak OIDC JSON`. Change the following variables, `auth-server-url` to `url` and change `resource` to `clientId`:
+12) Switch to the `Installation` tab in the client section, and choose the format as `KeyCloak OIDC JSON`. Change the following variables, `auth-server-url` to `url` and change `resource` to `clientId`:
  
  .. code-block:: JSON
   :linenos:
@@ -95,12 +95,10 @@ Installation Steps:
 
  Save it is `keycloak.json` into the `gawati-portal-ui` `src/configs` folder. Note that, you don't need to do this, if you have the above defaults as the portal ships with `keycloak.json` with the same contents.
  
-#. Finally, go to `Realm Settings => Login` and set `User Registration` to `on` and set `Email as User name` to `on`. 
+13) Finally, go to `Realm Settings => Login` and set `User Registration` to `on` and set `Email as User name` to `on`. 
 
    .. figure:: ./_images/kc-login.png
     :alt: Login
     :align: center
     :figclass: align-center
  
-
-
