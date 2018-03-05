@@ -209,21 +209,37 @@ The advantage of using something like a `gawati.local` pseudonym is that you can
 .. code-block:: apacheconf
   :linenos:
 
-  <VirtualHost 127.0.0.1:80>
+  <VirtualHost *:80>
   ProxyRequests off
   ServerName gawati.local
+  ServerAlias gawati.local
 
-  DirectoryRoot "/path/to/gawati-portal-ui/build"
+  DocumentRoot "/path/to/gawati-portal-ui/build"
 
-  # entry for akn binary files 
-  Alias /akn "/path/to/akn/pdf/files/folder/akn"
-  <Directory "/path/to/akn/pdf/files/folder/akn">	
+  <Directory "/path/to/gawati-portal-ui/build">
+    DirectoryIndex "index.html"
+    Require all granted
+    AllowOverride All
+      
+      ## the following is required for client side routing to work, 
+      ## otherwise results in a 404 on refresh
+      
+      RewriteEngine on
+      # Don't rewrite files or directories
+      RewriteCond %{REQUEST_FILENAME} -f [OR]
+      RewriteCond %{REQUEST_FILENAME} -d
+      RewriteRule ^ - [L]
+      # Rewrite everything else to index.html to allow html5 state links
+      RewriteRule ^ index.html [L]
+  </Directory>
+
+  Alias /akn "/path/to/pdf/akn"
+  <Directory "/path/to/pdf/akn">	
     DirectoryIndex "index.html"
     Require all granted
     AllowOverride All
   </Directory>
 
-  # entry for gawati data
   <Location ~ "/gwd/(.*)">
     AddType text/cache-manifest .appcache
     ProxyPassMatch  "http://localhost:8080/exist/restxq/gw/$1"
@@ -233,7 +249,6 @@ The advantage of using something like a `gawati.local` pseudonym is that you can
     SetEnv proxy-nokeepalive 1
   </Location>
 
-  # entry for gawati portal server
   <Location ~ "/gwp/(.*)">
     AddType text/cache-manifest .appcache
     ProxyPassMatch  "http://localhost:9001/gwp/$1"
@@ -242,8 +257,9 @@ The advantage of using something like a `gawati.local` pseudonym is that you can
     SetEnv proxy-nokeepalive 1
   </Location>
 
-
   </VirtualHost>
+
+
 
 You will also need to change the following parameters in `index.html`:
 
