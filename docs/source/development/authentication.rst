@@ -101,4 +101,116 @@ Installation Steps:
     :alt: Login
     :align: center
     :figclass: align-center
- 
+
+
+**********************************
+Installing KeyCloak for Production
+**********************************
+
+The following instructions deploy keycloak behind an Apache reverse proxy and SSL.
+
+#. Download `KeyCloak 3.4.3 Final <https://downloads.jboss.org/keycloak/3.4.3.Final/keycloak-3.4.3.Final.zip>`_ and unzip into the `/opt` folder. (We are assuming these commands are run as root)
+
+   .. code-block:: bash
+
+      cd /opt
+      wget https://downloads.jboss.org/keycloak/3.4.3.Final/keycloak-3.4.3.Final.zip
+      unzip keycloak-3.4.3.Final.zip
+
+
+#. Add a user for keycloak called `keycloak`, and change the ownership of the unzipped files to this user.
+
+   .. code-block:: bash
+
+      sudo chown keycloak: -R keycloak-3.4.3.Final
+
+
+#. Add a keycloak ``admin`` to ``/opt/keycloak-3.4.3.Final/standalone/configuration/keycloak-add-user.json``.
+
+   .. code-block:: bash
+
+      # run this in /opt/keycloak-3.4.3.Final if you are not already there
+      # run ``su keycloak`` to run this as the ``keycloak`` user
+      
+      ./bin/add-user-keycloak.sh --user admin --password <set an appropriate password> --realm master
+
+
+#. Modify ``standalone/configuration/standalone.xml`` to enable proxying to Keycloak:
+
+   Run these 3 commands as the ``keycloak`` user:
+
+   .. code-block:: sh
+      
+      # enable proxy forwarding, we need to forward traffic from port 8443 the secure port of keycloak to port 443 on Apache
+      ./bin/jboss-cli.sh 'embed-server,/subsystem=undertow/server=default-server/http-listener=default:write-attribute(name=proxy-address-forwarding,value=true)'
+      # add the redirect-socket attribute to enable https proxy forwarding
+      ./bin/jboss-cli.sh 'embed-server,/subsystem=undertow/server=default-server/http-listener=default:write-attribute(name=redirect-socket,value=proxy-https)'
+      # enable forwarding to port 443
+      ./bin/jboss-cli.sh 'embed-server,/socket-binding-group=standard-sockets/socket-binding=proxy-https:add(port=443)'
+
+
+#. Add a service startup config ``keycloak.service`` for systemd to start keycloak as a service:
+
+   .. code-block:: none
+
+      [Unit]
+      Description=KeyCloak
+      After=network.target
+
+      [Service]
+      Type=idle
+      User=keycloak
+      Group=keycloak
+      ExecStart=/opt/keycloak-3.4.3.Final/bin/standalone.sh -b 127.0.0.1
+      TimeoutStartSec=600
+      TimeoutStopSec=600
+
+      [Install]
+      WantedBy=multi-user.target
+
+
+   Now enable the service:
+
+   .. code-block:: bash
+
+      systemctl daemon-reload
+      systemctl start keycloak.service
+
+
+   Now check if the service is running:
+
+   .. code-block:: bash
+
+      systemctl status keycloak.service
+
+
+#. Now add the appropriate configuration to apache.
+
+   .. code-block:: apacheconf
+
+        <IfModule mod_ssl.c>
+        <VirtualHost *:443>
+
+            ProxyRequests off
+            ServerName auth.xyz.com
+            ServerAlias auth.xyz.com
+
+            ErrorLog ${APACHE_LOG_DIR}/error_auth.log
+            CustomLog ${APACHE_LOG_DIR}/access_auth.log combined
+
+            ProxyPreserveHost On
+            ProxyPass / http://localhost:8080/
+            ProxyPassReverse / http://localhost:8080/
+
+            RequestHeader set X-Forwarded-Proto "https"
+            RequestHeader set X-Forwarded-Port "443"
+
+            SSLCertificateFile /etc/letsencrypt/live/auth.xyz.com/fullchain.pem
+            SSLCertificateKeyFile /etc/letsencrypt/live/auth.xyz.com/privkey.pem
+            Include /etc/letsencrypt/options-ssl-apache.conf
+        </VirtualHost>
+        </IfModule>
+
+
+
+
