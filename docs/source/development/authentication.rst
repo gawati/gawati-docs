@@ -212,5 +212,13 @@ The following instructions deploy keycloak behind an Apache reverse proxy and SS
         </IfModule>
 
 
+  .. note::
+    If you only wish to install and test the system, See :doc:`Setup <../setup/index>`.
+    Here we created the SSL Certificates using ``letsencrypt``. Instructions for setting up signed SSL Certificates can be found here:
 
+     * On `Ubuntu 16.04 <https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-16-04>`_
+     * On `CentOS 7 <https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-centos-7>`_ 
+
+
+    
 
