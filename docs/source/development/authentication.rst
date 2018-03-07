@@ -162,8 +162,7 @@ Installation Steps
 
 #. Run ``standalone.sh`` (or in windows ``standalone.bat``). By default it starts on port 8080. You should change the default port as it clashes with the default ports of eXist-db. You will need to do that in `standalone/configuration/standalone.xml`.
 
-    .. code-block:: NONE
-    :linenos:
+    .. code-block:: xml
 
         <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
             ...
@@ -187,10 +186,14 @@ Installation Steps
     .. note::
         If you are getting a https related error. You can disable it from command line
 
-            * ``./bin/add-user-keycloak.sh -r master -u <user> -p <password>``
-            * ``./bin/kcadm.sh config credentials --server http://localhost:11080/auth --realm master --user <user> --password <password>``
-            * ``./bin/kcadm.sh update realms/master -s sslRequired=NONE``
-            * Restart the server
+            .. code-block:: sh
+            
+              ./bin/add-user-keycloak.sh -r master -u <user> -p <password>
+              ./bin/kcadm.sh config credentials --server http://localhost:11080/auth --realm master --user <user> --password <password>
+              ./bin/kcadm.sh update realms/master -s sslRequired=NONE
+             
+        
+        Restart the server
 
 
 #. Within the ``gawati`` realm, Navigate to client tab and click new client. Fill the name of client (``gawati-portal-ui``), the client root url and hit save:
