@@ -23,7 +23,7 @@ The installer is written for `CentOS`_ 7 (RedHat 7 compatible). CentOS / RedHat
 To download the `installation script`_, switch to user root and execute::
 
  cd
- curl https://gawati.org/setup -o setup
+ curl http://dl.gawati.org/dev/setup -o setup
  chmod 755 setup
 
 Quickstart
