@@ -29,7 +29,7 @@ To download the `installation script`_, switch to user root and execute::
 Quickstart
 ==========
 
-The installer *must be run as user root directly* (no sudo). It will switch accounts as needed.
+The installer **must be run as user root directly** (no sudo). It will switch accounts as needed.
 
 To run the installer simply run::
 
