@@ -1,7 +1,7 @@
 
 **Current Version** 
 
-  * GAWATI 1.0.11  <a href="http://dl.gawati.org/dev/1.0.11">download link</a>, relesased on: 14.03.2018
+  * GAWATI 1.0.11  `download link <http://dl.gawati.org/dev/1.0.11>`_ , released on: 14 March 2018
 
     
     - `gawati-data <https://github.com/gawati/gawati-data>`_ : `1.10 <https://github.com/gawati/gawati-data/commit/e04eb034a11f2528b21903ff5e4e627ab8b6c5c6>`_

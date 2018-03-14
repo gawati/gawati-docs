@@ -20,7 +20,7 @@ GAWATI VERSION - is a composite version number attached to the entire stack and 
     
         <tr>
             <td style="border: 1px solid black; text-align:center;"><a href="http://dl.gawati.org/dev/1.0.11">1.0.11</a></td>
-            <td style="border: 1px solid black; text-align:center;">14.03.2018</td>
+            <td style="border: 1px solid black; text-align:center;">14 March 2018</td>
             <td style="border: 1px solid black; text-align:center;">
                 <a href="https://github.com/gawati/gawati-portal-ui/commit/f904ab421885566ace3c2ebac75eec33e7902ccf">2.0.18</a>
                 </td>
@@ -37,7 +37,7 @@ GAWATI VERSION - is a composite version number attached to the entire stack and 
     
         <tr>
             <td style="border: 1px solid black; text-align:center;"><a href="http://dl.gawati.org/dev/1.0.10">1.0.10</a></td>
-            <td style="border: 1px solid black; text-align:center;">05.03.2018</td>
+            <td style="border: 1px solid black; text-align:center;">05 March 2018</td>
             <td style="border: 1px solid black; text-align:center;">
                 <a href="https://github.com/gawati/gawati-portal-ui/commit/cfc6ab76a2c26c1e87912f2a52c06bd176ac9b3b">2.0.17</a>
                 </td>
