@@ -23,13 +23,13 @@ The installer is written for `CentOS`_ 7 (RedHat 7 compatible). CentOS / RedHat
 To download the `installation script`_, switch to user root and execute::
 
  cd
- curl https://gawati.org/setup -o setup
+ curl http://dl.gawati.org/dev/setup -o setup
  chmod 755 setup
 
 Quickstart
 ==========
 
-The installer must be run as user root. It will switch accounts as needed.
+The installer **must be run as user root directly** (no sudo). It will switch accounts as needed.
 
 To run the installer simply run::
 
@@ -53,6 +53,18 @@ information for customising common configuration items and the key information
 of what is going to be installed.
 
 
+Firewall with SSL inspection
+****************************
+
+If you run a firewall that does SSL interception replacing server certificates, you must add your firewalls CA to the Gawati server as a trusted CA.
+To do so, retrieve your firewall CA in pem format from your firewall, copy it onto the Gawati server (SSLinterceptCA.crt in below example) and execute the following commands to add it as a trusted CA:
+
+  yum install ca-certificates
+  update-ca-trust force-enable
+  cp SSLinterceptCA.crt /etc/pki/ca-trust/source/anchors/
+  update-ca-trust extract
+
+ 
 Common configurations
 *********************
 
