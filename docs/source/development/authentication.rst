@@ -15,6 +15,10 @@ It needs to be installed and integrated to work with Gawati.
 Installing & Configuring KeyCloak for Production
 ************************************************
 
+-----
+Setup
+-----
+
 The following instructions deploy keycloak behind an Apache reverse proxy and SSL.
 
 #. Download `KeyCloak 3.4.3 Final <https://downloads.jboss.org/keycloak/3.4.3.Final/keycloak-3.4.3.Final.zip>`_ and unzip into the `/opt` folder. (We are assuming these commands are run as root)
@@ -126,6 +130,38 @@ The following instructions deploy keycloak behind an Apache reverse proxy and SS
 
      * On `Ubuntu 16.04 <https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-16-04>`_
      * On `CentOS 7 <https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-centos-7>`_ 
+
+
+---------------------------
+Installing the Gawati Theme
+---------------------------
+
+KeyCloak is themed independently of Gawati. 
+
+#. Download the `gawati keycloak theme <https://github.com/gawati/gawati-keycloak-theme/releases/download/1.0.0/gawati-keycloak-theme-1.0.0.zip>`_images
+
+#. Go to the ``themes`` folder, and extract the gawati theme into a folder called ``gawati``.
+
+#. Navigate to ``standalone/configuration/standalone.xml`` and add, a ``<welcomeTheme>`` with the value ``gawati``.
+
+   .. code-block:: xml
+
+        <theme>
+            <staticMaxAge>2592000</staticMaxAge>
+            <cacheThemes>true</cacheThemes>
+            <cacheTemplates>true</cacheTemplates>
+            <welcomeTheme>gawati</welcomeTheme>
+            <dir>${jboss.home.dir}/themes</dir>
+        </theme>
+
+
+    .. note::
+          You can set ``cacheThemes`` and ``cacheTemplates`` to ``false`` for development purposes
+
+
+#. Change the ``Display Name`` and the ``HTML Display Name``
+
+
 
 
 *************************************************
