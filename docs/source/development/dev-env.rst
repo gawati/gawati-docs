@@ -136,6 +136,10 @@ Kenya theme
 .. _Meld: http://meldmerge.org/
 .. _Meld OS X: https://yousseb.github.io/meld/
 
+
+Customizable CSS properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. raw:: html
 
   <table style="border-collapse: collapse; border: solid 1px black;">
@@ -152,11 +156,31 @@ Kenya theme
           <td style="border: 1px solid black; text-align:center;">--overrides-breadcrumb-color</td>
           <td style="border: 1px solid black; text-align:center;">Breadcrumbs text color</td>
           <td style="border: 1px solid black; text-align:center;">
-                  .. figure:: ./_images/vars/--overrides-breadcrumb-color.png
-                  :target: ./_images/vars/--overrides-breadcrumb-color.png
-                  :alt: --overrides-breadcrumb-color
-                  :align: center
-                  :figclass: align-center
+
+.. figure:: ./_images/vars/--overrides-breadcrumb-color.PNG
+  :target: ./_images/vars/--overrides-breadcrumb-color.PNG
+  :alt: --overrides-breadcrumb-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--overrides-p-color</td>
+          <td style="border: 1px solid black; text-align:center;">Overall text color</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--overrides-p-color.PNG
+  :target: ./_images/vars/--overrides-p-color.PNG
+  :alt: --overrides-p-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
               </td>
       </tr>
       
