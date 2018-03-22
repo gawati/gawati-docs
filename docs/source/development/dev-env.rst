@@ -135,3 +135,28 @@ Kenya theme
 .. _WinMerge: http://winmerge.org/
 .. _Meld: http://meldmerge.org/
 .. _Meld OS X: https://yousseb.github.io/meld/
+
+<table style="border-collapse: collapse; border: solid 1px black;">
+    
+    <thead>
+        <tr>
+            <th style="border: 1px solid black; text-align:center;">Variable</th>
+            <th style="border: 1px solid black; text-align:center;">Affected DOM</th>
+            <th style="border: 1px solid black; text-align:center;">Images</th>
+        </tr>
+    </thead>
+    
+    <tr>
+        <td style="border: 1px solid black; text-align:center;">--overrides-breadcrumb-color</td>
+        <td style="border: 1px solid black; text-align:center;">Breadcrumbs text color</td>
+        <td style="border: 1px solid black; text-align:center;">
+                .. figure:: ./_images/vars/--overrides-breadcrumb-color.png
+                :target: ./_images/vars/--overrides-breadcrumb-color.png
+                :alt: --overrides-breadcrumb-color
+                :align: center
+                :figclass: align-center
+            </td>
+    </tr>
+    
+        
+</table>
