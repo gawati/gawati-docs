@@ -467,6 +467,37 @@ Customizable CSS properties
               </td>
       </tr>
 
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--pagecontentcolumn-bg-color, --pagecontentcolumn-color</td>
+          <td style="border: 1px solid black; text-align:center;">Background, text color in the CMS pages.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--content.PNG
+  :target: ./_images/vars/--content.PNG
+  :alt: --content
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--paginator-li-bg-color: Page item background <br> --paginator-li-border-color: page item border color <br> --paginator-li-color: Page item text color<br> --paginator-li-disabled-color: Disabled page item text color <br> --paginator-li-disabled-border-color: Disabled page item border color</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--paginator.PNG
+  :target: ./_images/vars/--paginator.PNG
+  :alt: --paginator
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
       
 
           
