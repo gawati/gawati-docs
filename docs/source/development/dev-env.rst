@@ -271,5 +271,104 @@ Customizable CSS properties
               </td>
       </tr>
       
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--main-col-position</td>
+          <td style="border: 1px solid black; text-align:center;">Position of the main content column - left or right</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--content-grey-rule-bg-color</td>
+          <td style="border: 1px solid black; text-align:center;">Horizontal divider line color</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--content-grey-rule-bg-color.PNG
+  :target: ./_images/vars/--content-grey-rule-bg-color.PNG
+  :alt: --content-grey-rule-bg-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--content-text-block-color, --content-a-hover-color</td>
+          <td style="border: 1px solid black; text-align:center;">Links color and hover color</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--content-a-hover-color.PNG
+  :target: ./_images/vars/--content-a-hover-color.PNG
+  :alt: --content-a-hover-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--content-button-bg-color, --content-button-color</td>
+          <td style="border: 1px solid black; text-align:center;">Button colors in the main content column</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--content-button.PNG
+  :target: ./_images/vars/--content-button.PNG
+  :alt: --content-a-hover-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--content-tab-pane-bg-color</td>
+          <td style="border: 1px solid black; text-align:center;">Background color of the tab pane</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--content-search-result-bg-color, --content-search-result-box-shadow, --content-search-result-color, --content-search-result-h1-color</td>
+          <td style="border: 1px solid black; text-align:center;">Styles the main content column(Figure shows the region in yellow) in the search pages.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--content-search-result.PNG
+  :target: ./_images/vars/--content-search-result.PNG
+  :alt: --content-a-hover-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--content-doc-download-border-color</td>
+          <td style="border: 1px solid black; text-align:center;">Styles the border of the document actions row in the document page.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--content-doc-download-border-color.PNG
+  :target: ./_images/vars/--content-doc-download-border-color.PNG
+  :alt: --content-a-hover-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
           
   </table>
