@@ -484,7 +484,7 @@ Customizable CSS properties
       </tr>
 
       <tr>
-          <td style="border: 1px solid black; text-align:center;">--paginator-li-bg-color: Page item background <br> --paginator-li-border-color: page item border color <br> --paginator-li-color: Page item text color<br> --paginator-li-disabled-color: Disabled page item text color <br> --paginator-li-disabled-border-color: Disabled page item border color</td>
+          <td style="border: 1px solid black; text-align:center;" colspan="2">--paginator-li-bg-color: Page item background <br> --paginator-li-border-color: page item border color <br> --paginator-li-color: Page item text color<br> --paginator-li-disabled-color: Disabled page item text color <br> --paginator-li-disabled-border-color: Disabled page item border color</td>
           <td style="border: 1px solid black; text-align:center;">
 
 .. figure:: ./_images/vars/--paginator.PNG
@@ -498,7 +498,86 @@ Customizable CSS properties
               </td>
       </tr>
 
-      
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" colspan="2">
+          --reacttabs-bg-color: Tab background <br> 
+          --reacttabs-color: Tab text color <br> 
+          --reacttabs-selected-bg-color: Selected tab background color<br> 
+          --reacttabs-selected-color: Selected tab text color <br> 
+          --reacttabs-border: Tab border <br> 
+          --reacttabs-border-radius: Tab border radius <br> 
+          --reacttabs-bg-image: Tab background image (separator) <br> 
+          --reacttabs-hover-bg-color: Hovered tab background color <br> 
+          --reacttabs-hover-color: Hovered tab text color 
+          </td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--tabs.PNG
+  :target: ./_images/vars/--tabs.PNG
+  :alt: --tabs
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">
+          --feed-container-heading-bg-color
+          </td>
+          <td>Background color of the feed container on the home page(shown in yellow in the figure)</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--feed-container-heading-bg-color.PNG
+  :target: ./_images/vars/--feed-container-heading-bg-color.PNG
+  :alt: --feed-container-heading-bg-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">
+          --section-bg-color, --section-color
+          </td>
+          <td>Background and text color of the main content and sidebar container; 
+          Version text background color(shown in yellow in the figure); Background and text color of document page download links</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--section.PNG
+  :target: ./_images/vars/--section.PNG
+  :alt: --section
+  :align: center
+  :figclass: align-center
+
+.. figure:: ./_images/vars/--section-1.PNG
+  :target: ./_images/vars/--section-1.PNG
+  :alt: --section-1
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">
+          --section-flex-dir
+          </td>
+          <td>Determines the order of the main content and sidebar in the layout.  "row" and 
+          "row-reverse" values can be used to alter the position of the main columns.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. raw:: html
+
+              </td>
+      </tr>
 
           
   </table>
