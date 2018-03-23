@@ -183,6 +183,93 @@ Customizable CSS properties
 
               </td>
       </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--overrides-a-color, --overrides-a-focus-color</td>
+          <td style="border: 1px solid black; text-align:center;">Font color of links, color when in focus</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--overrides-a-color.PNG
+  :target: ./_images/vars/--overrides-a-color.PNG
+  :alt: --overrides-a-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--overrides-h-color</td>
+          <td style="border: 1px solid black; text-align:center;">Font color of headings other than the branding area</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--overrides-h-color.PNG
+  :target: ./_images/vars/--overrides-h-color.PNG
+  :alt: --overrides-h-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--font-1</td>
+          <td style="border: 1px solid black; text-align:center;">General font-family excluding headings</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--font-1.PNG
+  :target: ./_images/vars/--font-1.PNG
+  :alt: --font-1
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--font-2</td>
+          <td style="border: 1px solid black; text-align:center;">Font family of headings including the branding area</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--font-2.PNG
+  :target: ./_images/vars/--font-2.PNG
+  :alt: --font-2
+  :align: center
+  :figclass: align-center
+
+.. figure:: ./_images/vars/--font-2-1.PNG
+  :target: ./_images/vars/--font-2-1.PNG
+  :alt: --font-2
+  :align: center
+  :figclass: align-center
+
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--font-3</td>
+          <td style="border: 1px solid black; text-align:center;">Font family in the auto-suggest area</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--font-3.PNG
+  :target: ./_images/vars/--font-3.PNG
+  :alt: --font-3
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
       
           
   </table>
