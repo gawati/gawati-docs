@@ -320,7 +320,7 @@ Customizable CSS properties
 
 .. figure:: ./_images/vars/--content-button.PNG
   :target: ./_images/vars/--content-button.PNG
-  :alt: --content-a-hover-color
+  :alt: --content-button
   :align: center
   :figclass: align-center
 
@@ -346,7 +346,7 @@ Customizable CSS properties
 
 .. figure:: ./_images/vars/--content-search-result.PNG
   :target: ./_images/vars/--content-search-result.PNG
-  :alt: --content-a-hover-color
+  :alt: --content-search-result
   :align: center
   :figclass: align-center
 
@@ -362,7 +362,7 @@ Customizable CSS properties
 
 .. figure:: ./_images/vars/--content-doc-download-border-color.PNG
   :target: ./_images/vars/--content-doc-download-border-color.PNG
-  :alt: --content-a-hover-color
+  :alt: --content-doc-download-border-color
   :align: center
   :figclass: align-center
 
@@ -370,5 +370,104 @@ Customizable CSS properties
 
               </td>
       </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--autosuggest-color</td>
+          <td style="border: 1px solid black; text-align:center;">Font color of entered search text in auto-suggest search box.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--autosuggest-color.PNG
+  :target: ./_images/vars/--autosuggest-color.PNG
+  :alt: --autosuggest-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--home-wbutton-bg-color, --home-wbutton-color</td>
+          <td style="border: 1px solid black; text-align:center;">Font color of entered search text in auto-suggest search box.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--home-wbutton.PNG
+  :target: ./_images/vars/--home-wbutton.PNG
+  :alt: --home-wbutton
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--footer-bg-color, --footer-bg-color2</td>
+          <td style="border: 1px solid black; text-align:center;">Text and background color for region marked in red in the figure.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--footer-color.PNG
+  :target: ./_images/vars/--footer-color.PNG
+  :alt: --footer-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--footer-a-color</td>
+          <td style="border: 1px solid black; text-align:center;">Text color of links(marked in red in the figure) in the footer.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--footer-a-color.PNG
+  :target: ./_images/vars/--footer-a-color.PNG
+  :alt: --footer-a-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--footer-submit-bg, --footer-submit-color</td>
+          <td style="border: 1px solid black; text-align:center;">Colors of the form button in the footer.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--footer-submit.PNG
+  :target: ./_images/vars/--footer-submit.PNG
+  :alt: --footer-submit
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--footer-social-bg-color, --footer-social-color, --social-img-bg</td>
+          <td style="border: 1px solid black; text-align:center;">Background, text color in the social media region of footer.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--footer-social.PNG
+  :target: ./_images/vars/--footer-social.PNG
+  :alt: --footer-submit
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      
+
           
   </table>
