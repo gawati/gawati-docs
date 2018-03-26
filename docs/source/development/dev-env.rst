@@ -530,9 +530,9 @@ Customizable CSS properties
           <td>Background color of the feed container on the home page(shown in yellow in the figure)</td>
           <td style="border: 1px solid black; text-align:center;">
 
-.. figure:: ./_images/vars/--feed-container-heading-bg-color.PNG
-  :target: ./_images/vars/--feed-container-heading-bg-color.PNG
-  :alt: --feed-container-heading-bg-color
+.. figure:: ./_images/vars/--feed-container-heading.PNG
+  :target: ./_images/vars/--feed-container-heading.PNG
+  :alt: --feed-container-heading
   :align: center
   :figclass: align-center
 
@@ -579,5 +579,68 @@ Customizable CSS properties
               </td>
       </tr>
 
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">
+          --sidebar-col-position
+          </td>
+          <td colspan="2">Position of the sidebar column.  Assign values 'left' or 'right' based on the position of the main content column.    </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" colspan="2">
+          --sidebar-bg-color - Background color of the region in yellow(in the figure)<br>
+          --sidebar-box-shadow - Shadow of the region shown in yellow. <br>
+          --sidebar-border-radius - Border radius of the sidebar region
+          </td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--sidebar.PNG
+  :target: ./_images/vars/--sidebar.PNG
+  :alt: --sidebar
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" colspan="2">
+          --sidebar-a-color
+          </td>
+          <td> Links text color in the sidebar region
+          </td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--sidebar-a-color.PNG
+  :target: ./_images/vars/--sidebar-a-color.PNG
+  :alt: --sidebar-a-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" colspan="2">
+          --sidebar-small-heading-color - Text color of the filter headings(shown in yellow in the figure)<br>
+          --sidebar-box-shadow - Padding for the filter headings <br>
+          --sidebar-small-heading-bg - Background color of the filter headings
+          </td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--sidebar-small-heading.PNG
+  :target: ./_images/vars/--sidebar-small-heading.PNG
+  :alt: --sidebar-small-heading
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
           
   </table>
