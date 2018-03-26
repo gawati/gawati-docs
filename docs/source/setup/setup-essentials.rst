@@ -41,7 +41,8 @@ installation is executed according to the settings in this configuration file.
 
 Running the installer twice will complete our default installation, assuming you
 will access your server with the URL *https://my.gawati.local*. You will have to
-make sure that *my.gawati.local* resolves to your server IP locally.
+make sure that both *my.gawati.local* and *media.my.gawati.local* resolve to your
+server IP locally.
 
 .. note::
    The Installer will automatically set the Admin passwords for the 2 eXist instances
@@ -84,7 +85,11 @@ of the installer, find the section [gawati-portal] and change the
 SSL server certificate
 =======================
 
-Your SSL certificate name must match your Gawati server URL. The installer offers
+Gawati works with 2 distict URLs. One as the main website URL (eg my.gawati.local)
+and one for the medie / file repository providing static content derived from the
+main URL (media.my.gawati.local).
+
+Your SSL certificate names must match your Gawati server URL. The installer offers
 two mutually exclusive options for creating a certificate.
 
 - signed locally (use for internal server / testing)
@@ -107,7 +112,8 @@ locally signed certificate
 Creating such a certificate can be done without any external dependencies. It's
 meant for running internal or testing servers.
 In section [acme] make sure to configure *type=disabled*. In section [localcerts]
-set *type=install* and set variable *certs* identical to your *GAWATI_URL_ROOT*.
+set *type=install* and set variable *certs* identical to your *GAWATI_URL_ROOT*
+and add a whitespace followed by the equivalent of media.*GAWATI_URL_ROOT*.
 
 `letsencrypt`_ signed certificate
 ---------------------------------
@@ -118,7 +124,8 @@ If those conditions are met and you intend to make your server publicly availabl
 this is the preferred option.
 
 In section [localcerts] make sure to configure *type=disabled*. In section [acme]
-set *type=install* and set variable *certs* identical to your *GAWATI_URL_ROOT*.
+set *type=install* and set variable *certs* identical to your *GAWATI_URL_ROOT*
+and add a whitespace followed by the equivalent of media.*GAWATI_URL_ROOT*.
 
 builduser
 =========
