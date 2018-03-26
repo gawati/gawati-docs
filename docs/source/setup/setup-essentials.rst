@@ -85,8 +85,8 @@ of the installer, find the section [gawati-portal] and change the
 SSL server certificate
 =======================
 
-Gawati works with 2 distict URLs. One as the main website URL (eg my.gawati.local)
-and one for the medie / file repository providing static content derived from the
+Gawati works with 2 distinct URLs. One as the main website URL (eg my.gawati.local)
+and one for the media / file repository providing static content derived from the
 main URL (media.my.gawati.local).
 
 Your SSL certificate names must match your Gawati server URL. The installer offers
@@ -113,7 +113,7 @@ Creating such a certificate can be done without any external dependencies. It's
 meant for running internal or testing servers.
 In section [acme] make sure to configure *type=disabled*. In section [localcerts]
 set *type=install* and set variable *certs* identical to your *GAWATI_URL_ROOT*
-and add a whitespace followed by the equivalent of media.*GAWATI_URL_ROOT*.
+and add a whitespace followed by the equivalent of media. *GAWATI_URL_ROOT*.
 
 `letsencrypt`_ signed certificate
 ---------------------------------
@@ -125,7 +125,7 @@ this is the preferred option.
 
 In section [localcerts] make sure to configure *type=disabled*. In section [acme]
 set *type=install* and set variable *certs* identical to your *GAWATI_URL_ROOT*
-and add a whitespace followed by the equivalent of media.*GAWATI_URL_ROOT*.
+and add a whitespace followed by the equivalent of media. *GAWATI_URL_ROOT*.
 
 builduser
 =========
