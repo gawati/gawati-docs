@@ -183,6 +183,603 @@ Customizable CSS properties
 
               </td>
       </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--overrides-a-color, --overrides-a-focus-color</td>
+          <td style="border: 1px solid black; text-align:center;">Font color of links, color when in focus</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--overrides-a-color.PNG
+  :target: ./_images/vars/--overrides-a-color.PNG
+  :alt: --overrides-a-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--overrides-h-color</td>
+          <td style="border: 1px solid black; text-align:center;">Font color of headings other than the branding area</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--overrides-h-color.PNG
+  :target: ./_images/vars/--overrides-h-color.PNG
+  :alt: --overrides-h-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--font-1</td>
+          <td style="border: 1px solid black; text-align:center;">General font-family excluding headings</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--font-1.PNG
+  :target: ./_images/vars/--font-1.PNG
+  :alt: --font-1
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--font-2</td>
+          <td style="border: 1px solid black; text-align:center;">Font family of headings including the branding area</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--font-2.PNG
+  :target: ./_images/vars/--font-2.PNG
+  :alt: --font-2
+  :align: center
+  :figclass: align-center
+
+.. figure:: ./_images/vars/--font-2-1.PNG
+  :target: ./_images/vars/--font-2-1.PNG
+  :alt: --font-2
+  :align: center
+  :figclass: align-center
+
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--font-3</td>
+          <td style="border: 1px solid black; text-align:center;">Font family in the auto-suggest area</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--font-3.PNG
+  :target: ./_images/vars/--font-3.PNG
+  :alt: --font-3
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
       
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--main-col-position</td>
+          <td style="border: 1px solid black; text-align:center;">Position of the main content column - left or right</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--content-grey-rule-bg-color</td>
+          <td style="border: 1px solid black; text-align:center;">Horizontal divider line color</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--content-grey-rule-bg-color.PNG
+  :target: ./_images/vars/--content-grey-rule-bg-color.PNG
+  :alt: --content-grey-rule-bg-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--content-text-block-color, --content-a-hover-color</td>
+          <td style="border: 1px solid black; text-align:center;">Links color and hover color</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--content-a-hover-color.PNG
+  :target: ./_images/vars/--content-a-hover-color.PNG
+  :alt: --content-a-hover-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--content-button-bg-color, --content-button-color</td>
+          <td style="border: 1px solid black; text-align:center;">Button colors in the main content column</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--content-button.PNG
+  :target: ./_images/vars/--content-button.PNG
+  :alt: --content-button
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--content-tab-pane-bg-color</td>
+          <td style="border: 1px solid black; text-align:center;">Background color of the tab pane</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--content-search-result-bg-color, --content-search-result-box-shadow, --content-search-result-color, --content-search-result-h1-color</td>
+          <td style="border: 1px solid black; text-align:center;">Styles the main content column(Figure shows the region in yellow) in the search pages.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--content-search-result.PNG
+  :target: ./_images/vars/--content-search-result.PNG
+  :alt: --content-search-result
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--content-doc-download-border-color</td>
+          <td style="border: 1px solid black; text-align:center;">Styles the border of the document actions row in the document page.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--content-doc-download-border-color.PNG
+  :target: ./_images/vars/--content-doc-download-border-color.PNG
+  :alt: --content-doc-download-border-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--home-wbutton-bg-color, --home-wbutton-color</td>
+          <td style="border: 1px solid black; text-align:center;">Font color of entered search text in auto-suggest search box.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--home-wbutton.PNG
+  :target: ./_images/vars/--home-wbutton.PNG
+  :alt: --home-wbutton
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--footer-bg-color, --footer-bg-color2</td>
+          <td style="border: 1px solid black; text-align:center;">Text and background color for region marked in red in the figure.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--footer-color.PNG
+  :target: ./_images/vars/--footer-color.PNG
+  :alt: --footer-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--footer-a-color</td>
+          <td style="border: 1px solid black; text-align:center;">Text color of links(marked in red in the figure) in the footer.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--footer-a-color.PNG
+  :target: ./_images/vars/--footer-a-color.PNG
+  :alt: --footer-a-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--footer-submit-bg, --footer-submit-color</td>
+          <td style="border: 1px solid black; text-align:center;">Colors of the form button in the footer.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--footer-submit.PNG
+  :target: ./_images/vars/--footer-submit.PNG
+  :alt: --footer-submit
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--footer-social-bg-color, --footer-social-color, --social-img-bg</td>
+          <td style="border: 1px solid black; text-align:center;">Background, text color in the social media region of footer.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--footer-social.PNG
+  :target: ./_images/vars/--footer-social.PNG
+  :alt: --footer-submit
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--pagecontentcolumn-bg-color, --pagecontentcolumn-color</td>
+          <td style="border: 1px solid black; text-align:center;">Background, text color in the CMS pages.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--content.PNG
+  :target: ./_images/vars/--content.PNG
+  :alt: --content
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" colspan="2">--paginator-li-bg-color: Page item background <br> --paginator-li-border-color: page item border color <br> --paginator-li-color: Page item text color<br> --paginator-li-disabled-color: Disabled page item text color <br> --paginator-li-disabled-border-color: Disabled page item border color</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--paginator.PNG
+  :target: ./_images/vars/--paginator.PNG
+  :alt: --paginator
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" colspan="2">
+          --reacttabs-bg-color: Tab background <br> 
+          --reacttabs-color: Tab text color <br> 
+          --reacttabs-selected-bg-color: Selected tab background color<br> 
+          --reacttabs-selected-color: Selected tab text color <br> 
+          --reacttabs-border: Tab border <br> 
+          --reacttabs-border-radius: Tab border radius <br> 
+          --reacttabs-bg-image: Tab background image (separator) <br> 
+          --reacttabs-hover-bg-color: Hovered tab background color <br> 
+          --reacttabs-hover-color: Hovered tab text color 
+          </td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--tabs.PNG
+  :target: ./_images/vars/--tabs.PNG
+  :alt: --tabs
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">
+          --feed-container-heading-bg-color
+          </td>
+          <td>Background color of the feed container on the home page(shown in yellow in the figure)</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--feed-container-heading.PNG
+  :target: ./_images/vars/--feed-container-heading.PNG
+  :alt: --feed-container-heading
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">
+          --section-bg-color, --section-color
+          </td>
+          <td>Background and text color of the main content and sidebar container; 
+          Version text background color(shown in yellow in the figure); Background and text color of document page download links</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--section.PNG
+  :target: ./_images/vars/--section.PNG
+  :alt: --section
+  :align: center
+  :figclass: align-center
+
+.. figure:: ./_images/vars/--section-1.PNG
+  :target: ./_images/vars/--section-1.PNG
+  :alt: --section-1
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">
+          --section-flex-dir
+          </td>
+          <td>Determines the order of the main content and sidebar in the layout.  "row" and 
+          "row-reverse" values can be used to alter the position of the main columns.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">
+          --sidebar-col-position
+          </td>
+          <td colspan="2">Position of the sidebar column.  Assign values 'left' or 'right' based on the position of the main content column.    </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">
+          --sidebar-bg-color - Background color of the sidebar (region in yellow in the figure)<br>
+          --sidebar-box-shadow - Shadow of the sidebar. <br>
+          --sidebar-border-radius - Border radius of the sidebar.
+          </td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--sidebar.PNG
+  :target: ./_images/vars/--sidebar.PNG
+  :alt: --sidebar
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" >
+          --sidebar-a-color
+          </td>
+          <td> Links text color in the sidebar region
+          </td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--sidebar-a-color.PNG
+  :target: ./_images/vars/--sidebar-a-color.PNG
+  :alt: --sidebar-a-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" colspan="2">
+          --sidebar-small-heading-color - Text color of the filter headings(shown in yellow in the figure)<br>
+          --sidebar-box-shadow - Padding for the filter headings <br>
+          --sidebar-small-heading-bg - Background color of the filter headings
+          </td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--sidebar-small-heading.PNG
+  :target: ./_images/vars/--sidebar-small-heading.PNG
+  :alt: --sidebar-small-heading
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--autosuggest-color</td>
+          <td style="border: 1px solid black; text-align:center;">Font color of entered search text in auto-suggest search box.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--autosuggest-color.PNG
+  :target: ./_images/vars/--autosuggest-color.PNG
+  :alt: --autosuggest-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--sitesearch-li-color</td>
+          <td style="border: 1px solid black; text-align:center;">Font color of meta data in site search suggestions.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--sitesearch-li-color.PNG
+  :target: ./_images/vars/--sitesearch-li-color.PNG
+  :alt: --sitesearch-li-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--sitesearch-bg-image</td>
+          <td style="border: 1px solid black; text-align:center;">Site search results meta data separator.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--sitesearch-bg-image.PNG
+  :target: ./_images/vars/--sitesearch-bg-image.PNG
+  :alt: --sitesearch-bg-image
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" colspan="2">
+          --sitesearch-loading-bg-image - Site search results loading indicator image.<br>
+          --sitesearch-loading-bg-color - Site search input box(shown in red in the figure) background color while loading results.<br>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--sitesearch-loading-bg-image.PNG
+  :target: ./_images/vars/--sitesearch-loading-bg-image.PNG
+  :alt: --sitesearch-loading-bg-image
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" colspan="2">
+          --topbar-bg - Background color of the top bar (shown in yellow in the figure)<br>
+          --topbar-box-shadow - Shadow of the top bar.<br>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--topbar-bg.PNG
+  :target: ./_images/vars/--topbar-bg.PNG
+  :alt: --topbar-bg
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" >
+          --topbar-submit-button-bg-color
+          </td >
+          <td style="border: 1px solid black; text-align:center;"> Background color of the site search submit button in the top bar</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--topbar-submit-button-bg-color.PNG
+  :target: ./_images/vars/--topbar-submit-button-bg-color.PNG
+  :alt: --topbar-submit-button-bg-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" colspan="2">
+          --logo-img - Brand logo in the top bar<br>
+          --logo-color - Text color of the first line of heading in the branding area<br>
+          --logo-color2 - Text color of the smaller second line of heading in the branding area<br>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--logo.PNG
+  :target: ./_images/vars/--logo.PNG
+  :alt: --logo
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" colspan="2">
+          --languageswitcher-bg-color - Background color of the language switch upon hover(red)<br>
+          --languageswitcher-highlight-bg-color - Background color of the current language(yellow).<br>
+          --languageswitcher-color - Text color of the language switches<br>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--languageswitcher.PNG
+  :target: ./_images/vars/--languageswitcher.PNG
+  :alt: --languageswitcher
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">
+          --sidebar-left-margin, --sidebar-right-margin </td>
+          <td>The sidebar is collpsed by default on smaller screens and revealed using the burger menu button. Based on the
+          position of the sidebar in the large screen, set left or right margin to 0px.  The sidebar is attached to the side
+          with zero margin.  To which side the sidebar gets attached determines the swipe direction to close the sidebar.           
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--sidebar-margin.PNG
+  :target: ./_images/vars/--sidebar-margin.PNG
+  :alt: --sidebar-margin
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
           
   </table>
