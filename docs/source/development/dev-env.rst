@@ -678,12 +678,83 @@ Customizable CSS properties
       <tr>
           <td style="border: 1px solid black; text-align:center;" colspan="2">
           --sitesearch-loading-bg-image - Site search results loading indicator image.<br>
-          --sitesearch-loading-bg-color - Site search input box background color while loading results.<br>
+          --sitesearch-loading-bg-color - Site search input box(shown in red in the figure) background color while loading results.<br>
           <td style="border: 1px solid black; text-align:center;">
 
 .. figure:: ./_images/vars/--sitesearch-loading-bg-image.PNG
   :target: ./_images/vars/--sitesearch-loading-bg-image.PNG
   :alt: --sitesearch-loading-bg-image
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" colspan="2">
+          --topbar-bg - Background color of the top bar (shown in yellow in the figure)<br>
+          --topbar-box-shadow - Shadow of the top bar.<br>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--topbar-bg.PNG
+  :target: ./_images/vars/--topbar-bg.PNG
+  :alt: --topbar-bg
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" colspan="2">
+          --topbar-submit-button-bg-color
+          </td style="border: 1px solid black; text-align:center;">
+          <td> Background color of the site search submit button in the top bar</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--topbar-submit-button-bg-color.PNG
+  :target: ./_images/vars/--topbar-submit-button-bg-color.PNG
+  :alt: --topbar-submit-button-bg-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" colspan="2">
+          --logo-img - Brand logo in the top bar<br>
+          --logo-color - Text color of the first line of heading in the branding area<br>
+          --logo-color2 - Text color of the smaller second line of heading in the branding area<br>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--logo.PNG
+  :target: ./_images/vars/--logo.PNG
+  :alt: --logo
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" colspan="2">
+          --languageswitcher-bg-color - Background color of the language switch upon hover(red)<br>
+          --languageswitcher-highlight-bg-color - Background color of the current language(yellow).<br>
+          --languageswitcher-color - Text color of the language switches<br>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--logo.PNG
+  :target: ./_images/vars/--logo.PNG
+  :alt: --logo
   :align: center
   :figclass: align-center
 
