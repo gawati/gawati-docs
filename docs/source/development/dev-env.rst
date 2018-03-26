@@ -372,22 +372,6 @@ Customizable CSS properties
       </tr>
 
       <tr>
-          <td style="border: 1px solid black; text-align:center;">--autosuggest-color</td>
-          <td style="border: 1px solid black; text-align:center;">Font color of entered search text in auto-suggest search box.</td>
-          <td style="border: 1px solid black; text-align:center;">
-
-.. figure:: ./_images/vars/--autosuggest-color.PNG
-  :target: ./_images/vars/--autosuggest-color.PNG
-  :alt: --autosuggest-color
-  :align: center
-  :figclass: align-center
-
-.. raw:: html
-
-              </td>
-      </tr>
-
-      <tr>
           <td style="border: 1px solid black; text-align:center;">--home-wbutton-bg-color, --home-wbutton-color</td>
           <td style="border: 1px solid black; text-align:center;">Font color of entered search text in auto-suggest search box.</td>
           <td style="border: 1px solid black; text-align:center;">
@@ -606,7 +590,7 @@ Customizable CSS properties
       </tr>
 
       <tr>
-          <td style="border: 1px solid black; text-align:center;" colspan="2">
+          <td style="border: 1px solid black; text-align:center;" >
           --sidebar-a-color
           </td>
           <td> Links text color in the sidebar region
@@ -635,6 +619,71 @@ Customizable CSS properties
 .. figure:: ./_images/vars/--sidebar-small-heading.PNG
   :target: ./_images/vars/--sidebar-small-heading.PNG
   :alt: --sidebar-small-heading
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--autosuggest-color</td>
+          <td style="border: 1px solid black; text-align:center;">Font color of entered search text in auto-suggest search box.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--autosuggest-color.PNG
+  :target: ./_images/vars/--autosuggest-color.PNG
+  :alt: --autosuggest-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--sitesearch-li-color</td>
+          <td style="border: 1px solid black; text-align:center;">Font color of meta data in site search suggestions.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--sitesearch-li-color.PNG
+  :target: ./_images/vars/--sitesearch-li-color.PNG
+  :alt: --sitesearch-li-color
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--sitesearch-bg-image</td>
+          <td style="border: 1px solid black; text-align:center;">Site search results meta data separator.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--sitesearch-bg-image.PNG
+  :target: ./_images/vars/--sitesearch-bg-image.PNG
+  :alt: --sitesearch-bg-image
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" colspan="2">
+          --sitesearch-loading-bg-image - Site search results loading indicator image.<br>
+          --sitesearch-loading-bg-color - Site search input box background color while loading results.<br>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--sitesearch-loading-bg-image.PNG
+  :target: ./_images/vars/--sitesearch-loading-bg-image.PNG
+  :alt: --sitesearch-loading-bg-image
   :align: center
   :figclass: align-center
 
