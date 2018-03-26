@@ -571,10 +571,10 @@ Customizable CSS properties
       </tr>
 
       <tr>
-          <td style="border: 1px solid black; text-align:center;" colspan="2">
-          --sidebar-bg-color - Background color of the region in yellow(in the figure)<br>
-          --sidebar-box-shadow - Shadow of the region shown in yellow. <br>
-          --sidebar-border-radius - Border radius of the sidebar region
+          <td style="border: 1px solid black; text-align:center;">
+          --sidebar-bg-color - Background color of the sidebar (region in yellow in the figure)<br>
+          --sidebar-box-shadow - Shadow of the sidebar. <br>
+          --sidebar-border-radius - Border radius of the sidebar.
           </td>
           <td style="border: 1px solid black; text-align:center;">
 
@@ -710,10 +710,10 @@ Customizable CSS properties
       </tr>
 
       <tr>
-          <td style="border: 1px solid black; text-align:center;" colspan="2">
+          <td style="border: 1px solid black; text-align:center;" >
           --topbar-submit-button-bg-color
-          </td style="border: 1px solid black; text-align:center;">
-          <td> Background color of the site search submit button in the top bar</td>
+          </td >
+          <td style="border: 1px solid black; text-align:center;"> Background color of the site search submit button in the top bar</td>
           <td style="border: 1px solid black; text-align:center;">
 
 .. figure:: ./_images/vars/--topbar-submit-button-bg-color.PNG
@@ -752,9 +752,28 @@ Customizable CSS properties
           --languageswitcher-color - Text color of the language switches<br>
           <td style="border: 1px solid black; text-align:center;">
 
-.. figure:: ./_images/vars/--logo.PNG
-  :target: ./_images/vars/--logo.PNG
-  :alt: --logo
+.. figure:: ./_images/vars/--languageswitcher.PNG
+  :target: ./_images/vars/--languageswitcher.PNG
+  :alt: --languageswitcher
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">
+          --sidebar-left-margin, --sidebar-right-margin </td>
+          <td>The sidebar is collpsed by default on smaller screens and revealed using the burger menu button. Based on the
+          position of the sidebar in the large screen, set left or right margin to 0px.  The sidebar is attached to the side
+          with zero margin.  To which side the sidebar gets attached determines the swipe direction to close the sidebar.           
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--sidebar-margin.PNG
+  :target: ./_images/vars/--sidebar-margin.PNG
+  :alt: --sidebar-margin
   :align: center
   :figclass: align-center
 
