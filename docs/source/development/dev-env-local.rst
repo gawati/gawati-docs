@@ -16,7 +16,7 @@ The installation items are listed below:
   1. eXist-db: Download and install eXist-db, see `eXist-db <https://bintray.com/existdb/releases/exist/3.6.0/view>`_ Remember to note down the admin password of the eXist-db installation, you will need that later.
   2. Ant: Download and `install Ant <http://ant.apache.org/manual/install.html#installing>`_ 
   3. Apache HTTPD: Install Apache, on Cent OS, Ubuntu and OS X this will likely be installed by default, on Windows you will have to download and install, see `Apache for Windows <https://www.apachehaus.com/cgi-bin/download.plx>`_; enable `mod_alias`, `mod_rewrite`, `mod_proxy`, `mod_proxy_http` and enable htaccess.
-  4. KeyCloak: Authentication server, see `KeyCloak installation <./authentication.rst>`_  
+  4. KeyCloak: Authentication server, see :doc:`./authentication` 
   5. Visual Studio Code: This is if you want play around with gawati code. Download, and setup Visual Studio Code (there are versions for Windows, OS X and Linux) for development, see `VS Code Setup <./using-vscode.rst>`_
 
 You can either build the source from github for each component, or you can install a released version of a component. For getting familiar with the system we recommend starting by installing a released version.
