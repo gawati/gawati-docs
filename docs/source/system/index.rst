@@ -6,3 +6,4 @@ System Overview
 
    gawati-architecture
    gawati-data-server
+   how-authentication

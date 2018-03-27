@@ -6,10 +6,10 @@ Authentication in Gawati is handled by a separate component service called `KeyC
 Keycloak is a solution for Identity Management (IDM) and Single Sign On (SSO); See `KeyCloak <http://www.keycloak.org/>`_ .
 
 Keycloak has the following components:
- * Keycloak server – It is an authentication server to store the user information and used to get the access token. We need to just redirect client to keycloak server.
+ * Keycloak server – an authentication server to store the user information and used to get the access token.
  * Keycloak adapter – It is a componenet which help us to integrate keycloak in the existing application. 
 
-It needs to be installed and integrated to work with Gawati. 
+It needs to be installed and integrated to work with Gawati. For an overview of how KeyCloak works in Gawati, see `How Trust and Security works in Gawati <../system/how-authentication>`_
 
 ************************************************
 Installing & Configuring KeyCloak for Production
