@@ -9,7 +9,7 @@ Keycloak has the following components:
  * Keycloak server – an authentication server to store the user information and used to get the access token.
  * Keycloak adapter – It is a componenet which help us to integrate keycloak in the existing application. 
 
-It needs to be installed and integrated to work with Gawati. For an overview of how KeyCloak works in Gawati, see `How Trust and Security works in Gawati <../system/how-authentication.rst>`_
+It needs to be installed and integrated to work with Gawati. For an overview of how KeyCloak works in Gawati, see :doc:`../system/how-authentication`
 
 ************************************************
 Installing & Configuring KeyCloak for Production
