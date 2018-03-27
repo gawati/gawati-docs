@@ -2,6 +2,14 @@
 Authentication in Gawati
 ########################
 
+.. contents:: Table of Contents 
+  :local:
+
+
+************
+Introduction
+************
+
 Authentication in Gawati is handled by a separate component service called `KeyCloak`. 
 Keycloak is a solution for Identity Management (IDM) and Single Sign On (SSO); See `KeyCloak <http://www.keycloak.org/>`_ .
 
