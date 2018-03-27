@@ -14,7 +14,7 @@ This document focuses on how trust and security works in Gawati, what are the co
 In Gawati we use a third-party open source server called `Key Cloak <https://www.keycloak.org>`_.  KeyCloak uses JWT (JSON Web Tokens) to implement security. For a quick introduction to JWT see `Understanding JSON Web Tokens <https://medium.com/vandium-software/5-easy-steps-to-understanding-json-web-tokens-jwt-1164c0adfcec>`_ .
 
 .. note::
-    To install KeyCloak for Gawati use see the `Installation Instructions <../development/authentication>`_ .
+    To install KeyCloak for Gawati use see the `Installation Instructions <../development/authentication.rst>`_ .
 
 
 ***************************
