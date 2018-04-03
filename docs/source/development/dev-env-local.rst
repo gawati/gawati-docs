@@ -29,7 +29,6 @@ Installing components
 *********************
 .. note::
   .. include:: version-info.rst
-  .. include:: download-links.rst
 
 Installing Gawati Data and Gawati Data XML
 ==========================================
