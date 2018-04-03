@@ -537,6 +537,6 @@ Run Gawati Client
 .. _gawati-portal-server: https://github.com/gawati/gawati-portal-server
 .. _XML Data set: https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_xml_sample-1.2.zip
 .. _PDF Data set: https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_pdf_sample-1.2.zip
-.. _Client Sample data: https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_xml_sample-1.2.zip
+.. _Client Sample data: https://github.com/gawati/gawati-client-data/releases/download/1.0/gawati-client-data-sample.zip
 .. _Installing Keycloak: http://docs.gawati.org/en/latest/development/authentication.html#installing-configuring-keycloak-for-development
 .. _Model Realm: https://github.com/gawati/gawati-keycloak-scripts/blob/dev/model_realm/model-realm.json
