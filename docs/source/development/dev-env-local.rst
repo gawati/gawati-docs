@@ -55,7 +55,7 @@ We serve PDF and other binary documents from the filesystem to ensure optimal pe
 Download the data sets
 ----------------------
 
-Download the `XML Data set`_ and the corresponding `PDF Data set`_
+Download the XML data set, which is in 2 parts: `XML Data set`_  +  `Full Text Data set`_ (the full text data set is the full text extraction of the PDFs) and the corresponding `PDF Data set`_
 
 Setup the PDF data set
 ----------------------
@@ -65,7 +65,7 @@ To setup the PDF data-set, you just need to extract the files into a folder, e.g
 Setup the XML data set
 ----------------------
 
-To setup the XML data-set, extract the archive into a separate folder. On Linux and MacOS you can run the following command to get the data input password:
+To setup the XML data-set, extract the archives into separate folders (e.g. ``/home/data/akn_xml/akn`` and ``/home/data/akn_xml/akn_ft``). On Linux and MacOS you can run the following command to get the data input password:
 
 .. code-block:: bash
   :linenos:
@@ -95,6 +95,8 @@ Now upload the data using the following command run from the eXist-db folder:
   :linenos:
 
   ./bin/client.sh -u gwdata -P <copied_password_hash> -d -m /db/apps/gw-data/akn -p /home/data/akn_xml/akn
+  ./bin/client.sh -u gwdata -P <copied_password_hash> -d -m /db/apps/gw-data/akn_ft -p /home/data/akn_xml/akn_ft
+  
 
 On Windows you will run it as :samp:`.\\bin\\client.bat` instead:
 
@@ -102,6 +104,10 @@ On Windows you will run it as :samp:`.\\bin\\client.bat` instead:
   :linenos:
 
   .\bin\client.bat -u gwdata -P <copied_password_hash> -d -m /db/apps/gw-data/akn -p d:\data\akn_xml\akn
+
+
+.. note::
+  if you get a password failure, log in to eXist-db as admin, and reset the password for gwdata user manually, and then use that password.
 
 
 Add the Apache configuration for binary data
@@ -355,5 +361,6 @@ To access the web-based dashboard from a remote computer, you need to use ssh tu
 
 .. _gawati-portal-ui: https://github.com/gawati/gawati-portal-ui
 .. _gawati-portal-server: https://github.com/gawati/gawati-portal-server
+.. _Full Text Data set: https://github.com/gawati/gawati-data-xml/releases/download/1.6/akn_xml_ft_sample.zip
 .. _XML Data set: https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_xml_sample-1.2.zip
 .. _PDF Data set: https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_pdf_sample-1.2.zip
