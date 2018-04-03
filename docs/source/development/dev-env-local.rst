@@ -447,7 +447,7 @@ Installing Keycloak Auth
         :align: center
         :figclass: align-center
 
-#. Within the ``Ethiopia`` realm, navigate to the Clients tab. Click on `gawati-client`. Set the other parameters as shown below. In this case we have set the root url, valid url etc to http://localhost:3000 which is the dev mode host and port for `gawat-client` UI. If you are deploying on a domain e.g. http://www.domain.org you can set it to that domain.
+#. Within the ``Ethiopia`` realm, navigate to the ``Clients`` tab. Click on ``gawati-client``. Set the other parameters as shown below. In this case we have set the root url, valid url etc to http://localhost:3000 which is the dev mode host and port for gawat-client UI. If you are deploying on a domain e.g. http://www.domain.org you can set it to that domain.
 
     .. figure:: ./_images/kc-edit-dev-client.png
         :alt: Edit Client
@@ -519,7 +519,7 @@ Run Gawati Client
       cd gawati-client
       npm start
 
-#. Load ``localhost:3000`` in the browser. You should see a login screen. Register a new user.
+#. Load http://localhost:3000 in the browser. You should see a login screen. Register a new user.
 
     .. figure:: ./_images/gawati-client-login.png
       :alt: Login
