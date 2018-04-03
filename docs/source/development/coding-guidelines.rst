@@ -99,7 +99,7 @@ The below are coding guidelines of how the code is to be strucutured and written
 React JS  
 --------
 
-Our front-end is primarily using React JS, and we recommend following the `Airbnb React JS coding  style guide <<https://github.com/airbnb/javascript/tree/master/react>`__ . 
+Our front-end is primarily using React JS, and we recommend following the `Airbnb React JS coding  style guide <https://github.com/airbnb/javascript/tree/master/react>`__ . 
 Additionally we recommend the following guidelines for our React code-base. 
 
 ES 2015
