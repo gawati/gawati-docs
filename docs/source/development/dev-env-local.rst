@@ -60,7 +60,7 @@ Download the XML data set, which is in 2 parts: `XML Data set`_  +  `Full Text D
 Setup the PDF data set
 ----------------------
 
-To setup the PDF data-set, you just need to extract the files into a folder, e.g if you extract the PDF files into `/home/data/akn_pdf`, and add a Apache configuration to serve the folder contents (See line 7 below `Add the Apache configuration for binary data`_)
+To setup the PDF data-set, you just need to extract the files into a folder, e.g if you extract the PDF files into ``/home/data/akn_pdf``, and add a Apache configuration to serve the folder contents (See line 7 below `Add the Apache configuration for binary data`_)
 
 Setup the XML data set
 ----------------------
@@ -104,7 +104,7 @@ On Windows you will run it as :samp:`.\\bin\\client.bat` instead:
   :linenos:
 
   .\bin\client.bat -u gwdata -P <copied_password_hash> -d -m /db/apps/gw-data/akn -p d:\data\akn_xml\akn
-
+  .\bin\client.bat -u gwdata -P <copied_password_hash> -d -m /db/apps/gw-data/akn_ft -p /home/data/akn_xml/akn_ft
 
 .. note::
   if you get a password failure, log in to eXist-db as admin, and reset the password for gwdata user manually, and then use that password.
