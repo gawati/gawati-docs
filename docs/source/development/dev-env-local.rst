@@ -11,6 +11,10 @@ The below instructions are not specific to an operating system, the components w
     1. JDK 1.8 - On Linux operating systems you can install `OpenJDK8 <http://openjdk.java.net/install/>`_; For `Windows <https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html#CHDEBCCJ>`_ and for `Mac OSX <https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html#CHDBADCG>`_ and `Using OS X Homebrew <https://stackoverflow.com/questions/24342886/how-to-install-java-8-on-mac/28635465#28635465>`_
     2. NodeJS 8.9.x - See `NodeJS LTS 8.9.x <https://nodejs.org/en/download/>`_. Alternatively you can install NVM (for `Linux <https://github.com/creationix/nvm/>`_ , `Windows <https://github.com/coreybutler/nvm-windows>`_ ) which lets you easily install parallel versions of NodeJS. 
 
+
+.. contents:: Table of Contents 
+  :local:
+
 The installation items are listed below:
 
   1. eXist-db 3.4.1: Download and install eXist-db 3.4.1, see `eXist-db <https://bintray.com/existdb/releases/exist/3.4.1/view>`_ Remember to note down the admin password of the eXist-db installation, you will need that later.
@@ -19,10 +23,11 @@ The installation items are listed below:
   4. KeyCloak 3.4.1: Authentication server, see :doc:`./authentication` 
   5. Visual Studio Code: This is if you want play around with gawati code. Download, and setup Visual Studio Code (there are versions for Windows, OS X and Linux) for development, see `VS Code Setup <./using-vscode.rst>`_
 
+.. note::
+  If you are installing eXist-db on Mac OS X, install it within the User folder, installing it in ``/Applications`` causes problems sometimes as the permissions required for eXist-db to write to the file system are for a super user.  
+
 You can either build the source from github for each component, or you can install a released version of a component. For getting familiar with the system we recommend starting by installing a released version.
 
-.. contents:: Table of Contents 
-  :local:
 
 *********************
 Installing components
