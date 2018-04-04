@@ -1,9 +1,6 @@
 Gawati as a local installation
 ##############################
 
-.. note:: 
-  To access instructions for Gawati Portal v1 see `here <./dev-env-local-v1>`_
-
 If you haven't yet, please review the Gawati Architecture page: :doc:`./system/gawati-architecture`.
 
 The below instructions are not specific to an operating system, the components will run on different operating systems.
