@@ -1,20 +1,35 @@
 Gawati Architecture
 ###################
 
-(OUTDATED NEEDS UPDATE)
 
 The Gawati architecture is described in this document. 
 
-Gawati is composed of different components, which are outlined below:
+Gawati is composed of 2 different applications which have different audiences in mind. 
 
- * **The Raw Data:** composed of XML and PDF documents. The XML documents reside within an XML Database.  The PDF documents are served from the file system via Apache server.
- * :doc:`./gawati-data-server` this provides access to the XML and consequently PDF documents. It has native access to the XML data, and is accessed via REST services. Implemented as a XQuery RESTXQ Services on eXist-db. 
- * **Portal:** provides the front-end web portal to the Data Server. Currently implmented as an XQuery application on eXist-db. Front-end is bootstrap.
+  1. The Gawati Portal - this is a public facing portal system that allows searching and accessing legal documents
+  2. The Gawati Client - which is a back-office application that allows managing and inputting legal documents which are presented by the Portal.
 
 
-.. figure:: ./_images/arch.png
-   :alt: Gawati Architecture
+*************
+Gawati Portal
+*************
+
+The Gawati Portal is composed of different application components which are indicated below in the diagram. 
+
+.. figure:: ./_images/high-level-arch-portal.png
+   :alt: Gawati Portal Architecture
    :align: center
    :figclass: align-center
 
-   Gawati Architecture
+
+*************
+Gawati Client
+*************
+
+The Gawati Client is composed of different application components which are indicated below in the diagram. 
+
+.. figure:: ./_images/high-level-arch-client.png
+   :alt: Gawati Portal Architecture
+   :align: center
+   :figclass: align-center
+
