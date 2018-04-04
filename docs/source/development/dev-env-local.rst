@@ -1,7 +1,7 @@
 Gawati as a local installation
 ##############################
 
-If you haven't yet, please review the Gawati Architecture page: :doc:`./system/gawati-architecture`.
+If you haven't yet, please review the Gawati Architecture page: :doc:`../system/gawati-architecture`.
 
 The below instructions are not specific to an operating system, the components will run on different operating systems.
 
@@ -27,7 +27,7 @@ Installing Gawati Portal
 ************************
 
 Gawati Portal provides access to all legal and legislative data in the system.
-See :doc:`gawati-portal-arch` for an architecture overview. 
+See :ref:`gawati-portal-arch` for an architecture overview. 
 
 .. note::
   .. include:: version-info.rst
@@ -364,7 +364,7 @@ Installing Gawati Client
 
 The Gawati Client is a service that enables data input and management in Gawati. It has four components: Client UI, Client Server, Client Data (an eXist-db component), and the Keycloak Auth component.
 
-See :doc:`gawati-client-arch` for an architecture overview. 
+See :ref:`gawati-client-arch` for an architecture overview. 
 
 Setting up the Client UI
 ========================
