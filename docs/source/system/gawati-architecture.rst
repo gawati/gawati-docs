@@ -9,7 +9,7 @@ Gawati is composed of 2 different applications which have different audiences in
   1. The Gawati Portal - this is a public facing portal system that allows searching and accessing legal documents
   2. The Gawati Client - which is a back-office application that allows managing and inputting legal documents which are presented by the Portal.
 
-
+.. _gawati-portal-arch:
 *************
 Gawati Portal
 *************
@@ -21,7 +21,7 @@ The Gawati Portal is composed of different application components which are indi
    :align: center
    :figclass: align-center
 
-
+.. _gawati-client-arch:
 *************
 Gawati Client
 *************
