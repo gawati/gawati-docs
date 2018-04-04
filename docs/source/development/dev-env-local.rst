@@ -360,11 +360,194 @@ To access the web-based dashboard from a remote computer, you need to use ssh tu
    ssh -vv -i <path to private key> -p 22 -L 9999:127.0.0.1:8080 server_user@101.102.103.104
 
 
+Installing Gawati Client
+========================
+The Gawati Client is a service that enables data input and management in Gawati. It has four components: Client UI, Client Server, Client Data (an eXist-db component), and the Keycloak Auth component.
+
+Setting up the Client UI
+------------------------
+#. Clone git@gitlab.com:bungenicom/gawati/gawati-client.git
+
+#. Install packages
+
+    .. code-block:: bash
+          :linenos:
+
+          npm install
+
+#. Make the necessary Apache conf entries:
+
+    .. code-block:: apacheconf
+          :linenos:
+
+          # for gawati-client-data
+          <Location ~ "/gwdc/(.*)">
+            AddType text/cache-manifest .appcache
+            ProxyPassMatch  "http://localhost:8080/exist/restxq/gwdc/$1"
+            ProxyPassReverse "http://localhost:8080/exist/restxq/gwdc/$1"
+            SetEnv force-proxy-request-1.0 1
+            SetEnv proxy-nokeepalive 1
+          </Location>
+
+          # for gawati-client-server
+          <Location ~ "/gwc/(.*)">
+            AddType text/cache-manifest .appcache
+            ProxyPassMatch  "http://localhost:9002/gwc/$1"
+            ProxyPassReverse "http://localhost:9002/gwc/$1"
+            SetEnv force-proxy-request-1.0 1
+            SetEnv proxy-nokeepalive 1
+          </Location>
+
+Setting up the Client Server
+------------------------
+#. Clone git@gitlab.com:bungenicom/gawati/gawati-client-server.git
+#. Install packages
+
+    .. code-block:: bash
+          :linenos:
+
+          npm install
+
+Installing Gawati Client Data
+-----------------------------
+#. Clone git@gitlab.com:bungenicom/gawati/gawati-client-data.git.
+
+#. Build to get the package. 
+
+    .. code-block:: bash
+      :linenos:
+
+      cd gawati-client-data
+      ant xar
+
+    The above generates `gawati-client-data-1.0.xar` package in the ``build`` folder. Place the xar file in the ``autodeploy`` folder within the eXist installation, and restart the eXist database server. They will be automatically installed.
+
+#. Extract and load the `Client Sample data`_.
+   In eXist's dashboard -> Collections, create the path ``/db/docs/gawati-client-data``.
+
+   Now upload the data using the following command run from the eXist-db folder:
+
+    .. code-block:: bash
+      :linenos:
+
+      ./bin/client.sh -u admin -P <admin_password> -d -m /db/docs/gawati-client-data/akn -p <path_to_extracted_data>/akn
 
 
+Installing Keycloak Auth
+------------------------
+#. Follow the installation steps 1 - 6 from `Installing Keycloak`_.
+
+#. Download `model-realm.json` from `Model Realm`_.
+
+#. Clone git@github.com:gawati/gawati-keycloak-scripts.git.
+
+#. Use the downloaded model realm to generate a new development realm using the command:
+
+    .. code-block:: bash
+      :linenos:
+
+      cd gawati-keycloak-scripts
+      node index.js --new_realm_name=Ethiopia --input_realm=<path_to_model_realm>/model-realm.json --output_file=ethiopia.json
+
+#. Switch back to the administration console in the browser
+#. Create a dev realm by importing configuration from `ethiopia.json` generated above.
+
+    .. figure:: ./_images/kc-add-dev-realm.png
+        :alt: Add Realm
+        :align: center
+        :figclass: align-center
+
+#. Within the ``Ethiopia`` realm, navigate to the ``Clients`` tab. Click on ``gawati-client``. Set the other parameters as shown below. In this case we have set the root url, valid url etc to http://localhost:3000 which is the dev mode host and port for gawat-client UI. If you are deploying on a domain e.g. http://www.domain.org you can set it to that domain.
+
+    .. figure:: ./_images/kc-edit-dev-client.png
+        :alt: Edit Client
+        :align: center
+        :figclass: align-center
+
+
+#. Within the client, switch to the ``Credentials`` tab and regenerate the secret.
+
+    .. figure:: ./_images/kc-dev-secret.png
+        :alt: Edit Client
+        :align: center
+        :figclass: align-center
+
+#. Switch to the ``Installation`` tab in the client section, and choose the format as ``KeyCloak OIDC JSON``. Change the following variables, ``auth-server-url`` to ``url`` and change ``resource`` to ``clientId``. Download the json file. It should look similar to the json shown below.
+
+    .. code-block:: JSON
+        :linenos:
+
+        {
+          "realm": "Ethiopia",
+          "auth-server-url": "http://localhost:11080/auth",
+          "url": "http://localhost:11080/auth",
+          "ssl-required": "external",
+          "resource": "gawati-client",
+          "clientId": "gawati-client",
+          "credentials": {
+            "secret": "b344caaa-7341-479f-81b7-9d47aa3128dc"
+          },
+          "use-resource-role-mappings": true,
+          "confidential-port": 0,
+          "policy-enforcer": {}
+        }
+
+#. Copy the downloaded ``keycloak.json`` contents into  ``gawati-client/src/configs/authRealm.json`` and ``gawati-client-server/auth.json``.
+
+#. Finally, go to ``Realm Settings => Login`` and set ``User Registration`` to ``on`` and set ``Email as User name`` to ``on``.
+
+    .. figure:: ./_images/kc-dev-login.png
+      :alt: Login
+      :align: center
+      :figclass: align-center
+
+Run Gawati Client
+-----------------
+#. Start eXist
+
+#. Start keycloak
+
+    .. code-block:: bash
+      :linenos:
+
+      cd keycloak-3.4.3.Final
+      ./bin/standalone.sh
+
+#. Start gawati-client-server
+
+    .. code-block:: bash
+      :linenos:
+
+      cd gawati-client-server
+      node ./bin/www
+
+#. Start gawati-client
+
+    .. code-block:: bash
+      :linenos:
+
+      cd gawati-client
+      npm start
+
+#. Load http://localhost:3000 in the browser. You should see a login screen. Register a new user.
+
+    .. figure:: ./_images/gawati-client-login.png
+      :alt: Login
+      :align: center
+      :figclass: align-center
+
+#. After logging in, you should be able to see the dashboard with the two sample documents.
+
+    .. figure:: ./_images/gawati-client-dashboard.png
+      :alt: Dashboard
+      :align: center
+      :figclass: align-center
 
 .. _gawati-portal-ui: https://github.com/gawati/gawati-portal-ui
 .. _gawati-portal-server: https://github.com/gawati/gawati-portal-server
 .. _Full Text Data set: https://github.com/gawati/gawati-data-xml/releases/download/1.6/akn_xml_ft_sample.zip
 .. _XML Data set: https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_xml_sample-1.2.zip
 .. _PDF Data set: https://github.com/gawati/gawati-data-xml/releases/download/1.2/akn_pdf_sample-1.2.zip
+.. _Client Sample data: https://github.com/gawati/gawati-client-data/releases/download/1.0/gawati-client-data-sample.zip
+.. _Installing Keycloak: http://docs.gawati.org/en/latest/development/authentication.html#installing-configuring-keycloak-for-development
+.. _Model Realm: https://github.com/gawati/gawati-keycloak-scripts/blob/dev/model_realm/model-realm.json

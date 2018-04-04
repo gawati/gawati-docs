@@ -51,7 +51,7 @@ Parameters are loaded from npm environment defined in "package.json" (Package ve
 
 using ant
 """""""""
-See example at https://github.com/gawati/gawati-templates/blob/dev/Jenkinsfile
+See example at https://github.com/gawati/gawati-data/blob/dev/Jenkinsfile
 
 Parameters are loaded from ant environment defined in "build.xml" (Package version).
 
