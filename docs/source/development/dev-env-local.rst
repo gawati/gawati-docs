@@ -144,6 +144,7 @@ The above assumes:
 .. note::
   On Windows the Apache Alias directory path need to use the back slash instead of the standard windows forward slash. For e.g. if the templates are in: `d:\\code\\gawati-templates` then the path in the Apache configuration should be: `d:/code/gawati-templates`
 
+
 Test if your services are accessible
 ------------------------------------
 
@@ -285,11 +286,13 @@ You will also need to change the following parameters in `index.html`:
 
 For setting up Authentication, click here:  :doc:`Authentication <./authentication>`
 
+
 Installing Gawati Portal Server
 ===============================
 
 Extract the contents of the zip file into any directory. 
 The Gawati Portal has two runnable components, the portal http server which provides access to REST services, and a cron component that runs scheduled tasks periodically. 
+
 
 Running the REST service
 ---------------------------
@@ -314,6 +317,7 @@ To start up the web-service. By default it starts on PORT 9001. You can change t
   :linenos:
 
   PORT=11001 node ./bin/www
+
 
 Add the Apache Conf entry 
 -------------------------
@@ -366,11 +370,11 @@ The Gawati Client is a service that enables data input and management in Gawati.
 
 See :ref:`gawati-client-arch` for an architecture overview. 
 
+
 Setting up the Client UI
 ========================
 
-#. Clone git@gitlab.com:bungenicom/gawati/gawati-client.git
-
+#. Clone https://github.com/gawati/gawati-client.git
 #. Install packages
 
     .. code-block:: bash
@@ -401,9 +405,10 @@ Setting up the Client UI
             SetEnv proxy-nokeepalive 1
           </Location>
 
+
 Setting up the Client Server
 ============================
-#. Clone git@gitlab.com:bungenicom/gawati/gawati-client-server.git
+#. https://github.com/gawati/gawati-client-server.git
 #. Install packages
 
     .. code-block:: bash
@@ -411,10 +416,10 @@ Setting up the Client Server
 
           npm install
 
+
 Installing Gawati Client Data
 =============================
-#. Clone git@gitlab.com:bungenicom/gawati/gawati-client-data.git.
-
+#. Clone https://github.com/gawati/gawati-client-data.git
 #. Build to get the package. 
 
     .. code-block:: bash
@@ -439,18 +444,14 @@ Installing Gawati Client Data
 Installing Keycloak Auth
 ========================
 #. Follow the installation steps 1 - 6 from `Installing Keycloak`_.
-
-#. Download `model-realm.json` from `Model Realm`_.
-
-#. Clone git@github.com:gawati/gawati-keycloak-scripts.git.
-
-#. Use the downloaded model realm to generate a new development realm using the command:
+#. Clone https://github.com/gawati/gawati-keycloak-scripts.git
+#. Generate a new development realm using the command:
 
     .. code-block:: bash
       :linenos:
 
       cd gawati-keycloak-scripts
-      node index.js --new_realm_name=Ethiopia --input_realm=<path_to_model_realm>/model-realm.json --output_file=ethiopia.json
+      node index.js --new_realm_name=Ethiopia --input_realm=model_realm/model-realm.json --output_file=ethiopia.json
 
 #. Switch back to the administration console in the browser
 #. Create a dev realm by importing configuration from `ethiopia.json` generated above.
@@ -475,7 +476,8 @@ Installing Keycloak Auth
         :align: center
         :figclass: align-center
 
-#. Switch to the ``Installation`` tab in the client section, and choose the format as ``KeyCloak OIDC JSON``. Change the following variables, ``auth-server-url`` to ``url`` and change ``resource`` to ``clientId``. Download the json file. It should look similar to the json shown below.
+#. Switch to the ``Installation`` tab in the client section, and choose the format as ``KeyCloak OIDC JSON``. Download the json file.
+#. Open the dowloaded json file using your preferred text editor. Copy the variables ``auth-server-url`` to ``url`` and ``resource`` to ``clientId``. It should look similar to the json shown below.
 
     .. code-block:: JSON
         :linenos:
@@ -496,7 +498,6 @@ Installing Keycloak Auth
         }
 
 #. Copy the downloaded ``keycloak.json`` contents into  ``gawati-client/src/configs/authRealm.json`` and ``gawati-client-server/auth.json``.
-
 #. Finally, go to ``Realm Settings => Login`` and set ``User Registration`` to ``on`` and set ``Email as User name`` to ``on``.
 
     .. figure:: ./_images/kc-dev-login.png
@@ -504,10 +505,10 @@ Installing Keycloak Auth
       :align: center
       :figclass: align-center
 
+
 Run Gawati Client
 =================
 #. Start eXist
-
 #. Start keycloak
 
     .. code-block:: bash
@@ -545,6 +546,7 @@ Run Gawati Client
       :alt: Dashboard
       :align: center
       :figclass: align-center
+
 
 .. _gawati-portal-ui: https://github.com/gawati/gawati-portal-ui
 .. _gawati-portal-server: https://github.com/gawati/gawati-portal-server
