@@ -38,10 +38,8 @@ Development Workflow
 The standard development cycle is as follows:
   1. clone the projects from github
   2. build the projects where necessary (`gawati portal`_, `gawati data`_, `gawati data xml`_)
-  3. deploy onto apache (`gawati templates`_) and;
-  4. deploy onto eXist-db (`gawati portal`_, `gawati data`_, `gawati data xml`_)
+  3. deploy onto eXist-db (`gawati portal`_, `gawati data`_, `gawati data xml`_)
 
-Code for `gawati templates`_ is directly edited and committed from the filesystem.
 
 Code for eXist-db packages requires an additional step. You will need to export the database onto the file-system and then merge it into your github clone folder:
 
