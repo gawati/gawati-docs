@@ -21,13 +21,13 @@ Specify multiple hosts
 
 Specify distinct hosts for the front-end, back-end services and the media, all mapped to the localhost IP. Below we have specified 3 distinct hosts. In Linux the hosts file is typically ```/etc/hosts``` on Windows you will need to open `C:/Windows/System32/drivers/etc/hosts`, and add the settings there.
 
-.. code-block:: default
+.. code-block:: apacheconf
+    :linenos:
 
     127.0.0.1       gawati.local  # front-end
     127.0.0.1       data.local    # data services
     127.0.0.1       media.local   # media files
     127.0.0.1       auth.local    # auth / keycloak if you want be a purist
-
 
 Then specify in your apache vhosts conf file, configurations for each host as follows. 
 
