@@ -165,7 +165,7 @@ For example: if you want to serve the portal from the `/ui` virtual directory of
 Development and Production mode
 -------------------------------
 
-See our detailed guide on setting up your environment for production and development mode testing :doc:`<./dev-and-prod-testing>`.
+See our detailed guide on setting up your environment for production and development mode testing :doc:`./dev-and-prod-testing`.
 
 For setting up Authentication, click here:  :doc:`Authentication <./authentication>`
 
