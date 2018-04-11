@@ -22,7 +22,6 @@ Specify multiple hosts
 Specify distinct hosts for the front-end, back-end services and the media, all mapped to the localhost IP. Below we have specified 3 distinct hosts. In Linux the hosts file is typically ```/etc/hosts``` on Windows you will need to open `C:/Windows/System32/drivers/etc/hosts`, and add the settings there.
 
 .. code-block:: 
-   :linenos:
 
     127.0.0.1       gawati.local  # front-end
     127.0.0.1       data.local    # data services
@@ -40,7 +39,7 @@ gawati.local : front-end (for production testing)
 
 This is relevant only for production testing. When you run ```npm start``` in development mode, the front-end runs on ```localhost:3000``` and these settings are ignored. But when you build the production system using ``` npm run build ``` the production system can be accessed via the ```http://gawati.local``` url.
 
-.. code-block::
+.. code-block:: apacheconf
     :linenos:
 
     <VirtualHost 127.0.0.1:80>
