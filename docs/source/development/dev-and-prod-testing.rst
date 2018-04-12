@@ -229,7 +229,7 @@ This parameter is used only in development mode, set it to ``http://data.local``
 
 With all this set-up restart Apache HTTPD and you are all set to use both development and production mode testing side by side. 
 
- .. _faqs-dev-prod:
+.. _faqs-dev-prod:
  
 ***
 FAQ
