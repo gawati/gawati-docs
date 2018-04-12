@@ -1,11 +1,11 @@
 Testing Development & Production modes side by side
 ###################################################
 
-This document is specific to React based components in Gawati. Specifically ```gawati-portal-ui``` and ```gawati-client```. 
+This document is specific to React based components in Gawati. Specifically ``gawati-portal-ui`` and ``gawati-client``. 
 
-The standard procedure for development testing is to run ```npm start``` and the React application starts up on port ```3000```, for production testing we run ```npm run build``` and the built output is provided in the ```build``` folder, from where it is served via Apache httpd (explained below see :ref:`gawati-local`. For the application routing we use React Router, which intercepts client URL requests and channels them appropriately, however this causes problems when we proxy the data back-end on the same domain as the main system. 
+The standard procedure for development testing is to run ``npm start`` and the React application starts up on port ``3000``, for production testing we run ``npm run build`` and the built output is provided in the ``build`` folder, from where it is served via Apache httpd (explained below see :ref:`gawati-local`. For the application routing we use React Router, which intercepts client URL requests and channels them appropriately, however this causes problems when we proxy the data back-end on the same domain as the main system. 
 
-For instance, if the production site is running on ```http://www.domain.com``` , and the data back-end is being reverse proxied on ```http://www.domain.com/gwd/*``` and the media files (AKN pdf files) are being reverse proxied on ```http://www.domain.com/akn/*``` -- in this scenario direct browser requests for PDF files will with a 404 because React Router detects that there is no specifed route to the ```/akn``` path. 
+For instance, if the production site is running on ``http://www.domain.com`` , and the data back-end is being reverse proxied on ``http://www.domain.com/gwd/*`` and the media files (AKN pdf files) are being reverse proxied on ``http://www.domain.com/akn/*`` -- in this scenario direct browser requests for PDF files will with a 404 because React Router detects that there is no specifed route to the ``/akn`` path. 
 
 For this reason, we recommend running the data-backend and media services on distinct domains or sub-domains. 
 
@@ -19,7 +19,7 @@ For local production and development testing we have specified a setup below.
 Specify multiple hosts
 **********************
 
-Specify distinct hosts for the front-end, back-end services and the media, all mapped to the localhost IP. Below we have specified 3 distinct hosts. In Linux the hosts file is typically ```/etc/hosts``` on Windows you will need to open `C:/Windows/System32/drivers/etc/hosts`, and add the settings there.
+Specify distinct hosts for the front-end, back-end services and the media, all mapped to the localhost IP. Below we have specified 3 distinct hosts. In Linux the hosts file is typically ``/etc/hosts`` on Windows you will need to open `C:/Windows/System32/drivers/etc/hosts`, and add the settings there.
 
 .. code-block:: apacheconf
     :linenos:
@@ -37,7 +37,7 @@ Then specify in your apache vhosts conf file, configurations for each host as fo
 gawati.local : front-end (for production testing)
 *************************************************
 
-This is relevant only for production testing. When you run ```npm start``` in development mode, the front-end runs on ```localhost:3000``` and these settings are ignored. But when you build the production system using ``` npm run build ``` the production system can be accessed via the ```http://gawati.local``` url.
+This is relevant only for production testing. When you run ``npm start`` in development mode, the front-end runs on ``localhost:3000`` and these settings are ignored. But when you build the production system using `` npm run build `` the production system can be accessed via the ``http://gawati.local`` url.
 
 .. code-block:: apacheconf
     :linenos:
@@ -143,7 +143,7 @@ We proxy the eXist-db services on the data.local host.
     </VirtualHost>    
 
 .. note::
-    Note the use of the CORS header in ```data.local```, specifically:
+    Note the use of the CORS header in ``data.local``, specifically:
 
     .. code-block:: apacheconf
 
@@ -152,7 +152,7 @@ We proxy the eXist-db services on the data.local host.
             Header set Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
         </IfModule>
     
-    Which allows requests coming in from both ```localhost:3000``` and ```gawati.local``` hosts.
+    Which allows requests coming in from both ``localhost:3000`` and ``gawati.local`` hosts.
 
 *********************************************************************
 media.local : media files (for development & production testing)
@@ -198,7 +198,7 @@ The Akoma Ntoso PDF and thumbnail files are served via this host.
 Set the PROXY Params in the front-end
 *************************************
 
-In ```public/index.html``` set the 2 proxy parameters as below.
+In ``public/index.html`` set the 2 proxy parameters as below.
 
 .. code-block:: html
 
@@ -214,7 +214,7 @@ In ```public/index.html``` set the 2 proxy parameters as below.
 Set the PROXY Param in package.json
 ***********************************
 
-This parameter is used only in development mode, set it to ```http://data.local``` 
+This parameter is used only in development mode, set it to ``http://data.local`` 
 
 .. code-block:: json
 
@@ -228,3 +228,21 @@ This parameter is used only in development mode, set it to ```http://data.local`
 
 
 With all this set-up restart Apache HTTPD and you are all set to use both development and production mode testing side by side. 
+
+ .. _faqs-dev-prod:
+ 
+***
+FAQ
+***
+
+.. _faq-dev-prod-eperm:
+
+EPERM errors when running ``npm run build`` on windows
+------------------------------------------------------
+
+You attempt to build on windows and you get EPERM errors related to symlinking. 
+This happens because on Windows you have to explicitly allow your user symlink permission prior to running ``npm run build``. 
+You can remove the permission after completion. 
+
+The permission is configured in Group Policies of local Computer at ``Computer Configuration\Windows Settings\Security Settings\Local Policies\User Rights Assignment`` . 
+Please see here for more details `click here <https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/create-symbolic-links>`_.
