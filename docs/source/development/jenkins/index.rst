@@ -1,6 +1,15 @@
 Jenkins Setup
 #############
 
+Installation
+************
+
+Run::
+
+  yum groupinstall 'Development Tools'
+  yum install jenkins
+
+
 Repository configuration
 ************************
 
