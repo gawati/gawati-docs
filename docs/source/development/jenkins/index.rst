@@ -40,7 +40,8 @@ Building packages and copy to downloadserver
 For more detailed information about Jenkins library see :doc:`Jenkins library <jenkinslib>`
 
 
-Define package file name body as variable PKF in Jenkinsfile::
+if you need the package file name body different from the package name you may
+defined it as variable PKF in Jenkinsfile::
 
     environment { 
         PKF="portal-ui"
