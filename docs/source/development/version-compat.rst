@@ -19,6 +19,23 @@ GAWATI VERSION - is a composite version number attached to the entire stack and 
     </thead>
     
         <tr>
+            <td style="border: 1px solid black; text-align:center;"><a href="http://dl.gawati.org/dev/1.0.14">1.0.14</a></td>
+            <td style="border: 1px solid black; text-align:center;">24 April 2018</td>
+            <td style="border: 1px solid black; text-align:center;">
+                <a href="https://github.com/gawati/gawati-portal-ui/tree/eb11e115f9206e6345ea4e2fcdb348d6f1b4fd5e" title="github tree">2.0.23</a> 
+                </td>
+            <td style="border: 1px solid black; text-align:center;">
+                <a href="https://github.com/gawati/gawati-portal-server/tree/be0e86786146e284dfdac42209d27ebe4fdc2263" title="github tree">1.0.11</a> 
+                </td>
+            <td style="border: 1px solid black; text-align:center;">
+                <a href="https://github.com/gawati/gawati-data/tree/863cf9957e061c52035005d7ea5eeae0bbcc6233" title="github tree">1.13</a> 
+                </td>
+            <td style="border: 1px solid black; text-align:center;">
+                <a href="https://github.com/gawati/gawati-data-xml/tree/4d35a80ed8ad3270a95fc2a0361f15b6a23e8727" title="github tree">1.6</a> 
+                </td>
+        </tr>
+    
+        <tr>
             <td style="border: 1px solid black; text-align:center;"><a href="http://dl.gawati.org/dev/1.0.13">1.0.13</a></td>
             <td style="border: 1px solid black; text-align:center;">27 March 2018</td>
             <td style="border: 1px solid black; text-align:center;">
