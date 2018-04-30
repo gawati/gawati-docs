@@ -39,7 +39,7 @@ Installing Gawati Data and Gawati Data XML
 .. note::
   .. include:: note-gawati-data.rst
 
-Place #3,#4 files in the `autodeploy` folder within the eXist installation, and restart the eXist database server. 
+Place the ``gawati-data`` and ``gw-data`` XAR files in the `autodeploy` folder within the eXist installation, and restart the eXist database server. 
 They will be automatically installed.
 
 Load Sample Data
@@ -74,9 +74,9 @@ To setup the XML data-set, extract the archives into separate folders (e.g. ``/h
 
   <path_to_exist>/bin/client.sh -ouri=xmldb:exist://localhost:8080/exist/xmlrpc -u admin -P <exist_admin_password> -x "data(doc('/db/apps/gw-data/_auth/_pw.xml')/users/user[@name = 'gwdata']/@pw)"
 
-Where `<path_to_exist>` is the path to the eXist-db installation, and `<exist_admin_password>` is the eXist-db admin password. If you installed eXist on a different port change that in the `-ouri` setting.
+Where ``<path_to_exist>`` is the path to the eXist-db installation, and ``<exist_admin_password>`` is the eXist-db admin password. If you installed eXist on a different port change that in the ``-ouri`` setting.
 
-On Windows do the following; Start the eXist-db Client(`<path_to_exist>/bin/client.bat`). In the command window of the eXist-db client run the following commands:
+On Windows do the following; Start the eXist-db Client(``<path_to_exist>/bin/client.bat``). In the command window of the eXist-db client run the following commands:
 
 .. code-block:: none
   :linenos:
@@ -100,7 +100,7 @@ Now upload the data using the following command run from the eXist-db folder:
   ./bin/client.sh -u gwdata -P <copied_password_hash> -d -m /db/apps/gw-data/akn_ft -p /home/data/akn_xml/akn_ft
   
 
-On Windows you will run it as :samp:`.\\bin\\client.bat` instead:
+On Windows you will run it as :samp:``.\\bin\\client.bat`` instead:
 
 .. code-block:: bash
   :linenos:
