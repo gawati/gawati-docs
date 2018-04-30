@@ -32,6 +32,7 @@ See :ref:`gawati-portal-arch` for an architecture overview.
 .. note::
   .. include:: version-info.rst
 
+**IMPORTANT**: Kindly read how Apache HTTP is used a crucial glue between the different components of Gawati :doc:`./dev-and-prod-testing`
 
 Installing Gawati Data and Gawati Data XML
 ==========================================
@@ -62,7 +63,7 @@ Download the XML data set, which is in 2 parts: `XML Data set`_  +  `Full Text D
 Setup the PDF data set
 ----------------------
 
-To setup the PDF data-set, you just need to extract the files into a folder, e.g if you extract the PDF files into ``/home/data/akn_pdf``, and add a Apache configuration to serve the folder contents (See line 7 below `Add the Apache configuration for binary data`_)
+To setup the PDF data-set, you just need to extract the files into a folder, e.g if you extract the PDF files into ``/home/data/akn_pdf``, and add a Apache configuration to serve the folder contents (See :ref:`conf-binary`)
 
 Setup the XML data set
 ----------------------
