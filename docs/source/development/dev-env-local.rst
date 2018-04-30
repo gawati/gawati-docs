@@ -111,46 +111,6 @@ On Windows you will run it as :samp:`.\\bin\\client.bat` instead:
 .. note::
   if you get a password failure, log in to eXist-db as admin, and reset the password for gwdata user manually, and then use that password.
 
-
-Add the Apache configuration for binary data
---------------------------------------------
-
-The Apache configuration will allow accessing gawati data server services over a web-browser using the URL:
-
-To do this, open the `httpd.conf` (or equivalent) file of your apache installation and add the following:
-
-.. code-block:: apacheconf
-  :linenos:
-
-    Alias /akn "/home/data/akn_pdf"
-    <Directory "/home/data/akn_pdf">
-      Require all granted
-      Options Includes FollowSymLinks
-      AllowOverride All
-      Order allow,deny
-      Allow from all
-    </Directory>
-
-Add the Apache configuration for gawati data services
------------------------------------------------------
-
-The services provided by *Gawati Data* to access the XML documents in Gawati are not directly exposed to the outside, they are reverse proxied using Apache. The full configuration of apache config entries is provided below: 
-
-.. include:: gawati-data-conf.rst
-
-The above assumes:
-  * eXist-db is running on port 8080 (if that is not the case in your installation change it appropriately in line 16 and 17)
-
-.. note::
-  On Windows the Apache Alias directory path need to use the back slash instead of the standard windows forward slash. For e.g. if the templates are in: `d:\\code\\gawati-templates` then the path in the Apache configuration should be: `d:/code/gawati-templates`
-
-
-Test if your services are accessible
-------------------------------------
-
-Assuming your domain is `localhost`, and you have loaded the data into eXist and started the service, this url accessed via a web browser should return some XML documents to you: `http://localhost/gw/service/recent/expressions/summary`
-
-
 Installing Gawati Portal UI
 ===========================
 
@@ -200,14 +160,6 @@ To start up the web-service. By default it starts on PORT 9001. You can change t
   :linenos:
 
   PORT=11001 node ./bin/www
-
-
-Add the Apache Conf entry 
--------------------------
-
-Add the following Apache entry for it:
-
-.. include:: portal-server-conf.rst
 
 
 Running the cron service
@@ -265,29 +217,6 @@ Setting up the Client UI
 
           npm install
 
-#. Make the necessary Apache conf entries:
-
-    .. code-block:: apacheconf
-          :linenos:
-
-          # for gawati-client-data
-          <Location ~ "/gwdc/(.*)">
-            AddType text/cache-manifest .appcache
-            ProxyPassMatch  "http://localhost:8080/exist/restxq/gwdc/$1"
-            ProxyPassReverse "http://localhost:8080/exist/restxq/gwdc/$1"
-            SetEnv force-proxy-request-1.0 1
-            SetEnv proxy-nokeepalive 1
-          </Location>
-
-          # for gawati-client-server
-          <Location ~ "/gwc/(.*)">
-            AddType text/cache-manifest .appcache
-            ProxyPassMatch  "http://localhost:9002/gwc/$1"
-            ProxyPassReverse "http://localhost:9002/gwc/$1"
-            SetEnv force-proxy-request-1.0 1
-            SetEnv proxy-nokeepalive 1
-          </Location>
-
 
 Setting up the Client Server
 ============================
@@ -298,7 +227,6 @@ Setting up the Client Server
           :linenos:
 
           npm install
-
 
 Installing Gawati Client Data
 =============================
