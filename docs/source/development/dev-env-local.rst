@@ -111,15 +111,17 @@ On Windows you will run it as :samp:`.\\bin\\client.bat` instead:
 .. note::
   if you get a password failure, log in to eXist-db as admin, and reset the password for gwdata user manually, and then use that password.
 
+Apache Config
+-------------
+
+There are Apache HTTP configs required for both serving XML and PDF documents. See :ref:`conf-gawati-data` and :ref:`conf-binary`
+
+
 Installing Gawati Portal UI
 ===========================
 
 Extract the contents of the zip file onto a directory served by Apache. 
-And add the corresponding Apache Server configuration entry. 
-
-For example: if you want to serve the portal from the `/ui` virtual directory of your domain, and your files are located in `/home/web/apps/gawati-portal-ui`, then use the following apache configuration --  
-
-.. include:: portal-ui-conf.rst
+And add the corresponding Apache Server configuration entry (See :ref:`conf-portal-ui`). 
 
 
 Development and Production mode
@@ -172,6 +174,11 @@ This is started by simply running:
   
   node ./cron.js
 
+
+Apache Config
+-------------
+
+See :ref:`conf-portal-server`.
 
 Environment Variables
 ---------------------
@@ -228,6 +235,7 @@ Setting up the Client Server
 
           npm install
 
+
 Installing Gawati Client Data
 =============================
 #. Clone https://github.com/gawati/gawati-client-data.git
@@ -250,6 +258,8 @@ Installing Gawati Client Data
       :linenos:
 
       ./bin/client.sh -u admin -P <admin_password> -d -m /db/docs/gawati-client-data/akn -p <path_to_extracted_data>/akn
+
+#. Make the necessary Apache conf entries. See :ref:`conf-client`.
 
 
 Installing Keycloak Auth

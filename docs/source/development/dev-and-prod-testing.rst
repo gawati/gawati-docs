@@ -229,6 +229,92 @@ This parameter is used only in development mode, set it to ``http://data.local``
 
 With all this set-up restart Apache HTTPD and you are all set to use both development and production mode testing side by side. 
 
+************************
+Apache configs explained 
+************************
+
+.. _conf-portal-ui:
+
+Apache configuration for portal-ui
+----------------------------------
+
+For example: if you want to serve the portal from the `/ui` virtual directory of your domain, and your files are located in `/home/web/apps/gawati-portal-ui`, then use the following apache configuration --  
+
+.. include:: portal-ui-conf.rst
+
+
+.. _conf-binary:
+
+Apache configuration for binary data
+------------------------------------
+
+The Apache configuration will allow accessing gawati data server services over a web-browser using the URL:
+
+To do this, open the `httpd.conf` (or equivalent) file of your apache installation and add the following:
+
+.. code-block:: apacheconf
+  :linenos:
+
+    Alias /akn "/home/data/akn_pdf"
+    <Directory "/home/data/akn_pdf">
+      Require all granted
+      Options Includes FollowSymLinks
+      AllowOverride All
+      Order allow,deny
+      Allow from all
+    </Directory>
+
+.. _conf-gawati-data:
+
+Apache configuration for gawati data services
+---------------------------------------------
+
+The services provided by *Gawati Data* to access the XML documents in Gawati are not directly exposed to the outside, they are reverse proxied using Apache. The full configuration of apache config entries is provided below: 
+
+.. include:: gawati-data-conf.rst
+
+The above assumes:
+  * eXist-db is running on port 8080 (if that is not the case in your installation change it appropriately in line 16 and 17)
+
+.. note::
+  On Windows the Apache Alias directory path need to use the back slash instead of the standard windows forward slash. For e.g. if the templates are in: `d:\\code\\gawati-templates` then the path in the Apache configuration should be: `d:/code/gawati-templates`
+
+.. _conf-portal-server:
+
+Apache configuration for portal server services
+-----------------------------------------------
+
+Add the following Apache entry for it:
+
+.. include:: portal-server-conf.rst
+
+.. _conf-client:
+
+Apache configuration for gawati client
+--------------------------------------
+
+    .. code-block:: apacheconf
+            :linenos:
+
+            # for gawati-client-data
+            <Location ~ "/gwdc/(.*)">
+            AddType text/cache-manifest .appcache
+            ProxyPassMatch  "http://localhost:8080/exist/restxq/gwdc/$1"
+            ProxyPassReverse "http://localhost:8080/exist/restxq/gwdc/$1"
+            SetEnv force-proxy-request-1.0 1
+            SetEnv proxy-nokeepalive 1
+            </Location>
+
+            # for gawati-client-server
+            <Location ~ "/gwc/(.*)">
+            AddType text/cache-manifest .appcache
+            ProxyPassMatch  "http://localhost:9002/gwc/$1"
+            ProxyPassReverse "http://localhost:9002/gwc/$1"
+            SetEnv force-proxy-request-1.0 1
+            SetEnv proxy-nokeepalive 1
+            </Location>
+
+
 .. _faqs-dev-prod:
  
 ***
