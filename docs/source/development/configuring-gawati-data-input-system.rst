@@ -16,6 +16,44 @@ The application allows adding documents to the system and the format of storage 
 The system provides a workflow which allows users with different roles to systematically input data into the system, following a structured process. 
 For its architectural details see :ref:`gawati-client-arch`.
 
+
+ .. _input-system-access-control:
+ 
+**************
+Access Control
+**************
+
+The Data Input system is an authenticated system and access to it requires a user name and password. In Gawati users are created in the configured KeyCloak Realm.
+However, just creating a user is not enough, you need to associate users to roles. In Gawati this is done via Groups, we have groups associated with one or more Roles, and users added to a group acquire the Roles on the group.
+
+If you have used the `Model Realm <./model-realm>`__ to create your realm, then the following roles & groups will be available to you:
+
+    - Roles
+        * `client.Admin` - has access to all the states and transitions the document can go through.
+        * `client.Editor` - can edit the document 
+        * `client.Submitter` - can draft a document, but cannot edit it outside of the draft state
+        * `client.Publisher` - can publish a document at the end of the workflow process
+    - Groups
+        * `clientAdmins`
+        * `clientEditors`
+        * `clientSubmitters`
+        * `clientPublishers`
+
+.. note::
+    - These roles and groups are not baked into the system, you can change them. Keep in mind though, changing groups and roles will also require you to change Workflow configuration (see :ref:`workflow-config`).
+    - Remember that roles are just labels, just because we called a Role as ``something.Admin`` doesn't automatically mean anything, the Roles are granted Permissions and that is what really determines access.
+
+
+In Gawati Input System the following permissions are recognized (we don't use the KeyCloak resource Permissions infrastructure). 
+Permissions are always assigned to ``Roles``, and the assignment is done view :ref:`workflow-config`.
+
+    * ``view`` - allows viewing the document
+    * ``list`` - allows showing the document in a listing (this is a subset of the view permission, the user with only ``list`` and not ``view`` can only see the document in a listing, but cannot view it)
+    * ``edit`` - allows editing the document
+    * ``delete`` - allows deleting the document
+    * ``transit`` - allows transiting the document from one state to another. Transiting a document typically means the permissions and roles applicable on the document will change. 
+
+
 ****************************
 Basic configuration (client)
 ****************************
@@ -48,6 +86,9 @@ The client specifies root Akoma Ntoso typologies in ``configs/aknDocTypes.json``
 
 .. note::
     Do not change these basic types or add new ones, they could render your documents invalid.
+
+
+.. _application-doc-types:
 
 =====================
 Application Doc Types
@@ -179,11 +220,120 @@ The data services run on eXist-db, the server component knows the address of the
     - ``xmlServer/serviceEndPoint`` : this is the full address to service end point of the eXist-db server. In this example it is running on the same host as the server component.
     - others : the rest of the configuration parameters can be left alone, they specify the individual services accessible to the server component.
 
+
+ .. _workflow-config:
+ 
 ===============
 Workflow Config
 ===============
 
-To be done
+The client component presents a dashboard where documents can be created and moved through different stages.
+We have already about :ref:`input-system-access-control`, and the concepts of Permissions and Roles are essential to understanding how workflows work.
+
+The Workflow describes the permissons and roles of a document as it moves from one person to the other. This is analogous to paper based authorization chains, where a document moves thorugh different individuals in an office. 
+Each person reviews the document, and sends it to a higher up, until the document is signed and released for official consumption. 
+
+The Workflow is configured in one or more JSON files placed in the ``workflow_configs`` folder in the server component. 
+Each document Type configured in the application has a corresponding workflow configuration file. 
+
+The JSON file for a workflow is structured as below:
+
+.. code-block:: json
+
+    {"workflow": {
+        "doctype": "act",
+        "subtype": "law",
+        "permissions": {"permission": [
+            {
+                "name": "view",
+                "title": "View",
+                "icon": "fa-eye"
+            },
+            {
+                "name": "edit",
+                "title": "Edit",
+                "icon": "fa-pencil"
+            },
+            {
+                "name": "delete",
+                "title": "Delete",
+                "icon": "fa-trash-o"
+            },
+            {
+                "name": "list",
+                "title": "List",
+                "icon": "fa-flag"
+            },
+            {
+                "name": "transit",
+                "title": "Transit",
+                "icon": "fa-flag"
+            }
+        ]},
+        "states": {"state": [
+                ....
+            ]}
+        ...
+    }
+
+
+--------------
+Workflow State
+--------------
+
+In the Workflow system, this concept of the document moving from one person to the other is represented via ``states``. Each state represents a set of roles and permissions applicable to the document in that state.
+The below JSON block describes the ``Draft`` state of a document. 
+
+.. code-block:: json
+
+        {
+            "name": "draft",
+            "title": "Draft",
+            "level": "1",
+            "color": "initial",
+            "permission": [
+                ....
+            ]
+        }
+
+The relevant ``state`` config variables are described below:
+
+    - ``name`` : the technical name of the workflow state (no spaces). 
+    - ``title`` : the literal string used to display the state name on the screen 
+    - ``permission`` : lists the permissions applicable in that state. 
+
+
+.. code-block:: json
+
+        "permission": [
+            {
+                "name": "view",
+                "roles": "client.Admin client.Submitter"
+            },
+            {
+                "name": "list",
+                "roles": "client.Admin client.Submitter"
+            },
+            {
+                "name": "edit",
+                "roles": "client.Admin client.Submitter"
+            },
+            {
+                "name": "delete",
+                "roles": "client.Admin client.Submitter"
+            },
+            {
+                "name": "transit",
+                "roles": "client.Admin client.Submitter"
+            }
+        ]
+
+Each permission can be associated with multiple states:
+
+    - ``name`` : the name of the permission as described in :ref:`input-system-access-control`
+    - ``roles`` : one or more roles separated by a space
+
+
 
 =================
 Storage Templates
