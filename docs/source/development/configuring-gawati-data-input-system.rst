@@ -14,10 +14,13 @@ About the Application
 
 The application allows adding documents to the system and the format of storage is in Akoma Ntoso XML format.
 The system provides a workflow which allows users with different roles to systematically input data into the system, following a structured process. 
+For its architectural details see :ref:`gawati-client-arch`.
 
-*******************
-Basic configuration
-*******************
+****************************
+Basic configuration (client)
+****************************
+
+The following is configuration that is required to be done in the client component of the data input ssytem.
 
 =====================
 Akoma Ntoso Doc Types
@@ -125,5 +128,140 @@ Document Parts shown in the UI for selection are listed in ``configs/docParts.js
     - ``partLabel`` : this is the label that appears in selector dropdown for the partName. 
 
 
+****************************
+Basic configuration (server)
+****************************
+
+The following is configuration that is required to be done in the server component of the data input system.
+The server component runs on a ``NodeJS`` server. It acts as an intermediary between the client component and the actual data services.
+
+===========================
+Data Services configuration
+===========================
+
+The data services run on eXist-db, the server component knows the address of the eXist-db server from the ``configs/dataServer/json`` file:
+
+.. code-block:: json
+
+    {
+        "xmlServer" : {
+            "serviceEndPoint" : "http://localhost:8080/exist/restxq",
+            "api": {
+                "saveXml": { 
+                    "url": "/gwdc/document/add",
+                    "method": "post"
+                },
+                "getXml" : {
+                    "url": "/gwdc/document/load",
+                    "method": "post"
+                },
+                "updateXml" : {
+                    "url": "/gwdc/document/edit",
+                    "method": "post"
+                },
+                "getDocuments": {
+                    "url": "/gwdc/documents",
+                    "method": "post"
+                },
+                "transit" : {
+                    "url": "/gwdc/document/transit",
+                    "method": "post"
+                },
+                "saveAttachments": {
+                    "url": "/gwdc/document/attachments",
+                    "method": "post"
+                }
+            }
+        }
+    }
+
+
+    - ``xmlServer/serviceEndPoint`` : this is the full address to service end point of the eXist-db server. In this example it is running on the same host as the server component.
+    - others : the rest of the configuration parameters can be left alone, they specify the individual services accessible to the server component.
+
+===============
+Workflow Config
+===============
+
+To be done
+
+=================
+Storage Templates
+=================
+
+The Storage Template is an Akoma Ntoso document template configured as a `Handlebars Template <http://handlebarsjs.com/>`__.
+These templates are used to generate documents for storage. There is a hierarchy to the defined templates
+
+    - akntemplate.hbs : main document template
+        * akntemplate.componentRef.hbs - this is used to generate  the ``componentRef`` part of the main document
+        * akntemplate.embeddedContent.hbs - this is used to generate the ``embeddedContent`` elements of the document
+
+For example, ``akntemplate.hbs`` looks like follows:
+
+.. code-block:: json
+
+    <gwd:package xmlns:gwd="http://gawati.org/ns/1.0/data" 
+        created="{{ createdDate }}"  
+        modified="{{ modifiedDate }}"
+        >
+        <gwd:workflow>
+            <gwd:state status="draft" label="Draft" />
+        </gwd:workflow>
+        <gwd:permissions>
+            ...
+        </gwd:permissions>
+        <an:akomaNtoso 
+            xmlns:gw="http://gawati.org/ns/1.0" 
+            xmlns:an="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+            <an:{{ aknType }} name="{{ localTypeNormalized }}">
+                <an:meta>
+                    <an:identification source="#gawati">
+                        <an:FRBRWork>
+                            <an:FRBRthis value="{{ workIRIthis }}"/>
+                            <an:FRBRuri value="{{ workIRI }}"/>
+                            <an:FRBRdate name="Work Date" date="{{ workDate }}"/>
+                            <an:FRBRauthor href="#author"/>
+                            <an:FRBRcountry value="{{ workCountryCode }}" showAs="{{ workCountryShowAs }}"/>
+                            {{!-- if subType is true only then render the subtype element --}}
+                            {{#if subType}} 
+                            <an:FRBRsubtype value="{{ localTypeNormalized }}"/>
+                            {{/if}}
+                            <an:FRBRnumber value="{{ docNumberNormalized }}" showAs="{{ docNumber }}"/>
+                            <an:FRBRprescriptive value="{{ docPrescriptive }}"/>
+                            <an:FRBRauthoritative value="{{ docAuthoritative }}"/>
+                        </an:FRBRWork>
+                        <an:FRBRExpression>
+                            ...
+                        </an:FRBRExpression>
+                        <an:FRBRManifestation>
+                            ...                    
+                        </an:FRBRManifestation>
+                    </an:identification>
+                    ....
+                    <an:references source="#source">
+                        <an:original eId="original" href="{{ exprIRIthis }}" showAs="{{ docNumber }}"/>
+                        <an:TLCOrganization eId="all" href="/ontology/Organization/AfricanLawLibrary" showAs="African Law Library"/>
+                    </an:references>
+                    <an:proprietary source="#all">
+                        ....
+                    </an:proprietary>
+                </an:meta>
+                <an:body>
+                    ....
+                </an:body>
+            </an:{{ aknType}}>
+        </an:akomaNtoso>
+    </gwd:package>
+
+and ``akntemplate.componentRef.hbs`` looks like follows:
+
+.. code-block:: json
+
+    <an:componentRef src="{{ embeddedIRIthis }}" 
+        alt="{{ embeddedFileName }}" 
+        GUID="#embedded-doc-{{ embeddedIndex }}" 
+        showAs="{{ embeddedShowAs }}"/>
+
+You can change these if you like, but you need to be sure what you are changing here as it may render the application unusable.
 
 
