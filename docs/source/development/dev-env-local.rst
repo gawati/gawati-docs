@@ -32,7 +32,7 @@ See :ref:`gawati-portal-arch` for an architecture overview.
 .. note::
   .. include:: version-info.rst
 
-**IMPORTANT**: Kindly read how Apache HTTP is used a crucial glue between the different components of Gawati :doc:`./dev-and-prod-testing`
+**IMPORTANT**: In Gawati Component interaction is purely via REST services, we use Apache HTTP as a reverse proxy to bind all the services together under one domain and user interface for the user. You may want to read up and get an idea of the Apache configuration before starting the installation. :doc:`./dev-and-prod-testing`
 
 Installing Gawati Data and Gawati Data XML
 ==========================================
