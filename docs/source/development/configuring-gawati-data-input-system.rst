@@ -217,6 +217,8 @@ The data services run on eXist-db, the server component knows the address of the
     }
 
 
+The main config params are described below:
+
     - ``xmlServer/serviceEndPoint`` : this is the full address to service end point of the eXist-db server. In this example it is running on the same host as the server component.
     - others : the rest of the configuration parameters can be left alone, they specify the individual services accessible to the server component.
 
