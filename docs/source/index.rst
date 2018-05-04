@@ -31,8 +31,8 @@ This documentation is generated using `Sphinx`_ from source written in
 `reStructuredText`_ and maintained `on GitHub`_.
 
 .. _Gawati: http://www.gawati.org
-.. _Portal demo: http://dev.gawati.org
-.. _Editor demo: http://data.dev.gawati.org
+.. _Portal demo: https://dev.gawati.org
+.. _Editor demo: https://data.dev.gawati.org
 .. _Sphinx: http://sphinx.pocoo.org/
 .. _reStructuredText: http://sphinx.pocoo.org/rest.html
 .. _on GitHub: https://github.com/gawati/gawati-docs
