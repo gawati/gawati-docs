@@ -34,23 +34,23 @@ See :ref:`gawati-portal-arch` for an architecture overview.
 
 **IMPORTANT**: In Gawati Component interaction is purely via REST services, we use Apache HTTP as a reverse proxy to bind all the services together under one domain and user interface for the user. You may want to read up and get an idea of the Apache configuration before starting the installation. :doc:`./dev-and-prod-testing`
 
-Installing Gawati Data and Gawati Data XML
-==========================================
+Installing Gawati Data
+======================
 
 .. note::
   .. include:: note-gawati-data.rst
 
-Place the ``gawati-data`` and ``gw-data`` XAR files in the `autodeploy` folder within the eXist installation, and restart the eXist database server. 
+Place the ``gawati-data``  XAR file in the `autodeploy` folder within the eXist installation, and restart the eXist database server. 
 They will be automatically installed.
 
 Load Sample Data
 ----------------
 .. note::
-  The sample data is currently at version 1.2
+  The sample data is currently at version 1.14
 
 To understand better how gawati works, we provide you with sample data, which can be loaded into the system and tested. Sample data is provided in two specific parts:
 
- * Xml Documents - which get loaded into the XML database (i.e. into *Gawati Data XML*) 
+ * Xml Documents - which get loaded into the XML database 
  * PDF and other binary Documents - which are refered to by the XML documents, but served from the *file system*
 
 We serve PDF and other binary documents from the filesystem to ensure optimal performance.
@@ -73,7 +73,7 @@ To setup the XML data-set, extract the archives into separate folders (e.g. ``/h
 .. code-block:: bash
   :linenos:
 
-  <path_to_exist>/bin/client.sh -ouri=xmldb:exist://localhost:8080/exist/xmlrpc -u admin -P <exist_admin_password> -x "data(doc('/db/apps/gw-data/_auth/_pw.xml')/users/user[@name = 'gwdata']/@pw)"
+  <path_to_exist>/bin/client.sh -ouri=xmldb:exist://localhost:8080/exist/xmlrpc -u admin -P <exist_admin_password> -x "data(doc('/db/apps/gawati-data/_auth/_pw.xml')/users/user[@name = 'gawatidata']/@pw)"
 
 Where ``<path_to_exist>`` is the path to the eXist-db installation, and ``<exist_admin_password>`` is the eXist-db admin password. If you installed eXist on a different port change that in the ``-ouri`` setting.
 
@@ -82,7 +82,7 @@ On Windows do the following; Start the eXist-db Client(``<path_to_exist>/bin/cli
 .. code-block:: none
   :linenos:
 
-  find data(doc('/db/apps/gw-data/_auth/_pw.xml')/users/user[@name = 'gwdata']/@pw)
+  find data(doc('/db/apps/gawati-data/_auth/_pw.xml')/users/user[@name = 'gawatidata']/@pw)
   show 1
 
 Copy the output password hash as shown below.
@@ -97,8 +97,8 @@ Now upload the data using the following command run from the eXist-db folder:
 .. code-block:: bash
   :linenos:
 
-  ./bin/client.sh -u gwdata -P <copied_password_hash> -d -m /db/apps/gw-data/akn -p /home/data/akn_xml/akn
-  ./bin/client.sh -u gwdata -P <copied_password_hash> -d -m /db/apps/gw-data/akn_ft -p /home/data/akn_xml/akn_ft
+  ./bin/client.sh -u gawatidata -P <copied_password_hash> -d -m /db/docs/gawati-data -p /home/data/akn_xml_docs_sample
+  ./bin/client.sh -u gawatidata -P <copied_password_hash> -d -m /db/docs/gawati-data -p /home/data/akn_xml_ft_sample
   
 
 On Windows you will run it as :samp:``.\\bin\\client.bat`` instead:
@@ -106,8 +106,8 @@ On Windows you will run it as :samp:``.\\bin\\client.bat`` instead:
 .. code-block:: bash
   :linenos:
 
-  .\bin\client.bat -u gwdata -P <copied_password_hash> -d -m /db/apps/gw-data/akn -p d:\data\akn_xml\akn
-  .\bin\client.bat -u gwdata -P <copied_password_hash> -d -m /db/apps/gw-data/akn_ft -p /home/data/akn_xml/akn_ft
+  .\bin\client.bat -u gawatidata -P <copied_password_hash> -d -m /db/docs/gawati-data -p d:\data\akn_xml_docs_sample
+  .\bin\client.bat -u gawatidata -P <copied_password_hash> -d -m /db/docs/gawati-data -p d:\data\akn_xml_ft_sample
 
 .. note::
   if you get a password failure, log in to eXist-db as admin, and reset the password for gwdata user manually, and then use that password.
