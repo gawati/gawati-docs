@@ -40,13 +40,13 @@ Installing Gawati Data
 .. note::
   .. include:: note-gawati-data.rst
 
-Place the ``gawati-data``  XAR files in the `autodeploy` folder within the eXist installation, and restart the eXist database server. 
+Place the ``gawati-data``  XAR file in the `autodeploy` folder within the eXist installation, and restart the eXist database server. 
 They will be automatically installed.
 
 Load Sample Data
 ----------------
 .. note::
-  The sample data is currently at version 1.2
+  The sample data is currently at version 1.14
 
 To understand better how gawati works, we provide you with sample data, which can be loaded into the system and tested. Sample data is provided in two specific parts:
 
