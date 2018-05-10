@@ -21,13 +21,14 @@ The below instructions are not specific to an operating system, the components w
 
 You can either build the source from github for each component, or you can install a released version of a component. For getting familiar with the system we recommend starting by installing a released version.
 
+.. _inst-gawati-portal:
 
 ************************
 Installing Gawati Portal
 ************************
 
 Gawati Portal provides access to all legal and legislative data in the system.
-See :ref:`gawati-portal-arch` for an architecture overview. 
+See :ref:`gawati-portal` for an architecture overview. 
 
 .. note::
   .. include:: version-info.rst
@@ -40,8 +41,7 @@ Installing Gawati Data
 .. note::
   .. include:: note-gawati-data.rst
 
-Place the ``gawati-data``  XAR file in the `autodeploy` folder within the eXist installation, and restart the eXist database server. 
-They will be automatically installed.
+Place the ``gawati-data``  XAR file in the `autodeploy` folder within the eXist installation, and restart the eXist database server. They will be automatically installed. You can also use the Package Manager in the eXist-db admin dashboard to manually select and install the package (see `Installing Packages in eXist-db`_).
 
 Load Sample Data
 ----------------
@@ -204,20 +204,28 @@ To access the web-based dashboard from a remote computer, you need to use ssh tu
 
    ssh -vv -i <path to private key> -p 22 -L 9999:127.0.0.1:8080 server_user@101.102.103.104
 
+.. _inst-gawati-editor:
 
-************************
-Installing Gawati Client
-************************
+*****************************
+Installing Gawati Data Editor
+*****************************
 
-The Gawati Client is a service that enables data input and management in Gawati. It has four components: Client UI, Client Server, Client Data (an eXist-db component), and the Keycloak Auth component.
+Gawati Data Editor (or Gawati Editor  in short), is a tool that allows inputting managing documents in the portal. Gawati is a suite of distributed applications, and the same model applies here for data entry. The :ref:`gawati-portal` has been conceived has a public facing system to access and search for data. The Gawati Editor is a back-office systme that allows managing the process of entering data and publishing it online.
 
-See :ref:`gawati-client-arch` for an architecture overview. 
+Gawati Editor can be used independent of the :ref:`gawati-portal`, as it has its own working-data store and workflow, and information is published onto the :ref:`gawati-portal` via a asynchronous message queue. 
 
+The Gawati Editor is composed of different components: Editor UI, Editor Server component, Editor Data services(an eXist-db component), and authentication integration component.
 
-Setting up the Client UI
+See :ref:`gawati-editor` for an architecture overview. 
+
+.. _inst-gawati-editor-ui:
+
+Setting up the Editor UI
 ========================
 
-#. Clone https://github.com/gawati/gawati-client.git
+To install the Editor UI Component in development environments: 
+
+#. Clone https://github.com/gawati/gawati-editor-ui.git
 #. Install packages
 
     .. code-block:: bash
@@ -226,9 +234,14 @@ Setting up the Client UI
           npm install
 
 
-Setting up the Client Server
-============================
-#. https://github.com/gawati/gawati-client-server.git
+.. _inst-gawati-editor-fe:
+
+Setting Up the Editor FE (Server Component)
+===========================================
+
+To install the Editor Server Component in development environments: 
+
+#. Clone https://github.com/gawati/gawati-editor-fe.git
 #. Install packages
 
     .. code-block:: bash
@@ -237,8 +250,11 @@ Setting up the Client Server
           npm install
 
 
-Installing Gawati Client Data
-=============================
+.. _inst-gawati-editor-be:
+
+Installing Gawati Editor BE (Data services Component)
+=====================================================
+
 #. Clone https://github.com/gawati/gawati-client-data.git
 #. Build to get the package. 
 
@@ -248,7 +264,7 @@ Installing Gawati Client Data
       cd gawati-client-data
       ant xar
 
-    The above generates `gawati-client-data-1.0.xar` package in the ``build`` folder. Place the xar file in the ``autodeploy`` folder within the eXist installation, and restart the eXist database server. They will be automatically installed.
+    The above generates `gawati-client-data-1.x.xar` package in the ``build`` folder. Place the xar file in the ``autodeploy`` folder within the eXist installation, and restart the eXist database server. They will be automatically installed. You can also use the Package Manager in the eXist-db admin dashboard to manually select and install the package (see `Installing Packages in eXist-db`_).
 
 #. Extract and load the `Client Sample data`_.
    In eXist's dashboard -> Collections, create the path ``/db/docs/gawati-client-data``.
@@ -258,7 +274,7 @@ Installing Gawati Client Data
     .. code-block:: bash
       :linenos:
 
-      ./bin/client.sh -u admin -P <admin_password> -d -m /db/docs/gawati-client-data/akn -p <path_to_extracted_data>/akn
+      ./bin/client.sh -u admin -P <admin_password> -d -m /db/docs/gawati-client-data -p <path_to_extracted_data>
 
 #. Make the necessary Apache conf entries. See :ref:`conf-client`.
 
@@ -273,23 +289,27 @@ Installing Keycloak Auth
       :linenos:
 
       cd gawati-keycloak-scripts
-      node index.js --new_realm_name=Ethiopia --input_realm=model_realm/model-realm.json --output_file=ethiopia.json
+      node index.js --new_realm_name=auth.gawati.local --input_realm=model_realm/model-realm.json --output_file=auth.gawati.local.json
 
-#. Switch back to the administration console in the browser
-#. Create a dev realm by importing configuration from `ethiopia.json` generated above.
+#. Switch back to the administration console of KeyCloak in the browser
+#. Create a dev realm by importing configuration from `auth.gawati.local.json` generated above.
 
     .. figure:: ./_images/kc-add-dev-realm.png
         :alt: Add Realm
         :align: center
         :figclass: align-center
 
-#. Within the ``Ethiopia`` realm, navigate to the ``Clients`` tab. Click on ``gawati-client``. Set the other parameters as shown below. In this case we have set the root url, valid url etc to http://localhost:3000 which is the dev mode host and port for gawat-client UI. If you are deploying on a domain e.g. http://www.domain.org you can set it to that domain.
+#. Within the ``auth.gawati.local`` realm, navigate to the ``Clients`` tab. Click on ``gawati-client``. Set the other parameters as shown below. In this case we have set the root url, valid url etc to http://localhost:3000 which is the dev mode host and port for Gawati Editor UI. If you are deploying on a domain e.g. http://www.domain.org you can set it to that domain.
 
     .. figure:: ./_images/kc-edit-dev-client.png
         :alt: Edit Client
         :align: center
         :figclass: align-center
 
+    .. figure:: ./_images/kc-edit-dev-client-2.png
+        :alt: Edit Client
+        :align: center
+        :figclass: align-center
 
 #. Within the client, switch to the ``Credentials`` tab and regenerate the secret.
 
@@ -305,7 +325,7 @@ Installing Keycloak Auth
         :linenos:
 
         {
-          "realm": "Ethiopia",
+          "realm": "auth.gawati.local",
           "auth-server-url": "http://localhost:11080/auth",
           "url": "http://localhost:11080/auth",
           "ssl-required": "external",
@@ -319,16 +339,26 @@ Installing Keycloak Auth
           "policy-enforcer": {}
         }
 
-#. Copy the downloaded ``keycloak.json`` contents into  ``gawati-client/src/configs/authRealm.json`` and ``gawati-client-server/auth.json``.
-#. Finally, go to ``Realm Settings => Login`` and set ``User Registration`` to ``on`` and set ``Email as User name`` to ``on``.
-
-    .. figure:: ./_images/kc-dev-login.png
-      :alt: Login
+#. Copy the downloaded ``keycloak.json`` contents into the   ``gawati-editor-fe/auth.json`` file on the editor-fe installation (see :ref:`inst-gawati-editor-fe`.
+#. Finally, login as admin into KeyCloak and create some users. You can create test users like `submitter`, `editor`, `admin` and associate them with the groups `clientSubmitters`, `clientEditors` and `clientAdmins` .
+    
+    .. figure:: ./_images/kc-added-user.png
+      :alt: Submitter Username
       :align: center
       :figclass: align-center
 
+      Above: a user called ``submitter`` has been added.
 
-Run Gawati Client
+
+    .. figure:: ./_images/kc-added-user-group.png
+      :alt: Adding user to group
+      :align: center
+      :figclass: align-center
+
+      Above: the user has been added to the ``clientSubmitters`` group to give it the ``client.Submitter`` role.
+
+
+Run Gawati Editor
 =================
 #. Start eXist
 #. Start keycloak
@@ -339,30 +369,32 @@ Run Gawati Client
       cd keycloak-3.4.3.Final
       ./bin/standalone.sh
 
-#. Start gawati-client-server
+#. Start gawati-editor-fe service. Use the ``dev_npm_start`` scripts to start the service in development node. 
 
     .. code-block:: bash
       :linenos:
 
-      cd gawati-client-server
-      node ./bin/www
+      cd gawati-editor-fe
+      ./dev_npm_start.sh # .\dev_npm_start.bat on windows
 
-#. Start gawati-client
+#. Start gawati-editor-ui
 
     .. code-block:: bash
       :linenos:
 
-      cd gawati-client
-      npm start
+      cd gawati-editor-ui
+      npm start 
 
-#. Load http://localhost:3000 in the browser. You should see a login screen. Register a new user.
+#. Load http://localhost:3000 in the browser. You should see a login screen. Login with any of the users you created.
 
     .. figure:: ./_images/gawati-client-login.png
       :alt: Login
       :align: center
       :figclass: align-center
 
-#. After logging in, you should be able to see the dashboard with the two sample documents.
+      Above: Login screen for gawati-editor
+
+#. After logging in, you should be able to see the dashboard with some sample documents.
 
     .. figure:: ./_images/gawati-client-dashboard.png
       :alt: Dashboard
@@ -377,4 +409,5 @@ Run Gawati Client
 .. _PDF Data set: https://github.com/gawati/gawati-data/releases/download/1.14/akn_xml_pdf_sample_1.14.zip
 .. _Client Sample data: https://github.com/gawati/gawati-client-data/releases/download/1.0/gawati-client-data-sample.zip
 .. _Installing Keycloak: http://docs.gawati.org/en/latest/development/authentication.html#installing-configuring-keycloak-for-development
+.. _Installing Packages in eXist-db: https://exist-db.org/exist/apps/doc/dashboard.xml#D2.4.8
 .. _Model Realm: https://github.com/gawati/gawati-keycloak-scripts/blob/dev/model_realm/model-realm.json
