@@ -41,6 +41,14 @@ Installing Gawati Data
 .. note::
   .. include:: note-gawati-data.rst
 
+For development environments, you should clone the project from Git, and build the package:
+
+.. code-block:: bash
+  :linenos:
+
+  git clone https://github.com/gawati/gawati-data.git
+  ant xar
+
 Place the ``gawati-data``  XAR file in the `autodeploy` folder within the eXist installation, and restart the eXist database server. They will be automatically installed. You can also use the Package Manager in the eXist-db admin dashboard to manually select and install the package (see `Installing Packages in eXist-db`_).
 
 Load Sample Data
@@ -112,6 +120,18 @@ On Windows you will run it as :samp:``.\\bin\\client.bat`` instead:
 .. note::
   if you get a password failure, log in to eXist-db as admin, and reset the password for gwdata user manually, and then use that password.
 
+
+Finally Rebuild the Database Index
+-----------------------------------
+
+.. code-block:: bash
+  :linenos:
+
+  $curl http://localhost:8080/exist/apps/gawati-data/post-data-load.xql
+  <success>Build Sort index</success>
+
+
+
 Apache Config
 -------------
 
@@ -122,6 +142,15 @@ Installing Gawati Portal UI
 ===========================
 
 Extract the contents of the zip file onto a directory served by Apache. 
+
+But, if installing for development, clone from git and build:
+
+.. code-block:: bash
+  :linenos:
+
+  git clone https://github.com/gawati/gawati-portal-ui.git
+  npm install 
+
 And add the corresponding Apache Server configuration entry (See :ref:`conf-portal-ui`). 
 
 
@@ -133,10 +162,20 @@ See our detailed guide on setting up your environment for production and develop
 For setting up Authentication, click here:  :doc:`Authentication <./authentication>`
 
 
-Installing Gawati Portal Server
-===============================
+Installing Gawati Portal FE
+===========================
 
 Extract the contents of the zip file into any directory. 
+
+For development environments, clone from git and install it:
+
+.. code-block:: bash
+  :linenos:
+
+  git clone https://github.com/gawati/gawati-portal-fe.git
+  npm install 
+
+
 The Gawati Portal has two runnable components, the portal http server which provides access to REST services, and a cron component that runs scheduled tasks periodically. 
 
 
