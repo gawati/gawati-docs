@@ -320,23 +320,7 @@ Installing Gawati Editor BE (Data services Component)
 
 Installing Keycloak Auth
 ========================
-#. Follow the installation steps 1 - 6 from `Installing Keycloak`_.
-#. Clone https://github.com/gawati/gawati-keycloak-scripts.git
-#. Generate a new development realm using the command:
-
-    .. code-block:: bash
-      :linenos:
-
-      cd gawati-keycloak-scripts
-      node index.js --new_realm_name=auth.gawati.local --input_realm=model_realm/model-realm.json --output_file=auth.gawati.local.json
-
-#. Switch back to the administration console of KeyCloak in the browser
-#. Create a dev realm by importing configuration from `auth.gawati.local.json` generated above.
-
-    .. figure:: ./_images/kc-add-dev-realm.png
-        :alt: Add Realm
-        :align: center
-        :figclass: align-center
+#. Follow the installation steps from `Installing Keycloak`_.
 
 #. Within the ``auth.gawati.local`` realm, navigate to the ``Clients`` tab. Click on ``gawati-client``. Set the other parameters as shown below. In this case we have set the root url, valid url etc to http://localhost:3000 which is the dev mode host and port for Gawati Editor UI. If you are deploying on a domain e.g. http://www.domain.org you can set it to that domain.
 

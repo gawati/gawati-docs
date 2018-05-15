@@ -220,65 +220,45 @@ Installation Steps
 
 #. Click on the administration console. Login with the admin and admin.
 
-#. Create a test realm called `gawati`: 
-    
-    .. figure:: ./_images/kc-add-realm.png
-     :alt: Add Realm
-     :align: center
-     :figclass: align-center
-  
-    .. note::
-        If you are getting a https related error. You can disable it from command line
+#. Clone https://github.com/gawati/gawati-keycloak-scripts.git
 
-            .. code-block:: sh
-            
-              ./bin/add-user-keycloak.sh -r master -u <user> -p <password>
-              ./bin/kcadm.sh config credentials --server http://localhost:11080/auth --realm master --user <user> --password <password>
-              ./bin/kcadm.sh update realms/master -s sslRequired=NONE
-             
-        
-        Restart the server
+#. Generate a new development realm using the command:
+
+    .. code-block:: bash
+      :linenos:
+
+      cd gawati-keycloak-scripts
+      node index.js --new_realm_name=auth.gawati.local --input_realm=model_realm/model-realm.json --output_file=auth.gawati.local.json
+
+#. Switch back to the administration console of KeyCloak in the browser
+
+#. Create a dev realm by importing configuration from `auth.gawati.local.json` generated above.
+
+    .. figure:: ./_images/kc-add-dev-realm.png
+        :alt: Add Realm
+        :align: center
+        :figclass: align-center
 
 
-#. Within the ``gawati`` realm, Navigate to client tab and click new client. Fill the name of client (``gawati-portal-ui``), the client root url and hit save:
-    
-    .. figure:: ./_images/kc-add-client.png
-     :alt: Add Client
+********************************************************
+Configuring Single Sign-on across different applications
+********************************************************
+
+In Gawati single-sign-on (SSO) is provided via KeyCloak. 
+
+Functionally it works in the following way -- you login into an application (e.g. the Portal), and that automatically logs you into other Applications which have been configured for SSO like the Profiles application. 
+
+The setup for such SSO aware applications is very easy. 
+
+#. You just need to make use of the same KeyCloak JSON configuration file to initialize their authentication environments.
+
+#. You need to configure the client setup in KeyCloak associated with the KeyCloak JSON file to recognize multiple redirect urls. For example, if your portal is being served on ``http://www.domain.org`` and your profiles application is on ``http://profiles.domain.org`` , you need to initialize both with the same KeyCloak file, and set ``http://www.domain.org/*`` and ``http://profiles.domain.org/*`` as valid redirect URIs in KeyCloak. In the figure below, is an example where redirect URIs have been set to ``http://localhost:3000`` & ``http://locahost:3001`` and ``Web Origins`` has been set to ``+``. This kind of setup allows you to login to ``locahost:3000`` and move on to ``locahost:3001`` as if you had already authenticated on it.
+
+    .. figure:: ./_images/multiple-redirect-uris.png
+     :alt: Multiple Redirect URIs
      :align: center
      :figclass: align-center
  
-
-#. Now edit the same  ``gawati-portal-ui`` client document, and set the other parameters as shown below. In this case we have set the root url, valid url etc to `http://localhost:3000` which is the dev mode host and port for the `gawati-portal-ui`, if you are deploying on `localhost` and apache you can set this to ``http://localhost``. Correspondingly if you are deploying on a domain e.g. ``http://www.domain.org`` you can set it to that domain. 
-
-   .. figure:: ./_images/kc-edit-client.png
-    :alt: Add Client
-    :align: center
-    :figclass: align-center
-
-
-#. Switch to the ``Installation`` tab in the client section, and choose the format as ``KeyCloak OIDC JSON``. Change the following variables, ``auth-server-url`` to ``url`` and change ``resource`` to ``clientId``:
- 
-    .. code-block:: JSON
-        :linenos:
-
-        {
-            "realm": "gawati",
-            "url": "http://localhost:11080/auth",
-            "ssl-required": "external",
-            "clientId": "gawati-portal-ui",
-            "public-client": true,
-            "confidential-port": 0
-        }
-
-
-   Save it is ``keycloak.json`` into the ``gawati-portal-ui`` ``src/configs`` folder. Note that, you don't need to do this, if you have the above defaults as the portal ships with ``keycloak.json`` with the same contents.
-
-#. Finally, go to ``Realm Settings => Login`` and set ``User Registration`` to ``on`` and set ``Email as User name`` to ``on``. 
-
-   .. figure:: ./_images/kc-login.png
-    :alt: Login
-    :align: center
-    :figclass: align-center
 
 
     
