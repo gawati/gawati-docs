@@ -294,7 +294,8 @@ To install the Editor Server Component in development environments:
 Installing Gawati Editor BE (Data services Component)
 =====================================================
 
-#. Clone https://github.com/gawati/gawati-client-data.git
+#. Download sample data from here: https://github.com/gawati/gawati-client-data/releases/download/1.4/akn_xml_docs_sample-1.4.zip
+
 #. Build to get the package. 
 
     .. code-block:: bash
