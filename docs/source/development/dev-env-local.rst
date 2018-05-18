@@ -430,7 +430,7 @@ Run Gawati Editor
 .. _gawati-portal-server: https://github.com/gawati/gawati-portal-server
 .. _Full Text Data set: https://github.com/gawati/gawati-data/releases/download/1.14/akn_xml_ft_sample_1.14.zip
 .. _XML Data set: https://github.com/gawati/gawati-data/releases/download/1.14/akn_xml_docs_sample_1.14.zip
-.. _PDF Data set: https://github.com/gawati/gawati-data/releases/download/1.14/akn_xml_pdf_sample_1.14.zip
+.. _PDF Data set: https://github.com/gawati/gawati-data/releases/download/1.14/akn_xml_pdf_sample-1.14.zip
 .. _Client Sample data: https://github.com/gawati/gawati-client-data/releases/download/1.0/gawati-client-data-sample.zip
 .. _Installing Keycloak: http://docs.gawati.org/en/latest/development/authentication.html#installing-configuring-keycloak-for-development
 .. _Installing Packages in eXist-db: https://exist-db.org/exist/apps/doc/dashboard.xml#D2.4.8
