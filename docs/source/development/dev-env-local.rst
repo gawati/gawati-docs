@@ -49,7 +49,17 @@ For development environments, you should clone the project from Git, and build t
   git clone https://github.com/gawati/gawati-data.git
   ant xar
 
-Place the ``gawati-data``  XAR file in the `autodeploy` folder within the eXist installation, and restart the eXist database server. They will be automatically installed. You can also use the Package Manager in the eXist-db admin dashboard to manually select and install the package (see `Installing Packages in eXist-db`_).
+.. raw:: html
+
+  <iframe width="560" height="315" src="http://www.youtube.com/embed/35ua4-Ctov8?rel=0" frameborder="0" allowfullscreen></iframe>
+  
+
+Install the ``gawati-data``  XAR file into eXist using the eXist package manager in the eXist-db admin dashboard to manually select and install the package (see `Installing Packages in eXist-db`_).
+
+.. raw:: html
+
+  <iframe width="560" height="315" src="http://www.youtube.com/embed/9AYSWREk24I?rel=0" frameborder="0" allowfullscreen></iframe>
+
 
 Load Sample Data
 ----------------
@@ -137,6 +147,10 @@ Apache Config
 
 There are Apache HTTP configs required for both serving XML and PDF documents. See :ref:`conf-gawati-data` and :ref:`conf-binary`
 
+Development
+-----------
+
+We recommend using :doc:`Oxygen XML for developing on eXist-db <./using-oxygen>`. VSCode can also be used (see :ref:`using-vscode-existdb`).
 
 Installing Gawati Portal UI
 ===========================

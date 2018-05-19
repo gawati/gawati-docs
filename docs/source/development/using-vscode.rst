@@ -17,6 +17,9 @@ Setting up defaults
 Go to `File-> Preferences -> Settings`. Add / Edit entry `"files.encoding"` to
 `"utf8"`. You can also set `"files.autoGuessEncoding"` to `true`.
 
+
+ .. _using-vscode-existdb:
+
 ***************************
 Using VS Code with eXist DB
 ***************************
