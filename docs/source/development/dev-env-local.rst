@@ -308,7 +308,9 @@ To install the Editor Server Component in development environments:
 Installing Gawati Editor BE (Data services Component)
 =====================================================
 
-#. Download sample data from here: https://github.com/gawati/gawati-client-data/releases/download/1.4/akn_xml_docs_sample-1.4.zip
+#. Download sample data from here: `Client Sample data (XML)`_, `Client Sample data (PDF)`_
+
+#. Clone https://github.com/gawati/gawati-client-data.git
 
 #. Build to get the package. 
 
@@ -318,9 +320,15 @@ Installing Gawati Editor BE (Data services Component)
       cd gawati-client-data
       ant xar
 
-    The above generates `gawati-client-data-1.x.xar` package in the ``build`` folder. Place the xar file in the ``autodeploy`` folder within the eXist installation, and restart the eXist database server. They will be automatically installed. You can also use the Package Manager in the eXist-db admin dashboard to manually select and install the package (see `Installing Packages in eXist-db`_).
+    The above generates `gawati-client-data-1.x.xar` package in the ``build`` folder. Install it using the Package Manager in the eXist-db admin dashboard to manually select and install the package (see `Installing Packages in eXist-db`_).
+    Alternatively, here is a video that shows how to install a package in eXist-db:
 
-#. Extract and load the `Client Sample data`_.
+    .. raw:: html
+
+      <iframe width="560" height="315" src="http://www.youtube.com/embed/9AYSWREk24I?rel=0" frameborder="0" allowfullscreen></iframe>
+
+
+#. Extract and load the `Client Sample data (XML)`_.
    In eXist's dashboard -> Collections, create the path ``/db/docs/gawati-client-data``.
 
    Now upload the data using the following command run from the eXist-db folder:
@@ -328,7 +336,21 @@ Installing Gawati Editor BE (Data services Component)
     .. code-block:: bash
       :linenos:
 
-      ./bin/client.sh -u admin -P <admin_password> -d -m /db/docs/gawati-client-data -p <path_to_extracted_data>
+      ./bin/client.sh -u gawati-client-data -P <gawati-client-data_password> -d -m /db/docs/gawati-client-data -p <path_to_extracted_data>/gawati-client-data
+
+
+    or on windows: 
+
+    .. code-block:: bash
+      :linenos:
+
+      .\bin\client.bat -u gawati-client-data -P <gawati-client-data_password>  -d -m /db/docs/gawati-client-data -p  <path_to_extracted_data>\gawati-client-data
+
+  the user here is ``gawati-client-data`` which is the user with permissions over the ``/db/docs/gawati-client-data`` collection where we are storing the xml documents. The password for this user is generated during installation and stored in the ``/db/apps/gawati-client-data/_auth/_pw.xml`` file. The same instructions are shown in the video below.
+
+    .. raw:: html
+
+      <iframe width="560" height="315" src="http://www.youtube.com/embed/QOd8tv4Cs_k?rel=0" frameborder="0" allowfullscreen></iframe>
 
 #. Make the necessary Apache conf entries. See :ref:`conf-client`.
 
@@ -445,7 +467,8 @@ Run Gawati Editor
 .. _Full Text Data set: https://github.com/gawati/gawati-data/releases/download/1.14/akn_xml_ft_sample_1.14.zip
 .. _XML Data set: https://github.com/gawati/gawati-data/releases/download/1.14/akn_xml_docs_sample_1.14.zip
 .. _PDF Data set: https://github.com/gawati/gawati-data/releases/download/1.14/akn_xml_pdf_sample-1.14.zip
-.. _Client Sample data: https://github.com/gawati/gawati-client-data/releases/download/1.0/gawati-client-data-sample.zip
+.. _Client Sample data (XML): https://github.com/gawati/gawati-client-data/releases/download/1.4/akn_xml_docs_sample-1.4.zip
+.. _Client Sample data (PDF): https://github.com/gawati/gawati-client-data/releases/download/1.4/akn_pdf_docs_sample-1.4.zip
 .. _Installing Keycloak: http://docs.gawati.org/en/latest/development/authentication.html#installing-configuring-keycloak-for-development
 .. _Installing Packages in eXist-db: https://exist-db.org/exist/apps/doc/dashboard.xml#D2.4.8
 .. _Model Realm: https://github.com/gawati/gawati-keycloak-scripts/blob/dev/model_realm/model-realm.json
