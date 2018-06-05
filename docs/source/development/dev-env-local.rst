@@ -203,7 +203,7 @@ Run the following in the extracted folder to setup the server:
 
   npm install 
 
-Assuming you extracted the portal server into : `/home/web/portal-server`, from that folder, run :
+Assuming you extracted the portal server into : `/home/web/portal-fe`, from that folder, run :
 
 .. code-block:: bash
   :linenos:
