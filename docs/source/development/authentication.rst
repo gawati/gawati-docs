@@ -228,6 +228,7 @@ Installation Steps
       :linenos:
 
       cd gawati-keycloak-scripts
+      npm install
       node index.js --new_realm_name=auth.gawati.local --input_realm=model_realm/model-realm.json --output_file=auth.gawati.local.json
 
 #. Switch back to the administration console of KeyCloak in the browser
