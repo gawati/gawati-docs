@@ -193,7 +193,7 @@ Installation Steps
 
 #. Visit http://www.keycloak.org/downloads.html  and download  `KeyCloak 3.4.3 Final <https://downloads.jboss.org/keycloak/3.4.3.Final/keycloak-3.4.3.Final.zip>`_. 
 
-#. Unzip this and move to ``bin`` directory.
+#. Unzip this and navigate to the ``bin`` directory.
 
     .. note::
         To prevent KeyCloak from hanging due to lack of available entropy, change the jvm to use ``urandom`` instead of ``random``:
