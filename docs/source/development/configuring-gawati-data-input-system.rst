@@ -26,7 +26,7 @@ Access Control
 The Data Input system is an authenticated system and access to it requires a user name and password. In Gawati users are created in the configured KeyCloak Realm.
 However, just creating a user is not enough, you need to associate users to roles. In Gawati this is done via Groups, we have groups associated with one or more Roles, and users added to a group acquire the Roles on the group.
 
-If you have used the `Model Realm <./model-realm>`__ to create your realm, then the following roles & groups will be available to you:
+If you have used the `Model Realm <https://raw.githubusercontent.com/gawati/gawati-keycloak-scripts/dev/model_realm/model-realm.json>`__ to create your realm, then the following roles & groups will be available to you:
 
     - Roles
         * `client.Admin` - has access to all the states and transitions the document can go through.
@@ -34,10 +34,10 @@ If you have used the `Model Realm <./model-realm>`__ to create your realm, then 
         * `client.Submitter` - can draft a document, but cannot edit it outside of the draft state
         * `client.Publisher` - can publish a document at the end of the workflow process
     - Groups
-        * `clientAdmins`
-        * `clientEditors`
-        * `clientSubmitters`
-        * `clientPublishers`
+        * `client.Admins`
+        * `client.Editors`
+        * `client.Submitters`
+        * `client.Publishers`
 
 .. note::
     - These roles and groups are not baked into the system, you can change them. Keep in mind though, changing groups and roles will also require you to change Workflow configuration (see :ref:`workflow-config`).

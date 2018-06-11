@@ -48,3 +48,6 @@ The data entry client is composed of three components:
     * Application Server component - this provides access to services like Workflow, Data conversion and other processing which needs to be done on the server. Runs on ExpressJS and NodeJS (see `gawati-client-server <https://github.com/gawati/gawati-client-server>`__ ) 
     * UI Front-end: this provides the data entry forms and validates user input. This a ReactJS app.
 
+There are also other sub-systems of the Gawati Editor System which relate to how documents get published. 
+
+

@@ -128,7 +128,9 @@ On Windows you will run it as :samp:``.\\bin\\client.bat`` instead:
   .\bin\client.bat -u gawatidata -P <copied_password_hash> -d -m /db/docs/gawati-data -p d:\data\akn_xml_ft_sample
 
 .. note::
-  if you get a password failure, log in to eXist-db as admin, and reset the password for gwdata user manually, and then use that password.
+  
+  1. the current folder structure expected within ``/db/docs/gawati-data`` is ``/db/docs/gawati-data/akn`` for the XML files and ``/db/docs/gawati-data/akn_ft`` for the full text files.
+  2. if you get a password failure, log in to eXist-db as admin, and reset the password for gwdata user manually, and then use that password.
 
 
 Finally Rebuild the Database Index
@@ -151,6 +153,8 @@ Development
 -----------
 
 We recommend using :doc:`Oxygen XML for developing on eXist-db <./using-oxygen>`. VSCode can also be used (see :ref:`using-vscode-existdb`).
+
+.. _inst-gawati-portal-ui:
 
 Installing Gawati Portal UI
 ===========================
@@ -175,6 +179,7 @@ See our detailed guide on setting up your environment for production and develop
 
 For setting up Authentication, click here:  :doc:`Authentication <./authentication>`
 
+.. _inst-gawati-portal-fe:
 
 Installing Gawati Portal FE
 ===========================
@@ -256,6 +261,27 @@ To access the web-based dashboard from a remote computer, you need to use ssh tu
   :linenos:
 
    ssh -vv -i <path to private key> -p 22 -L 9999:127.0.0.1:8080 server_user@101.102.103.104
+
+
+Starting up Services
+====================
+
+All the primary components and services need to be started in a specific order because of interconnected dependencies.
+
+The recommended order is as follows:
+
+  * Base Services
+
+    #. KeyCloak
+    #. eXist-db
+    #. MongoDB
+  * Component Services
+  
+    #. :ref:`inst-gawati-portal-fe`
+    #. :ref:`inst-gawati-profiles-fe`
+    #. :ref:`inst-gawati-profiles-ui`
+    #. :ref:`inst-gawati-portal-ui`
+
 
 .. _inst-gawati-editor:
 
