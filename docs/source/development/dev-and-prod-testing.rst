@@ -99,6 +99,7 @@ We proxy the eXist-db services on the data.local host.
         RewriteRule ^(.*)$ $1 [R=200,L]
         ### CORS END
 
+        # gawati-data
         <Location ~ "/gwd/(.*)">
         AddType text/cache-manifest .appcache
         ProxyPassMatch  "http://localhost:8080/exist/restxq/gw/$1"
@@ -108,6 +109,7 @@ We proxy the eXist-db services on the data.local host.
         SetEnv proxy-nokeepalive 1
         </Location>
 
+        # gawati-portal-fe
         <Location ~ "/gwp/(.*)">
         AddType text/cache-manifest .appcache
         ProxyPassMatch  "http://localhost:9001/gwp/$1"
@@ -116,6 +118,7 @@ We proxy the eXist-db services on the data.local host.
         SetEnv proxy-nokeepalive 1
         </Location>
 
+        # gawati-client-data
         <Location ~ "/gwdc/(.*)">
         AddType text/cache-manifest .appcache
         ProxyPassMatch  "http://localhost:8080/exist/restxq/gwdc/$1"
@@ -124,6 +127,7 @@ We proxy the eXist-db services on the data.local host.
         SetEnv proxy-nokeepalive 1
         </Location>
 
+        # gawati-profiles-fe
         <Location ~ "/gwu/(.*)">
         AddType text/cache-manifest .appcache
         ProxyPassMatch  "http://localhost:9003/gwu/$1"
@@ -132,10 +136,20 @@ We proxy the eXist-db services on the data.local host.
         SetEnv proxy-nokeepalive 1
         </Location>
 
+        # gawati-editor-fe
         <Location ~ "/gwc/(.*)">
         AddType text/cache-manifest .appcache
         ProxyPassMatch  "http://localhost:9002/gwc/$1"
         ProxyPassReverse "http://localhost:9002/gwc/$1"
+        SetEnv force-proxy-request-1.0 1
+        SetEnv proxy-nokeepalive 1
+        </Location>
+
+        # gawati-xslt-transformer
+        <Location ~ "/gwx/(.*)">
+        AddType text/cache-manifest .appcache
+        ProxyPassMatch  "http://localhost:9005/Gawati/xml/xslt/$1"
+        ProxyPassReverse "http://localhost:9005/Gawati/xml/xslt/$1"
         SetEnv force-proxy-request-1.0 1
         SetEnv proxy-nokeepalive 1
         </Location>
@@ -241,6 +255,15 @@ Apache configuration for portal-ui
 For example: if you want to serve the portal from the `/ui` virtual directory of your domain, and your files are located in `/home/web/apps/gawati-portal-ui`, then use the following apache configuration --  
 
 .. include:: portal-ui-conf.rst
+
+.. _conf-profiles-ui:
+
+Apache configuration for profiles-ui
+----------------------------------
+
+For example: if you want to serve the portal from the `/ui` virtual directory of your domain, and your files are located in `/home/web/apps/gawati-portal-ui`, then use the following apache configuration --  
+
+.. include:: profiles-ui-conf.rst
 
 
 .. _conf-binary:

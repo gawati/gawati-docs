@@ -13,7 +13,10 @@ The below instructions are not specific to an operating system, the components w
     4. **Ant**: Download and `install Ant <http://ant.apache.org/manual/install.html#installing>`_ 
     5. **Apache HTTPD 2.4.x**: Install Apache, on Cent OS, Ubuntu and OS X this will likely be installed by default, on Windows you will have to download and install, see `Apache for Windows <https://www.apachehaus.com/cgi-bin/download.plx>`_; enable `mod_alias`, `mod_rewrite`, `mod_proxy`, `mod_proxy_http` and enable htaccess.
     6. **KeyCloak 3.4.1**: Authentication server, see :doc:`./authentication` 
-    7. *Visual Studio Code*: This is if you want play around with gawati code. Download, and setup Visual Studio Code (there are versions for Windows, OS X and Linux) for development, see `VS Code Setup <./using-vscode.rst>`_
+    7. **RabbitMQ 3.7.6**: Message Queue server, used by the content sync engine that moves data between the  :ref:`gawati-editor` and the  :ref:`gawati-portal` see `installing rabbitmq server <https://www.rabbitmq.com/download.html>`_, `version 3.7.6 <https://bintray.com/rabbitmq/all/rabbitmq-server/3.7.6>`_ you will need to install Erlang 20.3 before that, see `installing erlang <http://www.erlang.org/downloads/20.3>`_.
+    8. **MongoDB 3.6.5 Community Edition**: Used by the Gawati User Profiles system, see `Download MongoDB <https://www.mongodb.com/download-center?jmp=nav#community>`_ , `Install MongoDb <https://docs.mongodb.com/manual/installation/>`_
+    9. **Jetty 9.4.6.v20170531**: Used by :ref:`gawati-portal` (NOTE: required, only if you are saving legal documents in XML format), `Download <https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/9.4.6.v20170531/jetty-distribution-9.4.6.v20170531.zip>`_ , `Installing <https://www.eclipse.org/jetty/documentation/9.4.x/index.html>`_.
+    10. *Visual Studio Code*: This is if you want play around with gawati code. Download, and setup Visual Studio Code (there are versions for Windows, OS X and Linux) for development, see `VS Code Setup <./using-vscode.rst>`_
 
 
 .. contents:: Table of Contents 
@@ -143,7 +146,6 @@ Finally Rebuild the Database Index
   <success>Build Sort index</success>
 
 
-
 Apache Config
 -------------
 
@@ -155,6 +157,19 @@ Development
 We recommend using :doc:`Oxygen XML for developing on eXist-db <./using-oxygen>`. VSCode can also be used (see :ref:`using-vscode-existdb`).
 
 .. _inst-gawati-portal-ui:
+
+
+Accessing eXist-db via SSH tunnelling
+-------------------------------------
+
+If eXist-db is installed in a remote server, by default the server starts on port 8080 and listens only to localhost.
+To access the web-based dashboard from a remote computer, you need to use ssh tunneling. For example, if your remote server  is on the I.P. Address `101.102.103.104`, and eXist-db is on port `8080`, running the following command, will give you access to the eXist-db dashboard on `http://localhost:9999` :
+
+.. code-block:: bash
+  :linenos:
+
+   ssh -vv -i <path to private key> -p 22 -L 9999:127.0.0.1:8080 server_user@101.102.103.104
+
 
 Installing Gawati Portal UI
 ===========================
@@ -234,6 +249,23 @@ This is started by simply running:
   node ./cron.js
 
 
+Additional configuration to integrate with the Profiles service
+----------------------------------------------------------------
+
+The :ref:`gawati-portal` integrates with the :ref:`gawati-profiles` service to provide 
+
+If eXist-db is installed in a remote server, by default the server starts on port 8080 and listens only to localhost.
+To access the web-based dashboard from a remote computer, you need to use ssh tunneling. For example, if your remote server  is on the I.P. Address `101.102.103.104`, and eXist-db is on port `8080`, running the following command, will give you access to the eXist-db dashboard on `http://localhost:9999` :
+
+.. code-block:: bash
+  :linenos:
+
+   ssh -vv -i <path to private key> -p 22 -L 9999:127.0.0.1:8080 server_user@101.102.103.104
+
+
+
+
+
 Apache Config
 -------------
 
@@ -251,16 +283,7 @@ The server can be customized with various envirobment variables which can be spe
   * API_HOST - allows setting the host address to the `gawati-data` server, default is `localhost`
   * API_PORT - allows setting the port number to the `gawati-data` server, default is `8080`
 
-Accessing eXist-db via SSH tunnelling
--------------------------------------
 
-If eXist-db is installed in a remote server, by default the server starts on port 8080 and listens only to localhost.
-To access the web-based dashboard from a remote computer, you need to use ssh tunneling. For example, if your remote server  is on the I.P. Address `101.102.103.104`, and eXist-db is on port `8080`, running the following command, will give you access to the eXist-db dashboard on `http://localhost:9999` :
-
-.. code-block:: bash
-  :linenos:
-
-   ssh -vv -i <path to private key> -p 22 -L 9999:127.0.0.1:8080 server_user@101.102.103.104
 
 
 Starting up Services
@@ -281,6 +304,77 @@ The recommended order is as follows:
     #. :ref:`inst-gawati-profiles-fe`
     #. :ref:`inst-gawati-profiles-ui`
     #. :ref:`inst-gawati-portal-ui`
+
+
+.. _inst-gawati-profiles:
+
+**************************
+Installing Gawati Profiles
+**************************
+
+Gawati Profiles allows authenticated users in system to have a profile with their personal information. 
+The Profiles system supports other functionality in the system, like allowing logged in users to save their searches.
+The profiles system is made up of 3 different components:
+  * MongoDB (as mentioned earlier as a pre-requisite)
+  * profiles-ui - front-end component
+  * profiles-fe  - back-end component
+
+.. _inst-gawati-profiles-fe:
+
+Setting up profiles-fe
+======================
+
+Extract the contents of the zip file into any directory. 
+
+For development environments, clone from git and install it:
+
+.. code-block:: bash
+  :linenos:
+
+  git clone https://github.com/gawati/gawati-profiles-fe.git
+  npm install 
+
+Run the following in the app folder to setup the server:
+
+.. code-block:: bash
+  :linenos:
+
+  npm install 
+
+From that folder, run... :
+
+.. code-block:: bash
+  :linenos:
+
+  npm start
+
+...to start up the web-service. By default it starts on PORT 9003. You can change that by running it as: 
+
+.. code-block:: bash
+  :linenos:
+
+  PORT=11003 npm start
+
+
+.. _inst-gawati-profiles-ui:
+
+Installing Gawati Profiles UI
+=============================
+
+Extract the contents of the zip file onto a directory served by Apache. 
+
+But, if installing for development, clone from git and build:
+
+.. code-block:: bash
+  :linenos:
+
+  git clone https://github.com/gawati/gawati-profiles-ui.git
+  npm install 
+
+And add the corresponding Apache Server configuration entry (See :ref:`conf-profiles-ui`). 
+
+
+
 
 
 .. _inst-gawati-editor:
