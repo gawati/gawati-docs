@@ -6,23 +6,29 @@ If you haven't yet, please review the Gawati Architecture page: :doc:`../system/
 The below instructions are not specific to an operating system, the components will run on different operating systems.
 
 .. note::
-  **Pre-requisites:**
-    1. **JDK 1.8 LTS** - On Linux operating systems you can install `OpenJDK8 <http://openjdk.java.net/install/>`_; For `Windows <https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html#CHDEBCCJ>`_ and for `Mac OSX <https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html#CHDBADCG>`_ and `Using OS X Homebrew <https://stackoverflow.com/questions/24342886/how-to-install-java-8-on-mac/28635465#28635465>`_
-    2. **NodeJS LTS 8.11.x** - See `NodeJS LTS 8.11.x <https://nodejs.org/en/download/>`_. Alternatively you can install NVM (for `Linux <https://github.com/creationix/nvm/>`_ , `Windows <https://github.com/coreybutler/nvm-windows>`_ ) which lets you easily install parallel versions of NodeJS. 
-    3. **eXist-db 3.4.1**: Download and install eXist-db 3.4.1, see `eXist-db <https://bintray.com/existdb/releases/exist/3.4.1/view>`_ Remember to note down the admin password of the eXist-db installation, you will need that later.   If you are installing eXist-db on Mac OS X, install it within the User folder, installing it in ``/Applications`` causes problems sometimes as the permissions required for eXist-db to write to the file system are for a super user.  
-    4. **Ant**: Download and `install Ant <http://ant.apache.org/manual/install.html#installing>`_ 
-    5. **Apache HTTPD 2.4.x**: Install Apache, on Cent OS, Ubuntu and OS X this will likely be installed by default, on Windows you will have to download and install, see `Apache for Windows <https://www.apachehaus.com/cgi-bin/download.plx>`_; enable `mod_alias`, `mod_rewrite`, `mod_proxy`, `mod_proxy_http` and enable htaccess.
-    6. **KeyCloak 3.4.1**: Authentication server, see :doc:`./authentication` 
-    7. **RabbitMQ 3.7.6**: Message Queue server, used by the content sync engine that moves data between the  :ref:`gawati-editor` and the  :ref:`gawati-portal` see `installing rabbitmq server <https://www.rabbitmq.com/download.html>`_, `version 3.7.6 <https://bintray.com/rabbitmq/all/rabbitmq-server/3.7.6>`_ you will need to install Erlang 20.3 before that, see `installing erlang <http://www.erlang.org/downloads/20.3>`_.
-    8. **MongoDB 3.6.5 Community Edition**: Used by the Gawati User Profiles system, see `Download MongoDB <https://www.mongodb.com/download-center?jmp=nav#community>`_ , `Install MongoDb <https://docs.mongodb.com/manual/installation/>`_
-    9. **Jetty 9.4.6.v20170531**: Used by :ref:`gawati-portal` (NOTE: required, only if you are saving legal documents in XML format), `Download <https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/9.4.6.v20170531/jetty-distribution-9.4.6.v20170531.zip>`_ , `Installing <https://www.eclipse.org/jetty/documentation/9.4.x/index.html>`_.
-    10. *Visual Studio Code*: This is if you want play around with gawati code. Download, and setup Visual Studio Code (there are versions for Windows, OS X and Linux) for development, see `VS Code Setup <./using-vscode.rst>`_
-
+  **Pre-requisites (runtime):**
+  
+    #. **JDK 1.8 LTS** - On Linux operating systems you can install `OpenJDK8 <http://openjdk.java.net/install/>`_; For `Windows <https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html#CHDEBCCJ>`_ and for `Mac OSX <https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html#CHDBADCG>`_ and `Using OS X Homebrew <https://stackoverflow.com/questions/24342886/how-to-install-java-8-on-mac/28635465#28635465>`_
+    #. **NodeJS LTS 8.11.x** - See `NodeJS LTS 8.11.x <https://nodejs.org/en/download/>`_. Alternatively you can install NVM (for `Linux <https://github.com/creationix/nvm/>`_ , `Windows <https://github.com/coreybutler/nvm-windows>`_ ) which lets you easily install parallel versions of NodeJS. 
+    #. **eXist-db 3.4.1**: Download and install eXist-db 3.4.1, see `eXist-db <https://bintray.com/existdb/releases/exist/3.4.1/view>`_ Remember to note down the admin password of the eXist-db installation, you will need that later.   If you are installing eXist-db on Mac OS X, install it within the User folder, installing it in ``/Applications`` causes problems sometimes as the permissions required for eXist-db to write to the file system are for a super user.  
+    #. **Apache HTTPD 2.4.x**: Install Apache, on Cent OS, Ubuntu and OS X this will likely be installed by default, on Windows you will have to download and install, see `Apache for Windows <https://www.apachehaus.com/cgi-bin/download.plx>`_; enable `mod_alias`, `mod_rewrite`, `mod_proxy`, `mod_proxy_http` and enable htaccess.
+    #. **KeyCloak 3.4.1**: Authentication server, provides single-sign-on, see :doc:`./authentication` 
+    #. **RabbitMQ 3.7.6**: Message Queue server, used by the content sync engine that moves data between the  :ref:`gawati-editor` and the  :ref:`gawati-portal` see `installing rabbitmq server <https://www.rabbitmq.com/download.html>`_, `version 3.7.6 <https://bintray.com/rabbitmq/all/rabbitmq-server/3.7.6>`_ you will need to install Erlang 20.3 before that, see `installing erlang <http://www.erlang.org/downloads/20.3>`_.
+    #. **MongoDB 3.6.5 Community Edition**: Used by the Gawati User Profiles system, see `Download MongoDB <https://www.mongodb.com/download-center?jmp=nav#community>`_ , `Install MongoDb <https://docs.mongodb.com/manual/installation/>`_
+    #. **Jetty 9.4.6.v20170531**: Used by :ref:`gawati-portal` (NOTE: required, only if you are saving legal documents in XML format), `Download <https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/9.4.6.v20170531/jetty-distribution-9.4.6.v20170531.zip>`_ , `Installing <https://www.eclipse.org/jetty/documentation/9.4.x/index.html>`_.
+  
+  **Pre-requisites (development):**
+    
+    #. *Ant*: Download and `install Ant <http://ant.apache.org/manual/install.html#installing>`_ 
+    #. *Visual Studio Code*: This is if you want play around with gawati code. Download, and setup Visual Studio Code (there are versions for Windows, OS X and Linux) for development, see `VS Code Setup <./using-vscode.rst>`_
 
 .. contents:: Table of Contents 
   :local:
 
 You can either build the source from github for each component, or you can install a released version of a component. For getting familiar with the system we recommend starting by installing a released version.
+
+.. note::
+  .. include:: version-info.rst
 
 .. _inst-gawati-portal:
 
@@ -32,9 +38,6 @@ Installing Gawati Portal
 
 Gawati Portal provides access to all legal and legislative data in the system.
 See :ref:`gawati-portal` for an architecture overview. 
-
-.. note::
-  .. include:: version-info.rst
 
 **IMPORTANT**: In Gawati Component interaction is purely via REST services, we use Apache HTTP as a reverse proxy to bind all the services together under one domain and user interface for the user. You may want to read up and get an idea of the Apache configuration before starting the installation. :doc:`./dev-and-prod-testing`
 
@@ -156,8 +159,6 @@ Development
 
 We recommend using :doc:`Oxygen XML for developing on eXist-db <./using-oxygen>`. VSCode can also be used (see :ref:`using-vscode-existdb`).
 
-.. _inst-gawati-portal-ui:
-
 
 Accessing eXist-db via SSH tunnelling
 -------------------------------------
@@ -170,6 +171,8 @@ To access the web-based dashboard from a remote computer, you need to use ssh tu
 
    ssh -vv -i <path to private key> -p 22 -L 9999:127.0.0.1:8080 server_user@101.102.103.104
 
+
+.. _inst-gawati-portal-ui:
 
 Installing Gawati Portal UI
 ===========================
@@ -249,20 +252,30 @@ This is started by simply running:
   node ./cron.js
 
 
-Additional configuration to integrate with the Profiles service
-----------------------------------------------------------------
+Additional configuration to integrate with the Other services
+-------------------------------------------------------------
 
-The :ref:`gawati-portal` integrates with the :ref:`gawati-profiles` service to provide 
+The :ref:`gawati-portal` integrates with the :ref:`gawati-profiles` system, it needs to know on which host and port other services are running. 
 
-If eXist-db is installed in a remote server, by default the server starts on port 8080 and listens only to localhost.
-To access the web-based dashboard from a remote computer, you need to use ssh tunneling. For example, if your remote server  is on the I.P. Address `101.102.103.104`, and eXist-db is on port `8080`, running the following command, will give you access to the eXist-db dashboard on `http://localhost:9999` :
+This is done by configuring the ``configs/gawati.json`` file, you will need to change ``urlBase`` parameter to point to the specific base URLs of the individiual services.
 
-.. code-block:: bash
+.. code-block:: json
   :linenos:
 
-   ssh -vv -i <path to private key> -p 22 -L 9999:127.0.0.1:8080 server_user@101.102.103.104
-
-
+  {
+    "gawati-portal-ui":{
+      "urlBase": "http://localhost:3000"
+    },
+    "gawati-portal-fe":{
+      "urlBase": "http://localhost:9001"
+    },
+    "gawati-profiles-ui":{
+      "urlBase": "http://localhost:9004"
+    },
+    "gawati-profiles-fe":{
+      "urlBase": "http://localhost:9003"
+    }
+  }
 
 
 
@@ -283,7 +296,66 @@ The server can be customized with various envirobment variables which can be spe
   * API_HOST - allows setting the host address to the `gawati-data` server, default is `localhost`
   * API_PORT - allows setting the port number to the `gawati-data` server, default is `8080`
 
+Configuring KeyCloak Auth
+=========================
+#. Follow the installation steps from `Installing Keycloak`_.
 
+#. Within the ``auth.gawati.local`` realm, navigate to the ``Clients`` tab. Click on ``gawati-portal-ui``. Set the other parameters as shown below. In this case we have set the root url, valid url etc to http://localhost:3000 which is the dev mode host and port for Gawati Editor UI. If you are deploying on a domain e.g. http://www.domain.org you can set it to that domain. Note the ``Redirect URLs`` can be set to multiple urls, this is because, the profiles services typically runs on a different url base .e.g. a different domain than the portal, so the authentication headers need to support such redirects, and unless each of the redirect domains ( for the portal-ui and for the profiles system) are set here, then the authenticated redirect will fail. You can set ``Web Origins`` to ``+`` which tells KeyCloak to set valids CORS headers ``Redirect Urls``.
+
+    .. figure:: ./_images/kc-edit-dev-portal.png
+        :alt: Edit Portal
+        :align: center
+        :figclass: align-center
+
+    .. figure:: ./_images/kc-edit-dev-portal-2.png
+        :alt: Edit Client
+        :align: center
+        :figclass: align-center
+
+#. Within the client config, switch to the ``Credentials`` tab and regenerate the secret.
+
+    .. figure:: ./_images/kc-edit-dev-portal-secret.png
+        :alt: Edit Client
+        :align: center
+        :figclass: align-center
+
+#. Switch to the ``Installation`` tab in the client section, and choose the format as ``KeyCloak OIDC JSON``. Download the json file.
+#. Open the dowloaded json file using your preferred text editor. Copy the variables ``auth-server-url`` to ``url`` and ``resource`` to ``clientId``. It should look similar to the json shown below.
+
+    .. code-block:: JSON
+        :linenos:
+
+        {
+          "realm": "auth.gawati.local",
+          "auth-server-url": "http://localhost:11080/auth",
+          "url": "http://localhost:11080/auth",
+          "ssl-required": "external",
+          "resource": "gawati-portal-ui",
+          "clientId": "gawati-portal-ui",
+          "credentials": {
+            "secret": "b344caaa-7341-479f-81b7-9d47aa3128dc"
+          },
+          "use-resource-role-mappings": true,
+          "confidential-port": 0,
+          "policy-enforcer": {}
+        }
+
+#. Copy the downloaded ``keycloak.json`` contents into the   ``gawati-portal-fe/configs/auth.json`` file on the portal-fe installation (see :ref:`inst-gawati-portal-fe`.
+#. Finally, login as admin into KeyCloak and create some users. You can create a test users like `portaladmin`, `portaleditor`, `portaluser` and associate them with the groups `portalui.Admins`, `portalui.Editors` and `portalui.Editors` .
+    
+    .. figure:: ./_images/kc-added-user-portal.png
+      :alt: Submitter Username
+      :align: center
+      :figclass: align-center
+
+      Above: a user called ``portaladmin`` has been added.
+
+    .. figure:: ./_images/kc-added-user-group-portal.png
+      :alt: Adding user to group
+      :align: center
+      :figclass: align-center
+
+      Above: the user has been added to the ``portalui.Admins`` group to give it the ``portalui.Admin`` role.
 
 
 Starting up Services
@@ -298,6 +370,7 @@ The recommended order is as follows:
     #. KeyCloak
     #. eXist-db
     #. MongoDB
+    #. RabbitMQ
   * Component Services
   
     #. :ref:`inst-gawati-portal-fe`
@@ -475,8 +548,8 @@ Installing Gawati Editor BE (Data services Component)
 #. Make the necessary Apache conf entries. See :ref:`conf-client`.
 
 
-Installing Keycloak Auth
-========================
+Configuring KeyCloak Auth
+=========================
 #. Follow the installation steps from `Installing Keycloak`_.
 
 #. Within the ``auth.gawati.local`` realm, navigate to the ``Clients`` tab. Click on ``gawati-client``. Set the other parameters as shown below. In this case we have set the root url, valid url etc to http://localhost:3000 which is the dev mode host and port for Gawati Editor UI. If you are deploying on a domain e.g. http://www.domain.org you can set it to that domain.
@@ -520,7 +593,7 @@ Installing Keycloak Auth
         }
 
 #. Copy the downloaded ``keycloak.json`` contents into the   ``gawati-editor-fe/auth.json`` file on the editor-fe installation (see :ref:`inst-gawati-editor-fe`.
-#. Finally, login as admin into KeyCloak and create some users. You can create test users like `submitter`, `editor`, `admin` and associate them with the groups `clientSubmitters`, `clientEditors` and `clientAdmins` .
+#. Finally, login as admin into KeyCloak and create some users. You can create test users like `submitter`, `editor`, `admin` and associate them with the groups `client.Submitters`, `client.Editors` and `client.Admins` .
     
     .. figure:: ./_images/kc-added-user.png
       :alt: Submitter Username
@@ -535,7 +608,7 @@ Installing Keycloak Auth
       :align: center
       :figclass: align-center
 
-      Above: the user has been added to the ``clientSubmitters`` group to give it the ``client.Submitter`` role.
+      Above: the user has been added to the ``client.Submitters`` group to give it the ``client.Submitter`` role.
 
 
 Run Gawati Editor
