@@ -479,6 +479,7 @@ To install the Editor UI Component in development environments:
 
           npm install
 
+In case of error during the above step, please refer to https://stackoverflow.com/a/39648550 on instructions on how to resolve the issue
 
 .. _inst-gawati-editor-fe:
 
