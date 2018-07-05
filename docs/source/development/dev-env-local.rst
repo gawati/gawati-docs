@@ -5,6 +5,8 @@ If you haven't yet, please review the Gawati Architecture page: :doc:`../system/
 
 The below instructions are not specific to an operating system, the components will run on different operating systems.
 
+.. _inst-prerequisites:
+
 .. note::
   **Pre-requisites (runtime):**
   

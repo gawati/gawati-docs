@@ -57,12 +57,5 @@ There are also other sub-systems of the Gawati Editor System which relate to how
 Gawati Profiles System
 **********************
 
-The Profiles system is a separate application in Gawati that provides user profiles for a gawati application. 
-
-The integration with the other components in Gawati based on single-sign-on (SSO) authentication across the gawati applications.
-
-The Profiles System is composed of 2 different application components which are indicated above in the :ref:`gawati-portal` diagram:
-  * profiles-ui - which provides the front-end and user interface for the profiles system
-  * profiles-fe - which provides access to the mongo-db back-end.
-
+See :doc:`Profiles System <./gawati-profiles-system>`
 
