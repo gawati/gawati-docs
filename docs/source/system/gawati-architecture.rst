@@ -11,9 +11,9 @@ Gawati is composed of 2 different applications which have different audiences in
 
 .. _gawati-portal:
 
-*************
-Gawati Portal
-*************
+********************
+Gawati Portal System
+********************
 
 The Gawati Portal is composed of different application components which are indicated below in the diagram. 
 
@@ -21,6 +21,16 @@ The Gawati Portal is composed of different application components which are indi
    :alt: Gawati Portal Architecture
    :align: center
    :figclass: align-center
+
+The Portal System has its own dependencies which need to be installed before it can be used:
+   
+    * gawati-portal-ui - the UI web front-end
+    * gawati-portal-fe - the back-end service for the UI
+    * gawati profiles system - see below :ref:`gawati-profiles` which has its own dependencies
+    * gawati-data - the Database service component 
+    * gawati-portal-publisher - this is a subsystem component that allows publishing data onto the portal that has been received from the :ref:`gawati-editor`.
+    * gawati-portal-qprocessor - this is a subsystem component that allows receiving data from the :ref:`gawati-editor`. 
+
 
 .. _gawati-editor:
 
@@ -48,7 +58,16 @@ The data entry client is composed of three components:
     * Application Server component - this provides access to services like Workflow, Data conversion and other processing which needs to be done on the server. Runs on ExpressJS and NodeJS (see `gawati-client-server <https://github.com/gawati/gawati-client-server>`__ ) 
     * UI Front-end: this provides the data entry forms and validates user input. This a ReactJS app.
 
-There are also other sub-systems of the Gawati Editor System which relate to how documents get published. 
+The Editor System has its own dependencies which need to be installed before it can be used:
+   
+    * gawati-editor-ui - the UI web front-end for the editor
+    * gawati-editor-fe - the back-end service for the UI
+    * authentication system - uses a customized keycloak domain and client template.
+    * gawati-client-data - the Database service component 
+    * pdf2xml-service - converts PDF documents to XML 
+    * gawati-tagit - A Service that generates tags out of text documents provided to it
+    * gawati-editor-qprocessor - this is a subsystem component that allows sending data from the :ref:`gawati-editor`. to the :ref:`gawati-portal`.
+    * gawati-package-sign - a digital signature service used to generate digital signatures
 
 
 .. _gawati-profiles:
