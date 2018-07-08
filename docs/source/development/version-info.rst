@@ -25,4 +25,4 @@
 
     - `gawati-profiles-fe <https://github.com/gawati/gawati-profiles-fe>`_ : `1.0.1 <https://github.com/gawati/gawati-profiles-fe/tree/f4c47604f4983cc6a075f489c6aa3fa57cf05658>`_
 
-
+  Older releases, see: :doc:`./version-compat`
