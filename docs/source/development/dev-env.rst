@@ -149,54 +149,6 @@ Customizable CSS properties
               <th style="border: 1px solid black; text-align:center;">Images</th>
           </tr>
       </thead>
-      
-      <tr>
-          <td style="border: 1px solid black; text-align:center;">--overrides-breadcrumb-color</td>
-          <td style="border: 1px solid black; text-align:center;">Breadcrumbs text color</td>
-          <td style="border: 1px solid black; text-align:center;">
-
-.. figure:: ./_images/vars/--overrides-breadcrumb-color.PNG
-  :target: ./_images/vars/--overrides-breadcrumb-color.PNG
-  :alt: --overrides-breadcrumb-color
-  :align: center
-  :figclass: align-center
-
-.. raw:: html
-
-              </td>
-      </tr>
-
-      <tr>
-          <td style="border: 1px solid black; text-align:center;">--overrides-p-color</td>
-          <td style="border: 1px solid black; text-align:center;">Overall text color</td>
-          <td style="border: 1px solid black; text-align:center;">
-
-.. figure:: ./_images/vars/--overrides-p-color.PNG
-  :target: ./_images/vars/--overrides-p-color.PNG
-  :alt: --overrides-p-color
-  :align: center
-  :figclass: align-center
-
-.. raw:: html
-
-              </td>
-      </tr>
-
-      <tr>
-          <td style="border: 1px solid black; text-align:center;">--overrides-a-color, --overrides-a-focus-color</td>
-          <td style="border: 1px solid black; text-align:center;">Font color of links, color when in focus</td>
-          <td style="border: 1px solid black; text-align:center;">
-
-.. figure:: ./_images/vars/--overrides-a-color.PNG
-  :target: ./_images/vars/--overrides-a-color.PNG
-  :alt: --overrides-a-color
-  :align: center
-  :figclass: align-center
-
-.. raw:: html
-
-              </td>
-      </tr>
 
       <tr>
           <td style="border: 1px solid black; text-align:center;">--overrides-h-color</td>
@@ -247,7 +199,6 @@ Customizable CSS properties
   :align: center
   :figclass: align-center
 
-
 .. raw:: html
 
               </td>
@@ -261,6 +212,22 @@ Customizable CSS properties
 .. figure:: ./_images/vars/--font-3.PNG
   :target: ./_images/vars/--font-3.PNG
   :alt: --font-3
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;">--font-small-heading, --react-tabs-tab-font</td>
+          <td style="border: 1px solid black; text-align:center;">Font family in the sidebar field headings, tabs respectively.</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--font-small-heading-tabs.PNG
+  :target: ./_images/vars/--font-small-heading-tabs.PNG
+  :alt: --font-small-heading-tabs
   :align: center
   :figclass: align-center
 
@@ -354,24 +321,8 @@ Customizable CSS properties
       </tr>
 
       <tr>
-          <td style="border: 1px solid black; text-align:center;">--content-doc-download-border-color</td>
-          <td style="border: 1px solid black; text-align:center;">Styles the border of the document actions row in the document page.</td>
-          <td style="border: 1px solid black; text-align:center;">
-
-.. figure:: ./_images/vars/--content-doc-download-border-color.PNG
-  :target: ./_images/vars/--content-doc-download-border-color.PNG
-  :alt: --content-doc-download-border-color
-  :align: center
-  :figclass: align-center
-
-.. raw:: html
-
-              </td>
-      </tr>
-
-      <tr>
-          <td style="border: 1px solid black; text-align:center;">--home-wbutton-bg-color, --home-wbutton-color</td>
-          <td style="border: 1px solid black; text-align:center;">Font color of entered search text in auto-suggest search box.</td>
+          <td style="border: 1px solid black; text-align:center;">--home-wbutton-bg-color</td>
+          <td style="border: 1px solid black; text-align:center;">Background color of the buttons in the header and content area</td>
           <td style="border: 1px solid black; text-align:center;">
 
 .. figure:: ./_images/vars/--home-wbutton.PNG
@@ -386,7 +337,7 @@ Customizable CSS properties
       </tr>
 
       <tr>
-          <td style="border: 1px solid black; text-align:center;">--footer-bg-color, --footer-bg-color2</td>
+          <td style="border: 1px solid black; text-align:center;">--footer-bg-color, --footer-color</td>
           <td style="border: 1px solid black; text-align:center;">Text and background color for region marked in red in the figure.</td>
           <td style="border: 1px solid black; text-align:center;">
 
@@ -450,8 +401,8 @@ Customizable CSS properties
       </tr>
 
       <tr>
-          <td style="border: 1px solid black; text-align:center;">--pagecontentcolumn-bg-color, --pagecontentcolumn-color</td>
-          <td style="border: 1px solid black; text-align:center;">Background, text color in the CMS pages.</td>
+          <td style="border: 1px solid black; text-align:center;">--pagecontentcolumn-color</td>
+          <td style="border: 1px solid black; text-align:center;">Text color in the CMS pages.</td>
           <td style="border: 1px solid black; text-align:center;">
 
 .. figure:: ./_images/vars/--content.PNG
@@ -466,7 +417,9 @@ Customizable CSS properties
       </tr>
 
       <tr>
-          <td style="border: 1px solid black; text-align:center;" colspan="2">--paginator-li-bg-color: Page item background <br> --paginator-li-border-color: page item border color <br> --paginator-li-color: Page item text color<br> --paginator-li-disabled-color: Disabled page item text color <br> --paginator-li-disabled-border-color: Disabled page item border color</td>
+          <td style="border: 1px solid black; text-align:center;" colspan="2">--paginator-li-bg-color: Page item background <br>
+           --paginator-li-border-color: page item border color <br>
+           --paginator-li-color: Page item text color<br>
           <td style="border: 1px solid black; text-align:center;">
 
 .. figure:: ./_images/vars/--paginator.PNG
@@ -490,31 +443,15 @@ Customizable CSS properties
           --reacttabs-border-radius: Tab border radius <br> 
           --reacttabs-bg-image: Tab background image (separator) <br> 
           --reacttabs-hover-bg-color: Hovered tab background color <br> 
-          --reacttabs-hover-color: Hovered tab text color 
+          --reacttabs-hover-color: Hovered tab text color <br>
+          --reacttabs-selected-border: Selected tab border <br>
+          --reacttab-panel-border: React tab panel border
           </td>
           <td style="border: 1px solid black; text-align:center;">
 
 .. figure:: ./_images/vars/--tabs.PNG
   :target: ./_images/vars/--tabs.PNG
   :alt: --tabs
-  :align: center
-  :figclass: align-center
-
-.. raw:: html
-
-              </td>
-      </tr>
-
-      <tr>
-          <td style="border: 1px solid black; text-align:center;">
-          --feed-container-heading-bg-color
-          </td>
-          <td>Background color of the feed container on the home page(shown in yellow in the figure)</td>
-          <td style="border: 1px solid black; text-align:center;">
-
-.. figure:: ./_images/vars/--feed-container-heading.PNG
-  :target: ./_images/vars/--feed-container-heading.PNG
-  :alt: --feed-container-heading
   :align: center
   :figclass: align-center
 
@@ -569,7 +506,7 @@ Customizable CSS properties
       </tr>
 
       <tr>
-          <td style="border: 1px solid black; text-align:center;">
+          <td style="border: 1px solid black; text-align:center;" colspan="2">
           --sidebar-bg-color - Background color of the sidebar (region in yellow in the figure)<br>
           --sidebar-box-shadow - Shadow of the sidebar. <br>
           --sidebar-border-radius - Border radius of the sidebar.
@@ -609,7 +546,6 @@ Customizable CSS properties
       <tr>
           <td style="border: 1px solid black; text-align:center;" colspan="2">
           --sidebar-small-heading-color - Text color of the filter headings(shown in yellow in the figure)<br>
-          --sidebar-box-shadow - Padding for the filter headings <br>
           --sidebar-small-heading-bg - Background color of the filter headings
           </td>
           <td style="border: 1px solid black; text-align:center;">
@@ -617,71 +553,6 @@ Customizable CSS properties
 .. figure:: ./_images/vars/--sidebar-small-heading.PNG
   :target: ./_images/vars/--sidebar-small-heading.PNG
   :alt: --sidebar-small-heading
-  :align: center
-  :figclass: align-center
-
-.. raw:: html
-
-              </td>
-      </tr>
-
-      <tr>
-          <td style="border: 1px solid black; text-align:center;">--autosuggest-color</td>
-          <td style="border: 1px solid black; text-align:center;">Font color of entered search text in auto-suggest search box.</td>
-          <td style="border: 1px solid black; text-align:center;">
-
-.. figure:: ./_images/vars/--autosuggest-color.PNG
-  :target: ./_images/vars/--autosuggest-color.PNG
-  :alt: --autosuggest-color
-  :align: center
-  :figclass: align-center
-
-.. raw:: html
-
-              </td>
-      </tr>
-
-      <tr>
-          <td style="border: 1px solid black; text-align:center;">--sitesearch-li-color</td>
-          <td style="border: 1px solid black; text-align:center;">Font color of meta data in site search suggestions.</td>
-          <td style="border: 1px solid black; text-align:center;">
-
-.. figure:: ./_images/vars/--sitesearch-li-color.PNG
-  :target: ./_images/vars/--sitesearch-li-color.PNG
-  :alt: --sitesearch-li-color
-  :align: center
-  :figclass: align-center
-
-.. raw:: html
-
-              </td>
-      </tr>
-
-      <tr>
-          <td style="border: 1px solid black; text-align:center;">--sitesearch-bg-image</td>
-          <td style="border: 1px solid black; text-align:center;">Site search results meta data separator.</td>
-          <td style="border: 1px solid black; text-align:center;">
-
-.. figure:: ./_images/vars/--sitesearch-bg-image.PNG
-  :target: ./_images/vars/--sitesearch-bg-image.PNG
-  :alt: --sitesearch-bg-image
-  :align: center
-  :figclass: align-center
-
-.. raw:: html
-
-              </td>
-      </tr>
-
-      <tr>
-          <td style="border: 1px solid black; text-align:center;" colspan="2">
-          --sitesearch-loading-bg-image - Site search results loading indicator image.<br>
-          --sitesearch-loading-bg-color - Site search input box(shown in red in the figure) background color while loading results.<br>
-          <td style="border: 1px solid black; text-align:center;">
-
-.. figure:: ./_images/vars/--sitesearch-loading-bg-image.PNG
-  :target: ./_images/vars/--sitesearch-loading-bg-image.PNG
-  :alt: --sitesearch-loading-bg-image
   :align: center
   :figclass: align-center
 
@@ -727,9 +598,11 @@ Customizable CSS properties
 
       <tr>
           <td style="border: 1px solid black; text-align:center;" colspan="2">
-          --logo-img - Brand logo in the top bar<br>
+          --logo-img-top - Brand logo in the top bar<br>
+          --logo-img-height, --logo-img-width - Dimensions of the logo image on the topbar<br>
           --logo-color - Text color of the first line of heading in the branding area<br>
-          --logo-color2 - Text color of the smaller second line of heading in the branding area<br>
+          --navbrand-top-margin - Top margin of the nav-brand.  Can align with top line of language switcher
+                              or search bar.
           <td style="border: 1px solid black; text-align:center;">
 
 .. figure:: ./_images/vars/--logo.PNG
@@ -744,15 +617,128 @@ Customizable CSS properties
       </tr>
 
       <tr>
+          <td style="border: 1px solid black; text-align:center;">
+          --heading-above-search<br>--second-header-row-display
+          </td>
+          <td>There are two types of layouts:
+            <ul>
+              <li>Heading above search in a second header row</li>
+              <li>Heading alongside search in the same row inside .nav-brand</li>
+            </ul>
+            The .logotype element containing both first and second headings is added in two places.  The display property is used to show whichever is appropriate for the layout
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--heading-above-search.PNG
+  :target: ./_images/vars/--heading-above-search.PNG
+  :alt: --heading-above-search
+  :align: center
+  :figclass: align-center
+
+.. figure:: ./_images/vars/--heading-alongside-search.PNG
+  :target: ./_images/vars/--heading-alongside-search.PNG
+  :alt: --logo
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" >
+          --logotype-h1-bg <br>
+          --logotype-h1-height<br>
+          --logo-h1-font-size<br>
+          --logotype-h1-lineht<br>
+          --logotype-h1-font
+          </td >
+          <td style="border: 1px solid black; text-align:center;"> Styles of the first heading h1</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--logotype-h1-1.PNG
+  :target: ./_images/vars/--logotype-h1-1.PNG
+  :alt: --logotype-h1-1
+  :align: center
+  :figclass: align-center
+
+.. figure:: ./_images/vars/--logotype-h1-2.PNG
+  :target: ./_images/vars/--logotype-h1-2.PNG
+  :alt: --logotype-h1-2
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" >
+          --logo-h2-font-size<br>
+          --logo-h2-mleft
+          </td >
+          <td style="border: 1px solid black; text-align:center;"> Styles of the second heading h1 - font size, left margin</td>
+          <td style="border: 1px solid black; text-align:center;">
+
+.. figure:: ./_images/vars/--logo-h2.PNG
+  :target: ./_images/vars/--logo-h2.PNG
+  :alt: --logo-h2
+  :align: center
+  :figclass: align-center
+
+.. figure:: ./_images/vars/--logo-h2-2.PNG
+  :target: ./_images/vars/--logo-h2-2.PNG
+  :alt: --logo-h2-2
+  :align: center
+  :figclass: align-center
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" >
+          --logo-img-float-994<br>
+          --navbrand-mtop-994<br>
+          --navbrand-display-994<br>
+          </td >
+          <td style="border: 1px solid black; text-align:center;" colspan="2"> Below 994px screen width, the header row is rearranged.
+            The logo, and the headings are centered above the search box.
+
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
+          <td style="border: 1px solid black; text-align:center;" >
+          --sidebar-left-margin-767<br>
+          --sidebar-right-margin-767<br>
+          --navbrand-float-767<br>
+          </td >
+          <td style="border: 1px solid black; text-align:center;" colspan="2"> Below 767px screen width, the sidebar is hidden by default.
+            It can be brought up using the burger menu button.  The layout can either have the sidebar at the left or right.  So clicking 
+            on the burger menu button, should bring it up from the right or left side and hide it by sliding it onto the same side.  This 
+            property is used to set the side from which the sidebar swipes in and out.
+
+.. raw:: html
+
+              </td>
+      </tr>
+
+      <tr>
           <td style="border: 1px solid black; text-align:center;" colspan="2">
           --languageswitcher-bg-color - Background color of the language switch upon hover(red)<br>
           --languageswitcher-highlight-bg-color - Background color of the current language(yellow).<br>
-          --languageswitcher-color - Text color of the language switches<br>
+          --lang-switch-font-size -Font size of text in language switcher<br>
           <td style="border: 1px solid black; text-align:center;">
 
-.. figure:: ./_images/vars/--languageswitcher.PNG
-  :target: ./_images/vars/--languageswitcher.PNG
-  :alt: --languageswitcher
+.. figure:: ./_images/vars/--language-switcher.PNG
+  :target: ./_images/vars/--language-switcher.PNG
+  :alt: --language-switcher
   :align: center
   :figclass: align-center
 
