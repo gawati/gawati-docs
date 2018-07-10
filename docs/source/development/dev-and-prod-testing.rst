@@ -1,7 +1,7 @@
 Testing Development & Production modes side by side
 ###################################################
 
-This document is specific to React based components in Gawati. Specifically ``gawati-portal-ui`` and ``gawati-client``. 
+This document is specific to React based components in Gawati. Specifically ``gawati-portal-ui`` and ``gawati-editor-ui``. 
 
 The standard procedure for development testing is to run ``npm start`` and the React application starts up on port ``3000``, for production testing we run ``npm run build`` and the built output is provided in the ``build`` folder, from where it is served via Apache httpd (explained below see :ref:`gawati-local`. For the application routing we use React Router, which intercepts client URL requests and channels them appropriately, however this causes problems when we proxy the data back-end on the same domain as the main system. 
 
@@ -69,11 +69,22 @@ This is relevant only for production testing. When you run ``npm start`` in deve
     </VirtualHost>
 
 
+ .. _data-local:
+
+
 *********************************************************************
 data.local : services back-end (for development & production testing)
 *********************************************************************
 
-We proxy the eXist-db services on the data.local host. 
+We proxy the eXist-db services on the data.local host. Data is provided by different services running on different ports, ``data.local`` provides a single point proxy to access all these data services. Each data service is mapped to a different proxy root path: 
+
+    * ``/gwd``: ``gawati-data`` an eXist-db service used by :ref:`gawati-portal`
+    * ``/gwp`` : ``gawati-portal-fe`` a node js service used by :ref:`gawati-portal`
+    * ``/gwdc`` : ``gawati-client-data`` an eXist-db service used by :ref:`gawati-editor`
+    * ``/gwc`` : ``gawati-editor-fe`` a node js service used by :ref:`gawati-editor`
+    * ``/gwu`` : ``gawati-profiles-fe`` user service for profiles used by :ref:`gawati-portal`, :ref:`gawati-profiles`
+
+The full apache configuration is shown below. 
 
 .. code-block:: apacheconf
     :linenos:
