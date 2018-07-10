@@ -261,6 +261,20 @@ The setup for such SSO aware applications is very easy.
      :figclass: align-center
  
 
+***********************
+A note on access tokens
+***********************
+
+KeyCloak uses 2 tokens - one on the client-side and one on the server side. The client side periodically requests the server to update its server-side token. 
+The validity of the server-side token is recommended to be 15 minutes and should be set as below, in `Realm Settings->Token`.
+
+    .. figure:: ./_images/access_token_lifespan.png
+     :alt: Access Token Lifespan
+     :align: center
+     :figclass: align-center
+ 
+
+
 
     
 
