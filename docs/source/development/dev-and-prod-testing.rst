@@ -272,7 +272,7 @@ For example: if you want to serve the portal from the `/ui` virtual directory of
 Apache configuration for profiles-ui
 ----------------------------------
 
-For example: if you want to serve the portal from the `/ui` virtual directory of your domain, and your files are located in `/home/web/apps/gawati-portal-ui`, then use the following apache configuration --  
+For example: if you want to serve the portal from the `/profiles` virtual directory of your domain, and your files are located in `/home/web/apps/gawati-profiles-ui`, then use the following apache configuration --  
 
 .. include:: profiles-ui-conf.rst
 
