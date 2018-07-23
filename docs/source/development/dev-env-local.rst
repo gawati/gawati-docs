@@ -204,69 +204,6 @@ For development environments, clone from git and install it:
 The Gawati Portal has two runnable components, the portal http server which provides access to REST services, and a cron component that runs scheduled tasks periodically. 
 
 
-Running the REST service
----------------------------
-
-Run the following in the extracted folder to setup the server:
-
-.. code-block:: bash
-  :linenos:
-
-  npm install 
-
-Assuming you extracted the portal server into : `/home/web/portal-fe`, from that folder, run :
-
-.. code-block:: bash
-  :linenos:
-
-  node ./bin/www
-
-To start up the web-service. By default it starts on PORT 9001. You can change that by running it as: 
-
-.. code-block:: bash
-  :linenos:
-
-  PORT=11001 node ./bin/www
-
-
-Running the cron service
-------------------------
-
-This is started by simply running: 
-
-.. code-block:: bash
-  :linenos:
-  
-  node ./cron.js
-
-
-Additional configuration to integrate with the Other services
--------------------------------------------------------------
-
-The :ref:`gawati-portal` integrates with the :ref:`gawati-profiles` system, it needs to know on which host and port other services are running. 
-
-This is done by configuring the ``configs/gawati.json`` file, you will need to change ``urlBase`` parameter to point to the specific base URLs of the individiual services.
-
-.. code-block:: json
-  :linenos:
-
-  {
-    "gawati-portal-ui":{
-      "urlBase": "http://localhost:3000"
-    },
-    "gawati-portal-fe":{
-      "urlBase": "http://localhost:9001"
-    },
-    "gawati-profiles-ui":{
-      "urlBase": "http://localhost:9004"
-    },
-    "gawati-profiles-fe":{
-      "urlBase": "http://localhost:9003"
-    }
-  }
-
-
-
 Apache Config
 -------------
 
@@ -364,8 +301,39 @@ The recommended order is as follows:
     #. :ref:`inst-gawati-portal-fe`
     #. :ref:`inst-gawati-profiles-fe`
     #. :ref:`inst-gawati-profiles-ui`
+    #. :ref:`inst-gawati-viewer-service`
     #. :ref:`inst-gawati-portal-ui`
 
+.. _inst-gawati-viewer-service:
+
+Installing Gawati Viewer Service
+================================
+
+Extract the contents of the zip file into any directory. 
+
+For development environments, clone from git and install it:
+
+.. code-block:: bash
+  :linenos:
+
+  git clone https://github.com/gawati/gawati-viewer-service.git
+  npm install 
+
+
+The Gawati Viewer services are invoked by the gawati-viewer npm package.  The service can convert XML/DOCX to HTML
+
+
+Running the REST service
+---------------------------
+
+Run the following in the extracted folder to setup the server:
+
+Assuming you extracted the portal server into : `/home/web/gawati-viewer-service`, from that folder, run :
+
+.. code-block:: bash
+  :linenos:
+
+  node ./bin/www
 
 .. _inst-gawati-profiles:
 
