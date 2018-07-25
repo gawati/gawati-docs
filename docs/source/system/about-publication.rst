@@ -44,7 +44,7 @@ Essential Services
  * On the :ref:`gawati-editor` end: (both the below services need to run on the same host as they read from a common folder)
     - editor-qprocessor
     - editor-fe
- * On the :ref:`gawati-portal` end: (both the below services need to run on the same host as they read from a common folder)
+ * On the :ref:`gawati-portal` end: (both the below services need to run on the same host, if they run on different hosts the folder provided bythe qprocessor needs to be accessible by the publisher)
     - portal-qprocessor
     - portal-publisher
  
