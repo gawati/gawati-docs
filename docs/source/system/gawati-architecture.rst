@@ -71,13 +71,14 @@ The Editor System follows the same basic architecture as that of the Portal syst
 
 In addition to these there are some supporting services which are required by the editor system, that provide functional support for various other services: 
 
-    * Full text extraction - a lot of content in Gawati is PDF based. We extract the full text of the PDF document as XML and make that searchable by integrating it with the main metadata search. This full-text extraction is provided by a separated full-text extraction service. (See `pd2xml-service <https://github.com/gawati/pdf2xml-service>`_)
-    * Automatic Tagging - a document whose full text has been extract can be automatically tagged by a specialized service which uses a trained legal model to identify and generate tags based on the document's content. (see `gawati-tagit <https://github.com/gawati/gawati-tagit>`_).
-    * Digital Signatures - Document packages in Gawati can be digitally signed and published. This digital signature functionality is provided on the back of 2 services:
+    - Full text extraction - a lot of content in Gawati is PDF based. We extract the full text of the PDF document as XML and make that searchable by integrating it with the main metadata search. This full-text extraction is provided by a separated full-text extraction service. (See `pd2xml-service <https://github.com/gawati/pdf2xml-service>`_)
+    - Automatic Tagging - a document whose full text has been extract can be automatically tagged by a specialized service which uses a trained legal model to identify and generate tags based on the document's content. (see `gawati-tagit <https://github.com/gawati/gawati-tagit>`_).
+    - Digital Signatures - Document packages in Gawati can be digitally signed and published. This digital signature functionality is provided on the back of 2 services:
 
         1. package signature service: this accepts a gawati document as a gawati package and a private key to sign the document, and returns the signed document. (See `gawati-package-sign <https://github.com/gawati/gawati-package-sign>`_). This service also allows validating a document based on its public key. 
-        2. digital signature interaction service: this is intended (and recommended) to be run on the **host computer** signing the document.(See `gawati-digisign-fe <https://github.com/gawati/gawati-digisign-fe>`_).  For more information how digital signatures work in Gawati see :doc:`About Digital Signatures <./about-digital-signatures>`. 
-    * Asynchronous Publication - The gawati editor system uses an asynchronous publication mechanism to move documents from the Editor System on to the :ref:`gawati-portal`. For more information on this see :doc:`About Publication <./about-publication>`. On the editor system end the expected services: 
+        2. digital signature interaction service: this is intended (and recommended) to be run on the ``host computer`` signing the document.(See `gawati-digisign-fe <https://github.com/gawati/gawati-digisign-fe>`_).  For more information how digital signatures work in Gawati see :doc:`About Digital Signatures <./about-digital-signatures>`. 
+    
+    - Asynchronous Publication - The gawati editor system uses an asynchronous publication mechanism to move documents from the Editor System on to the :ref:`gawati-portal`. For more information on this see :doc:`About Publication <./about-publication>`. On the editor system end the expected services: 
         1. RabbitMQ - this is an enterprise grade Message Queue system which we just use out of the box for its message queue capabilities. 
         2. Editor QProcessor - this is a specialized service that runs as a background process in the Editor system and periodically scanes the message queue for publication events. It transmits documents which are to be published onto the portal system. (See `Editor QProcessor <https://github.com/gawati/gawati-editor-qprocessor>`_).
     
