@@ -165,6 +165,15 @@ The full apache configuration is shown below.
         SetEnv proxy-nokeepalive 1
         </Location>
 
+        # gawati-viewer-service
+        <Location ~ "/gwv/(.*)">
+        AddType text/cache-manifest .appcache
+        ProxyPassMatch  "http://localhost:9005/gwv/$1"
+        ProxyPassReverse "http://localhost:9005/gwv/$1"
+        SetEnv force-proxy-request-1.0 1
+        SetEnv proxy-nokeepalive 1
+        </Location>
+
     </VirtualHost>    
 
 .. note::
@@ -272,7 +281,7 @@ For example: if you want to serve the portal from the `/ui` virtual directory of
 Apache configuration for profiles-ui
 ----------------------------------
 
-For example: if you want to serve the portal from the `/ui` virtual directory of your domain, and your files are located in `/home/web/apps/gawati-portal-ui`, then use the following apache configuration --  
+For example: if you want to serve the portal from the `/profiles` virtual directory of your domain, and your files are located in `/home/web/apps/gawati-profiles-ui`, then use the following apache configuration --  
 
 .. include:: profiles-ui-conf.rst
 

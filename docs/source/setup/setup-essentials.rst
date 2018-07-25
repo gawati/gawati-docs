@@ -3,7 +3,8 @@ Server Setup
 
 .. contents:: Table of Contents 
   :local:
-  
+
+
 Installation script
 *******************
 
@@ -26,6 +27,7 @@ To download the `installation script`_, switch to user root and execute::
  curl http://dl.gawati.org/dev/setup -o setup
  chmod 755 setup
 
+
 Quickstart
 ==========
 
@@ -40,14 +42,21 @@ configuration template with our default settings. On second run the
 installation is executed according to the settings in this configuration file.
 
 Running the installer twice will complete our default installation, assuming you
-will access your server with the URL *https://my.gawati.local*. You will have to
-make sure that both *my.gawati.local* and *media.my.gawati.local* resolve to your
-server IP locally.
+will access your server using the base URL *https://my.gawati.local*.
+Additional services will be installed on subdomains thereof. In total, you will
+need to configure all of the following names resolve to your server IP locally
+(ie using your hosts file)::
+
+  my.gawati.local
+  data.my.gawati.local
+  edit.my.gawati.local
+  media.my.gawati.local  
 
 .. note::
-   The Installer will automatically set the Admin passwords for the 2 eXist instances
-   and display it to you. You will need to copy and paste this from the screen or note it down somewhere as it is
-   the only point where the password is shown to the user.
+   The Installer will automatically set the Admin password for eXist and display
+   it to you in a summary when the installation completed. You will need to copy
+   and paste this from the screen or note it down somewhere as it is the only time
+   when the password is shown to the user.
 
 If that's all you need, you may finish reading here. Below you find more
 information for customising common configuration items and the key information
@@ -65,9 +74,10 @@ To do so, retrieve your firewall CA in pem format from your firewall, copy it on
   cp SSLinterceptCA.crt /etc/pki/ca-trust/source/anchors/
   update-ca-trust extract
 
- 
+
 Common configurations
 *********************
+
 
 monitoring email address
 ========================
@@ -75,12 +85,14 @@ monitoring email address
 In the section [fail2ban], change the variables *mailsender* (default:
 from@sender.domain) and *mailrecipient* (default: root@localhost).
 
+
 Gawati server URL
 =================
 
 In the ini file that has been downloaded to your home folder after the first run
 of the installer, find the section [gawati-portal] and change the
 *GAWATI_URL_ROOT* variable (default: my.gawati.org).
+
 
 SSL server certificate
 =======================
@@ -106,6 +118,7 @@ to your case::
   state=Zug
   city=Zug
 
+
 locally signed certificate
 --------------------------
 
@@ -114,6 +127,7 @@ meant for running internal or testing servers.
 In section [acme] make sure to configure *type=disabled*. In section [localcerts]
 set *type=install* and set variable *certs* identical to your *GAWATI_URL_ROOT*
 and add a whitespace followed by the equivalent of media. *GAWATI_URL_ROOT*.
+
 
 `letsencrypt`_ signed certificate
 ---------------------------------
@@ -126,6 +140,7 @@ this is the preferred option.
 In section [localcerts] make sure to configure *type=disabled*. In section [acme]
 set *type=install* and set variable *certs* identical to your *GAWATI_URL_ROOT*
 and add a whitespace followed by the equivalent of media. *GAWATI_URL_ROOT*.
+
 
 builduser
 =========
@@ -157,6 +172,7 @@ At this time, the default target "dev" is the only installation target provided 
 
 You can change ours, or create your own ini files if you need to deviate from our defaults.
 
+
 Components overview
 *******************
 
@@ -164,13 +180,16 @@ The Gawati reference server is based on `CentOS`_ 7, Minimal Install.
 For hosting the application, we use `eXistdb`_ as XML/document database and
 `jetty`_ as Java web application server.
 
-We use two (2) instances of `eXistdb`_
+A production installation of Gawati will be installed with (2) instances of `eXistdb`_
 
-#. Backend - the main data repository / active data
-#. Staging - data in transit / for syncronisation
+#. Gawati-Editor, internal managament of the Gawati data 
+#. Gawati-Portal, data copy for public access 
 
+A development installation will serv both function off a single installation.
+ 
 All services except for a (1) frontend Apache instance will be listening on
 127.0.0.1 only.
+
 
 Jetty
 =====
@@ -185,21 +204,24 @@ A link to its jetty installation in /opt will be created inside JETTY_BASE calle
 
 Jetty will be installed as a system service starting with the boot process.
 
+
 eXistdb
 =======
 
-Two (2) instances of `eXistdb`_ will be created. Each instance under a dedicated
-user account. eXistdb will be installed in folder ~/apps/existdb with data in
-~/apps/existdata. A random generated password will be configured for user "admin"
-and is displayed during installation.
+`eXistdb`_ will be installed using a dedicated user account. The name of the user
+account is defined in the setup configuration (eg dev.ini). 
+eXistdb will be installed in folder ~/apps/existdb with data in ~/apps/existdata.
+A random generated password will be configured for existdb user "admin" and is
+displayed during installation.
 
-The backend instance of eXistdb will be installed as a system service starting
-with the boot process.
+eXistdb will be installed as a system service starting with the boot process.
+
 
 Downloads
 =========
 
 Installation Resources will be downloaded into "/opt/Download"
+
 
 Uninstalling
 ============
@@ -207,6 +229,7 @@ Uninstalling
 There is no proper uninstaller yet, but if you installed the system with our
 default installation paths and service names, you can use the script at
 /opt/Download/installer/uninstall.sh to remove all files related to Gawati.
+
 
 References
 **********
