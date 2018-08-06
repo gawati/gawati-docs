@@ -9,7 +9,10 @@
     #. **RabbitMQ 3.7.6**: Message Queue server, used by the content sync engine that moves data between the  :ref:`gawati-editor` and the  :ref:`gawati-portal` see `installing rabbitmq server <https://www.rabbitmq.com/download.html>`_, `version 3.7.6 <https://bintray.com/rabbitmq/all/rabbitmq-server/3.7.6>`_ you will need to install Erlang 20.3 before that, see `installing erlang <http://www.erlang.org/downloads/20.3>`_.
     #. **MongoDB 3.6.5 Community Edition**: Used by the Gawati User Profiles system, see `Download MongoDB <https://www.mongodb.com/download-center?jmp=nav#community>`_ , `Install MongoDb <https://docs.mongodb.com/manual/installation/>`_
     #. **Jetty 9.4.6.v20170531**: Used by :ref:`gawati-portal` (NOTE: required, only if you are saving legal documents in XML format), `Download <https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/9.4.6.v20170531/jetty-distribution-9.4.6.v20170531.zip>`_ , `Installing <https://www.eclipse.org/jetty/documentation/9.4.x/index.html>`_.
+    #. **Python 3.6**: Used by :ref:`gawati-editor` for automatically tagging text (the sub-service is used ``gawati-tagit``).
+    #. **Python 2.7**: Used by :ref:`gawati-editor` for extracting text from PDF files (the sub-service is used ``pdf2xml-service``).
   
+
   **Pre-requisites (development):**
     
     #. *Ant*: Download and `install Ant <http://ant.apache.org/manual/install.html#installing>`_ 
