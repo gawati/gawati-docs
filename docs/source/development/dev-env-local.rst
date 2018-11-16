@@ -177,6 +177,40 @@ But, if installing for development, clone from git and build:
 
 And add the corresponding Apache Server configuration entry (See :ref:`conf-portal-ui`). 
 
+The React app in the https://gitlab.com/bungenicom/gawati/gawati-portal-ui repository can be used to run different clients.  The configuration and set up scripts for the presently available clients: `ecowas` and `gawati` are available in separate git repositories.
+
+.. code-block:: bash
+  :linenos:
+
+    git clone https://gitlab.com/bungenicom/gawati/portal-ui-config
+    git clone https://gitlab.com/bungenicom/ecowas/portal-ui-config
+    
+
+**Switching clients**
+
+In order to switch clients during development:
+
+* Checkout to the `<client>/portal-ui-config` repository and pull latest.
+* Check proxy setting in 
+   - `package.json`
+   - `portal-ui-config/proxy.js`.
+
+* Change following values in `.env` and `.env.development` files accordingly:
+
+  .. code-block:: bash
+
+    REACT_APP_THEME=default
+    REACT_APP_CLIENT=gawati
+    REACT_APP_CONFIG_PATH=../../gawati-portal-config
+
+* Restart portal
+
+.. note::
+  `REACT_APP_CONFIG_PATH` points to the client config repository.  The path is relative to the `scripts` folder in gawati-portal-ui repository.
+
+.. note::
+  A theme can only be associated with a specific client. A client may have a choice of multiple themes.
+
 
 Development and Production mode
 -------------------------------
